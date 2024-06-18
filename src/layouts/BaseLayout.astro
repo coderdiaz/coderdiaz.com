@@ -1,0 +1,65 @@
+---
+import Container from '@/components/Container.astro';
+import Mexico from '@/components/badges/Mexico.astro';
+---
+
+<html lang="en" class="min-h-full antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body class="font-sans leading-relaxed h-full flex flex-col">
+    <section class="border-b border-gray-200">
+      <Container>
+        <a href="#" class="py-2.5 flex items-center justify-between text-sm">
+          <p class="font-semibold">Introducing AprendeStrapi.com</p>
+          <p>Join the course now <span aria-hidden="true">→</span></p>
+        </a>
+      </Container>
+    </section>
+    <header>
+      <Container>
+        <div class="flex items-center justify-between pt-8">
+          <span class="font-semibold">Javier Diaz — Engineering & Design</span>
+          <nav class="flex items-center gap-4">
+            <a class="text-sm font-medium text-gray-500 hover:text-gray-900" href="#">Projects</a>
+            <a class="text-sm font-medium text-gray-500 hover:text-gray-900" href="#">Services</a>
+            <a class="text-sm font-medium text-gray-500 hover:text-gray-900" href="#">Notes</a>
+          </nav>
+        </div>
+      </Container>
+    </header>
+    <main class="h-full flex-1">
+      <slot />
+    </main>
+    <footer>
+      <Container>
+        <div class="flex flex-col gap-8 pt-16 pb-20">
+          <p class="font-medium text-gray-500 flex items-center gap-2">
+            Shipped from Mexico
+            <Mexico />
+          </p>
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-4 flex-wrap">
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">About</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Manifesto</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Services</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Notes</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Contact</a>
+            </div>
+            <div class="flex items-center gap-4 flex-wrap">
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">X.com</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">GitHub</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">LinkedIn</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Dribbble</a>
+            </div>
+          </div>
+          <p class="text-sm text-gray-400">Since &copy; 2015.</p>
+        </div>
+      </Container>
+    </footer>
+  </body>
+</html>

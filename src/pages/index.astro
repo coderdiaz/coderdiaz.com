@@ -1,12 +1,261 @@
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Container from '@/components/Container.astro';
+import Ship from '@/components/badges/Ship.astro';
+import HoppyImage from '@/assets/images/hoppy.png';
+import AriaImage from '@/assets/images/academia-aria.png';
+import ProfileAvatar from '@/assets/images/profile.jpg';
+import DanceAppImage from '@/assets/images/dance-app.png';
+---
+<BaseLayout>
+  <section class="border-b border-gray-200">
+    <Container>
+      <div class="py-12">
+        <div class="flex flex-col items-start gap-8">
+          <div class="relative flex items-start flex-col gap-3 w-[44rem]">
+            <h1 class="text-[2.75rem] leading-[1.1] font-bold">
+              Building people-first 🍋 interfaces, websites 🌐, mobile apps and systems for the <span class="before:animate-glitch relative before:left-[3px] before:absolute before:top-0 before:w-full before:h-full before:overflow-hidden before:[text-shadow:-2px_0_red] before:[content:'web']">web</span>.
+            </h1>
+            <p class="text-gray-600 text-lg font-medium">I'm the person who can build products between engineering and design with a big attention to detail against the competitors. Currently founding my own engineering studio from Mexico.</p>
+            <span class="absolute left-0 -ml-16 mt-9 top-0 mb-0 hidden font-mono text-[18rem] text-gray-600 leading-none opacity-5 lg:flex">*</span>
+          </div>
+          <div class="flex items-center  gap-4">
+            <button class="relative px-4 py-2.5 rounded-2xl text-white bg-black shadow-lg shadow-[#F84F1A]/35 ring-2 ring-[#F84F1A]/20 hover:shadow-xl hover:shadow-[#F84F1A]/60 hover:ring-[#F84F1A]/30 font-semibold transition hover:scale-105 z-10">
+              Book a 30 min call
+            </button>
+            <div class="text-sm text-gray-500 font-medium">Use <span>⌘K</span> for a best experience</div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+  <section class="border-b border-gray-200 hover:bg-orange-100/25">
+    <a href="#">
+      <Container class="px-0">
+        <div class="pt-16 flex flex-col gap-4">
+          <div class="flex flex-col gap-5 w-[34rem] px-10">
+            <span class="inline max-w-max px-3 py-0.5 border-2 border-black rounded-full font-semibold text-sm text-gray-1100">
+              Dance App Manager
+            </span>
+            <div class="flex flex-col gap-2">
+              <h3 class="text-3xl font-bold">Manage your dance academy from your hands</h3>
+              <p class="font-medium text-gray-600">
+                A mobile app for dance academies to manage their students, classes, payments, and more. An app build and designed to be easy to use and exclusive for9 dance instructors.
+              </p>
+            </div>
+          </div>
+          <Image class="w-full pointer-events-none select-none" src={DanceAppImage} alt="Dance App Manager" />
+        </div>
+      </Container>
+    </a>
+  </section>
+  <section class="border-b border-gray-200 hover:bg-orange-100/25">
+    <a href="#">
+      <Container class="px-0">
+        <div class="pt-12 flex flex-col gap-4">
+          <div class="flex flex-col gap-5 w-[34rem] px-10">
+            <span class="inline max-w-max px-3 py-0.5 border-2 border-black rounded-full font-semibold text-sm text-gray-1100">Hoppy</span>
+            <div class="flex flex-col gap-2">
+              <h3 class="text-3xl font-bold">Keep your bills and subscriptions in order in one place</h3>
+              <p class="font-medium text-gray-600">You will be able to register and track bills and subscriptions, pause them at any time and get data on your expenses.</p>
+            </div>
+          </div>
+          <Image class="w-full pointer-events-none select-none" src={HoppyImage} alt="Hoppy" />
+        </div>
+      </Container>
+    </a>
+  </section>
+  <section class="border-b border-gray-200 hover:bg-orange-100/25">
+    <a href="#">
+      <Container class="px-0">
+        <div class="pt-16 flex flex-col gap-4">
+          <div class="flex flex-col gap-5 w-[34rem] px-10">
+            <span class="inline max-w-max px-3 py-0.5 border-2 border-black rounded-full font-semibold text-sm text-gray-1100">
+              Academia de baile ARIA
+            </span>
+            <div class="flex flex-col gap-2">
+              <h3 class="text-3xl font-bold">Learn to dance latin rhythms from zero with custom classes</h3>
+              <p class="font-medium text-gray-600">
+                Marketing site for a dance academy in Mexico City. The site is designed to attract new students and bring information about the academy.
+              </p>
+            </div>
+          </div>
+          <Image class="w-full pointer-events-none select-none" src={AriaImage} alt="Academia de baile ARIA" />
+        </div>
+      </Container>
+    </a>
+  </section>
+  <section class="border-b border-gray-200">
+    <Container class="px-0">
+      <div class="py-16 flex gap-4">
+        <div class="flex flex-col gap-4 w-[60rem] px-10 flex-grow">
+          <h3 class="text-2xl font-bold">Hey!, I'm Javier Diaz</h3>
+          <div class="relative flex flex-col gap-1.5 font-medium text-gray-600">
+            <p>
+              A mexican working with various startups, companies, agencies and individuals to build products and services for the web.
+            </p>
+            <p>
+              I love collaborate with people and teams to create fantastical experiences and products that are easy to use.
+            </p>
+            <p>
+              In my free time, you'll usually find me reading, watching movies, playing video games, or learning something new.
+            </p>
+            <span class="absolute left-0 -ml-10 mt-4 top-0 mb-0 hidden font-mono text-[12rem] text-gray-600 leading-none opacity-5 lg:flex">*</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <button class="mt-2 px-4 py-2.5 w-max rounded-2xl text-white bg-black shadow-lg shadow-blue-900/60 ring-2 ring-blue-400/20 hover:shadow-xl hover:shadow-blue-700/50 hover:ring-blue-400/30 font-semibold transition hover:scale-105">
+              Start a project
+            </button>
+            <button class="mt-2 px-4 py-2 w-max rounded-2xl text-black bg-white ring-2 ring-gray-100 font-semibold transition hover:bg-gray-100">
+              Discover my services
+            </button>
+          </div>
+        </div>
+        <div class="w-[28rem] h-80 overflow-hidden shadow-xl bg-white p-3 pb-9 rotate-[4deg] border border-gray-100">
+          <Image class="h-full w-full object-cover object-top pointer-events-none select-none" src={ProfileAvatar} alt="Avatar of Javier Diaz" />
+        </div>
+      </div>
+    </Container>
+  </section>
+  <section class="border-b border-gray-200">
+    <Container>
+      <div class="py-6 flex items-center gap-4">
+        <span class="font-semibold text-gray-1100">Let's connect</span>
+        <div class="flex items-center gap-2">
+          <a href="#" class="px-4 py-2 rounded-xl bg-gray-100 hover:bg-gray-200/70 text-sm text-gray-600 hover:text-gray-900 font-medium transition">
+            X.com
+          </a>
+          <a href="#" class="px-4 py-2 rounded-xl bg-gray-100 hover:bg-gray-200/70 text-sm text-gray-600 hover:text-gray-900 font-medium transition">
+            GitHub
+          </a>
+          <a href="#" class="px-4 py-2 rounded-xl bg-gray-100 hover:bg-gray-200/70 text-sm text-gray-600 hover:text-gray-900 font-medium transition">
+            LinkedIn
+          </a>
+          <a href="#" class="px-4 py-2.5 rounded-xl bg-gray-100 hover:bg-gray-200/70 text-sm text-gray-600 hover:text-gray-900 font-medium">
+            Youtube
+          </a>
+          <a href="#" class="px-4 py-2 rounded-xl bg-gray-100 hover:bg-gray-200/70 text-sm text-gray-600 hover:text-gray-900 font-medium transition">
+            Dribbble
+          </a>
+          <a href="#" class="px-4 py-2 rounded-xl bg-gray-100 hover:bg-gray-200/70 text-sm text-gray-600 hover:text-gray-900 font-medium transition">
+            Email
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+  <section class="border-b border-gray-200">
+    <Container class="px-0">
+      <div class="pt-16 pb-20 flex gap-4">
+        <div class="flex flex-col gap-4 w-[60rem] px-10 flex-grow">
+          <div class="flex items-center gap-2">
+            <span class="bg-orange-800 p-1 rounded-lg">
+              <Ship />
+            </span>
+            <h3 class="text-2xl font-bold">My travel life</h3>
+          </div>
+          <div class="relative flex flex-col gap-1.5 font-medium text-gray-600 mb-3">
+            <p>
+              Sometimes I write about my experiences, thoughts, and things I've learned. I'm not a writer, but I try to share my knowledge with others.
+            </p>
+            <span class="absolute left-0 -ml-10 -mt-16 top-0 mb-0 hidden font-mono text-[12rem] text-gray-600 leading-none opacity-5 lg:flex">*</span>
+          </div>
+          <div class="relative flex flex-col gap-1 z-10 -mx-2 mb-2">
+            <a href="#" class="py-2 hover:bg-gray-50 group hover:ring-4 hover:ring-gray-50 px-2 rounded-xl transition">
+              <article class="flex items-center gap-3">
+                <span class="block text-gray-500 text-sm tabular-nums">2024-03-20</span>
+                <h4 class="font-semibold underline underline-offset-2 decoration-gray-200 group-hover:decoration-orange-500 transition">2 years without a job: My experience</h4>
+              </article>
+            </a>
+            <a href="#" class="py-2 hover:bg-gray-50 group hover:ring-4 hover:ring-gray-50 px-2 rounded-xl transition">
+              <article class="flex items-center gap-3">
+                <span class="block text-gray-500 text-sm tabular-nums">2024-03-20</span>
+                <h4 class="font-semibold underline underline-offset-2 decoration-gray-200 group-hover:decoration-orange-500 transition">Tips and recommendations that I learned about SEO</h4>
+              </article>
+            </a>
+            <a href="#" class="py-2 hover:bg-gray-50 group hover:ring-4 hover:ring-gray-50 px-2 rounded-xl transition">
+              <article class="flex items-center gap-3">
+                <span class="block text-gray-500 text-sm tabular-nums">2024-03-20</span>
+                <h4 class="font-semibold underline underline-offset-2 decoration-gray-200 group-hover:decoration-orange-500 transition">How a disease change my life and work</h4>
+              </article>
+            </a>
+            <a href="#" class="py-2 hover:bg-gray-50 group hover:ring-4 hover:ring-gray-50 px-2 rounded-xl transition">
+              <article class="flex items-center gap-3">
+                <span class="block text-gray-500 text-sm tabular-nums">2024-03-20</span>
+                <h4 class="font-semibold underline underline-offset-2 decoration-gray-200 group-hover:decoration-orange-500 transition">Retrospective 2021</h4>
+              </article>
+            </a>
+            <a href="#" class="py-2 hover:bg-gray-50 group hover:ring-4 hover:ring-gray-50 px-2 rounded-xl transition">
+              <article class="flex items-center gap-3">
+                <span class="block text-gray-500 text-sm tabular-nums">2024-03-20</span>
+                <h4 class="font-semibold underline underline-offset-2 decoration-gray-200 group-hover:decoration-orange-500 transition">Improving performance for expanish.com</h4>
+              </article>
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="#" class="bg-gray-100 text-gray-600 hover:text-gray-900 px-2.5 py-1 leading-snug text-sm rounded-full font-semibold transition">
+              Show all posts
+            </a>
+            <a href="#" class="bg-gray-100 text-gray-600 hover:text-gray-900 px-2.5 py-1 leading-snug text-sm rounded-full font-semibold transition">
+              Follow me on X.com
+            </a>
+            <a href="#" class="bg-gray-100 text-gray-600 hover:text-gray-900 px-2.5 py-1 leading-snug text-sm rounded-full font-semibold transition">
+              Follow on LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+  <section>
+    <Container class="px-0">
+      <div class="py-16 flex gap-4">
+        <div class="flex flex-col gap-6 px-10 flex-grow text-gray-900">
+          <div class="relative flex flex-col gap-4">
+            <h3 class="text-4xl font-bold">Your product needs the best experience.</h3>
+            <p class="text-xl font-medium text-gray-500 max-w-[40rem]">
+              Let's bring your idea from <span class="font-bold text-black">0 → 1</span> and do it. I can help you with a variety of services to get your project off the ground and into the hands of your users.
+            </p>
+            <span class="absolute left-0 -ml-10 -mt-6 top-0 mb-0 hidden font-mono text-[12rem] text-gray-600 leading-none opacity-5 lg:flex -z-10">*</span>
+          </div>
+          <div class="flex items-center gap-3 flex-wrap z-10">
+            <span class="inline max-w-max px-3 py-1.5 bg-white/20 backdrop-blur-lg border border-gray-20 rounded-full font-semibold text-sm">
+              Frontend Development
+            </span>
+            <span class="inline max-w-max px-3 py-1.5 bg-white/20 backdrop-blur-lg border border-gray-20 rounded-full font-semibold text-sm">
+              CMS
+            </span>
+            <span class="inline max-w-max px-3 py-1.5 bg-white/20 backdrop-blur-lg border border-gray-20 rounded-full font-semibold text-sm">
+              Backend Development
+            </span>
+            <span class="inline max-w-max px-3 py-1.5 bg-white/20 backdrop-blur-lg border border-gray-20 rounded-full font-semibold text-sm">
+              APIs
+            </span>
+            <span class="inline max-w-max px-3 py-1.5 bg-white/20 backdrop-blur-lg border border-gray-20 rounded-full font-semibold text-sm">
+              Web Design
+            </span>
+            <span class="inline max-w-max px-3 py-1.5 bg-white/20 backdrop-blur-lg border border-gray-20 rounded-full font-semibold text-sm">
+              UX/UI Design
+            </span>
+            <span class="inline max-w-max px-3 py-1.5 bg-white/20 backdrop-blur-lg border border-gray-20 rounded-full font-semibold text-sm">
+              Mobile Apps
+            </span>
+            <span class="inline max-w-max px-3 py-1.5 bg-white/20 backdrop-blur-lg border border-gray-20 rounded-full font-semibold text-sm">
+              E-commerce
+            </span>
+            <span class="inline max-w-max px-3 py-1.5 bg-white/20 backdrop-blur-lg border border-gray-20 rounded-full font-semibold text-sm">
+              Design Systems
+            </span>
+            <span class="inline max-w-max px-3 py-1.5 bg-white/20 backdrop-blur-lg border border-gray-20 rounded-full font-semibold text-sm">
+              Training
+            </span>
+          </div>
+          <a href="#" class="text-2xl underline underline-offset-2 decoration-gray-200 hover:decoration-orange-500 transition font-semibold">
+            <span>Drop me a line and start from $599/week</span>
+          </a>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
