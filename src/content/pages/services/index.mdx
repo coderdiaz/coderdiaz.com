@@ -1,0 +1,129 @@
+---
+title: How can I help you?
+description: Each service I offer is designed to help you succeed in your business. Each delivery requires iterations of Strategy, Design, and Development.
+cta:
+  label: Start from $599/week
+  url: '#'
+---
+import { motion } from 'framer-motion';
+import Container from '@/components/Container.astro';
+import BlockRow from '@/components/BlockRow.astro';
+import { Terminal } from '@/components/badges/Terminal.tsx';
+import Design from '@/components/badges/Design.astro';
+import Mentoring from '@/components/badges/Mentoring.astro';
+
+<section class="border-b border-gray-200">
+  <Container>
+    <div class="grid grid-cols-2 gap-0">
+      <motion.div
+        client:load
+        initial={{opacity:0, y:-20}}
+        animate={{opacity:1, y:0}}
+        transition={{ type: 'spring', delay: 0.35}}
+        className="flex flex-col border-r border-gray-200">
+        <BlockRow title="Design & Strategy" class="py-8">
+          <span slot="icon" class="bg-orange-900 text-white p-1 rounded-lg">
+            <Design />
+          </span>
+          <div class="flex flex-col gap-5 text-lg">
+            <div class="flex flex-col gap-3">
+              <h4 class="font-semibold text-gray-800">Interfaces</h4>
+              <ul class="flex flex-col gap-2 z-10">
+                <li class="font-medium text-gray-600">Diseño de interfaces</li>
+                <li class="font-medium text-gray-600">Sistemas de Diseño</li>
+                <li class="font-medium text-gray-600">Diseño de experiencia</li>
+                <li class="font-medium text-gray-600">Landing Pages</li>
+                <li class="font-medium text-gray-600">Web Design</li>
+              </ul>
+            </div>
+            <div class="flex flex-col gap-3">
+              <h4 class="font-semibold text-gray-800">Producto</h4>
+              <ul class="flex flex-col gap-2 z-10">
+                <li class="font-medium text-gray-600">Prueba de concepto</li>
+                <li class="font-medium text-gray-600">MVP</li>
+                <li class="font-medium text-gray-600">Benchmarking</li>
+                <li class="font-medium text-gray-600">Gestión de proyectos</li>
+              </ul>
+            </div>
+            <div class="flex flex-col gap-3">
+              <h4 class="font-semibold text-gray-800">Strategy</h4>
+              <ul class="flex flex-col gap-2 z-10">
+                <li class="font-medium text-gray-600">Conversion rate optimisation</li>
+                <li class="font-medium text-gray-600">SEO optimisation</li>
+              </ul>
+            </div>
+          </div>
+        </BlockRow>
+        <BlockRow title="Other services" class="py-8">
+          <span slot="icon" class="bg-blue-700 text-white p-1 rounded-lg">
+            <Mentoring />
+          </span>
+          <div class="flex flex-col gap-5 text-lg">
+            <div class="flex flex-col gap-3">
+              <h4 class="font-semibold text-gray-800">Entrenamiento</h4>
+              <ul class="flex flex-col gap-2 z-10">
+                <li class="font-medium text-gray-600">Capacitación técnica</li>
+                <li class="font-medium text-gray-600">Consultorías</li>
+                <li class="font-medium text-gray-600">Mentorship</li>
+              </ul>
+            </div>
+          </div>
+        </BlockRow>
+      </motion.div>
+      <motion.div
+        client:load
+        initial={{opacity:0, y:-20}}
+        animate={{opacity:1, y:0}}
+        transition={{ type: 'spring', delay: 0.35}}
+      >
+        <BlockRow title="Software Development" class="py-8 pl-12">
+          <span slot="icon" class="bg-black text-white p-1 rounded-lg">
+            <Terminal />
+          </span>
+          <div class="flex flex-col gap-5 text-lg">
+            <div class="flex flex-col gap-3">
+              <h4 class="font-semibold text-gray-800">Front-end</h4>
+              <ul class="flex flex-col gap-2 z-10">
+                <li class="font-medium text-gray-600">React.js</li>
+                <li class="font-medium text-gray-600">Next.js</li>
+                <li class="font-medium text-gray-600">React Native</li>
+                <li class="font-medium text-gray-600">Astro</li>
+                <li class="font-medium text-gray-600">Tailwind CSS</li>
+                <li class="font-medium text-gray-600">HTML/CSS</li>
+              </ul>
+            </div>
+            <div class="flex flex-col gap-3">
+              <h4 class="font-semibold text-gray-800">Back-end</h4>
+              <ul class="flex flex-col gap-2 z-10">
+                <li class="font-medium text-gray-600">Node.js</li>
+                <li class="font-medium text-gray-600">Nest.js</li>
+                <li class="font-medium text-gray-600">GraphQL</li>
+                <li class="font-medium text-gray-600">API Rest</li>
+                <li class="font-medium text-gray-600">Strapi CMS</li>
+                <li class="font-medium text-gray-600">Payload CMS</li>
+                <li class="font-medium text-gray-600">Medusa</li>
+              </ul>
+            </div>
+            <div class="flex flex-col gap-3">
+              <h4 class="font-semibold text-gray-800">Devops</h4>
+              <ul class="flex flex-col gap-2 z-10">
+                <li class="font-medium text-gray-600">Docker</li>
+                <li class="font-medium text-gray-600">Norhflank</li>
+                <li class="font-medium text-gray-600">GraphQL</li>
+                <li class="font-medium text-gray-600">CloudFlare</li>
+                <li class="font-medium text-gray-600">Git</li>
+              </ul>
+            </div>
+            <div class="flex flex-col gap-3">
+              <h4 class="font-semibold text-gray-800">Languages</h4>
+              <ul class="flex flex-col gap-2 z-10">
+                <li class="font-medium text-gray-600">JavaScript</li>
+                <li class="font-medium text-gray-600">Go</li>
+              </ul>
+            </div>
+          </div>
+        </BlockRow>
+      </motion.div>
+    </div>
+  </Container>
+</section>
