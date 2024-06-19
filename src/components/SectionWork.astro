@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { motion } from 'framer-motion';
+import Container from './Container.astro';
+
+interface Props {
+  entry: CollectionEntry<'work'>;
+}
+
+const { entry } = Astro.props;
+---
+<section class="border-b border-gray-200 hover:bg-orange-100/25">
+  <a href={entry.slug} target="_self">
+    <Container class="px-0">
+      <div class="pt-16 flex flex-col gap-4">
+        <div class="flex flex-col gap-5 w-[34rem] px-10">
+          { entry.data.tag && (
+            <motion.span
+              client:load
+              initial={{opacity:0,y:-20}}
+              animate={{opacity:1,y:0}}
+              transition={{ type: 'spring', delay: 0.7}}
+              className="inline max-w-max px-3 py-0.5 border-2 border-black rounded-full font-semibold text-sm text-gray-1100">
+              {entry.data.tag}
+            </motion.span>
+          ) }
+          <div class="flex flex-col gap-2">
+            <motion.h3
+              client:load
+              initial={{opacity:0,y:-20}}
+              animate={{opacity:1,y:0}}
+              transition={{ type: 'spring', delay: 0.75}}
+              className="text-3xl font-bold">{entry.data.title}</motion.h3>
+            <motion.p
+              client:load
+              initial={{opacity:0,y:-20}}
+              animate={{opacity:1,y:0}}
+              transition={{ type: 'spring', delay: 0.8}}
+              className="font-medium text-gray-600">
+              {entry.data.description}
+            </motion.p>
+          </div>
+        </div>
+        { entry.data.featuredImage && (
+          <motion.div
+            client:load
+            initial={{opacity:0,y:-20}}
+            animate={{opacity:1,y:0}}
+            transition={{ type: 'spring', delay: 0.85}}
+          >
+            <Image
+              class="w-full pointer-events-none select-none"
+              src={entry.data.featuredImage as ImageMetadata}
+              alt={entry.data.tag} />
+          </motion.div>
+        )}
+      </div>
+    </Container>
+  </a>
+</section>
