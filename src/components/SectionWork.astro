@@ -6,48 +6,63 @@ import Container from './Container.astro';
 
 interface Props {
   entry: CollectionEntry<'work'>;
+  showServices?: boolean;
 }
 
-const { entry } = Astro.props;
+const { entry, showServices = false } = Astro.props;
 ---
-<section class="border-b border-gray-200 hover:bg-orange-100/25">
-  <a href={entry.slug} target="_self">
+<section class="border-b border-gray-200 hover:bg-gray-100/25">
+  <a href={`/${entry.slug}/`} target="_self">
     <Container class="px-0">
-      <div class="pt-16 flex flex-col gap-4">
-        <div class="flex flex-col gap-5 w-[34rem] px-10">
+      <div class="pt-16 flex flex-col gap-0">
+        <div class="flex flex-col gap-5 px-10">
           { entry.data.tag && (
             <motion.span
               client:load
               initial={{opacity:0,y:-20}}
               animate={{opacity:1,y:0}}
-              transition={{ type: 'spring', delay: 0.7}}
+              transition={{ type: 'spring', delay: 0.55}}
               className="inline max-w-max px-3 py-0.5 border-2 border-black rounded-full font-semibold text-sm text-gray-1100">
               {entry.data.tag}
             </motion.span>
           ) }
-          <div class="flex flex-col gap-2">
+          <div class="flex flex-col gap-2 w-[34rem]">
             <motion.h3
               client:load
-              initial={{opacity:0,y:-20}}
-              animate={{opacity:1,y:0}}
-              transition={{ type: 'spring', delay: 0.75}}
+              initial={{opacity:0, y:-20}}
+              animate={{opacity:1, y:0}}
+              transition={{ type: 'spring', delay: 0.6}}
               className="text-3xl font-bold">{entry.data.title}</motion.h3>
             <motion.p
               client:load
-              initial={{opacity:0,y:-20}}
-              animate={{opacity:1,y:0}}
-              transition={{ type: 'spring', delay: 0.8}}
+              initial={{opacity:0, y:-20}}
+              animate={{opacity:1, y:0}}
+              transition={{ type: 'spring', delay: 0.65}}
               className="font-medium text-gray-600">
               {entry.data.description}
             </motion.p>
           </div>
+          {(entry.data.services.length > 0 && showServices) && (
+            <motion.div
+              client:load
+              initial={{opacity:0, y:-20}}
+              animate={{opacity:1, y:0}}
+              transition={{ type: 'spring', delay: 0.7}}
+              className="flex items-center gap-3 flex-wrap z-10 mb-6">
+              {entry.data.services.map((service) => (
+                <span class="inline max-w-max px-3 py-1.5 bg-white/20 backdrop-blur-lg border border-gray-20 rounded-full font-semibold text-sm">
+                  {service}
+                </span>
+              ))}
+            </motion.div>
+          )}
         </div>
         { entry.data.featuredImage && (
           <motion.div
             client:load
             initial={{opacity:0,y:-20}}
             animate={{opacity:1,y:0}}
-            transition={{ type: 'spring', delay: 0.85}}
+            transition={{ type: 'spring', delay: 0.75}}
           >
             <Image
               class="w-full pointer-events-none select-none"
