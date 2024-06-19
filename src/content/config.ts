@@ -8,6 +8,12 @@ const seoSchema = (image: ImageFunction) => z.object({
     message: 'OG image must be at least 1280 pixels wide!',
   }).optional(),
   keywords: z.string().optional(),
+  canonicalUrl: z.string(),
+});
+
+const ctaSchema = z.object({
+  label: z.string(),
+  url: z.string(),
 });
 
 const notesCollection = defineCollection({
@@ -28,14 +34,26 @@ const workCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     publishedAt: z.date().nullable(),
-    featuredImage: image().refine((img) => img.width >= 1080, {
+    featuredImage: image().refine((img) => img.width >= 1280, {
       message: 'Featured image must be at least 1280 pixels wide!',
     }).optional(),
+    services: z.array(z.string()).default([]),
     seo: seoSchema(image).optional(),
   }),
-})
+});
+
+const pageCollection = defineCollection({
+  type: 'content',
+  schema: ({ image }) => z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    cta: ctaSchema.optional(),
+    seo: seoSchema(image).optional(),
+  }),
+});
 
 export const collections = {
   'notes': notesCollection,
   'work': workCollection,
+  'pages': pageCollection,
 };
