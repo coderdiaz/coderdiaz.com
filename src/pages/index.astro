@@ -1,16 +1,24 @@
 ---
 import { Image } from 'astro:assets';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import {motion} from 'framer-motion';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Container from '@/components/Container.astro';
 import Ship from '@/components/badges/Ship.astro';
 import { Mobile } from '@/components/badges/Mobile.tsx';
 import { Terminal } from '@/components/badges/Terminal.tsx';
-import HoppyImage from '@/assets/images/hoppy.png';
-import AriaImage from '@/assets/images/academia-aria.png';
 import ProfileAvatar from '@/assets/images/profile.jpg';
-import DanceAppImage from '@/assets/images/dance-app.png';
-import W3G from '@/assets/images/w3g.png';
+import SectionWork from '@/components/SectionWork.astro';
+import NoteItem from '@/components/NoteItem.astro';
+
+const publishedNotes = (await getCollection('notes', ({ data }: CollectionEntry<'notes'>) => data.draft !== true))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const publishedWork = (await getCollection('work', ({ data }: CollectionEntry<'work'>) => data.draft !== true))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const latestPosts = publishedNotes.slice(0, 5);
+const latestWork = publishedWork.slice(0, 4);
 ---
 <BaseLayout>
   <section class="border-b border-gray-200">
@@ -58,90 +66,8 @@ import W3G from '@/assets/images/w3g.png';
       </div>
     </Container>
   </section>
-  <section class="border-b border-gray-200 hover:bg-orange-100/25">
-    <a href="#">
-      <Container class="px-0">
-        <div class="pt-16 flex flex-col gap-4">
-          <div class="flex flex-col gap-5 w-[34rem] px-10">
-            <motion.span
-              client:load
-              initial={{opacity:0,y:-20}}
-              animate={{opacity:1,y:0}}
-              transition={{ type: 'spring', delay: 0.7}}
-              className="inline max-w-max px-3 py-0.5 border-2 border-black rounded-full font-semibold text-sm text-gray-1100">
-              Dance Academy Manager
-            </motion.span>
-            <div class="flex flex-col gap-2">
-              <motion.h3
-                client:load
-                initial={{opacity:0,y:-20}}
-                animate={{opacity:1,y:0}}
-                transition={{ type: 'spring', delay: 0.75}}
-                className="text-3xl font-bold">Manage your dance academy from your hands</motion.h3>
-              <motion.p
-                client:load
-                initial={{opacity:0,y:-20}}
-                animate={{opacity:1,y:0}}
-                transition={{ type: 'spring', delay: 0.8}}
-                className="font-medium text-gray-600">
-                A mobile app for dance academies to manage their students, classes, payments, and more. An app build and designed to be easy to use and exclusive for dance instructors.
-              </motion.p>
-            </div>
-          </div>
-          <motion.div
-            client:load
-            initial={{opacity:0,y:-20}}
-            animate={{opacity:1,y:0}}
-            transition={{ type: 'spring', delay: 0.85}}
-          >
-            <Image class="w-full pointer-events-none select-none" src={DanceAppImage} alt="Dance App Manager" />
-          </motion.div>
-        </div>
-      </Container>
-    </a>
-  </section>
-  <section class="border-b border-gray-200 hover:bg-orange-100/25">
-    <a href="#">
-      <Container class="px-0">
-        <div class="pt-16 flex flex-col gap-0">
-          <div class="flex flex-col gap-5 w-[34rem] px-10">
-            <motion.span
-              client:load
-              initial={{opacity:0,y:-20}}
-              animate={{opacity:1,y:0}}
-              transition={{ type: 'spring', delay: 0.90}}
-              className="inline max-w-max px-3 py-0.5 border-2 border-black rounded-full font-semibold text-sm text-gray-1100">
-              Analytics Dashboard
-            </motion.span>
-            <div class="flex flex-col gap-2">
-              <motion.h3
-                client:load
-                initial={{opacity:0,y:-20}}
-                animate={{opacity:1,y:0}}
-                transition={{ type: 'spring', delay: 0.95}}
-                className="text-3xl font-bold">Visualize your impact across channels</motion.h3>
-              <motion.p
-                client:load
-                initial={{opacity:0,y:-20}}
-                animate={{opacity:1,y:0}}
-                transition={{ type: 'spring', delay: 1}}
-                className="font-medium text-gray-600">
-                A dashboard that helps understand your audience, and grow your business. It's a tool that helps you make better decisions and improve your marketing strategy.
-              </motion.p>
-            </div>
-          </div>
-          <motion.div
-            client:load
-            initial={{opacity:0,y:-20}}
-            animate={{opacity:1,y:0}}
-            transition={{ type: 'spring', delay: 1.05}}
-          >
-            <Image class="w-full pointer-events-none select-none" src={W3G} alt="Dance App Manager" />
-          </motion.div>
-        </div>
-      </Container>
-    </a>
-  </section>
+  <SectionWork entry={latestWork[0]} />
+  <SectionWork entry={latestWork[1]} />
   <section class="border-b border-gray-200">
     <Container class="px-0">
       <div class="pt-16 pb-20 flex gap-4">
@@ -203,42 +129,8 @@ import W3G from '@/assets/images/w3g.png';
       </div>
     </Container>
   </section>
-  <section class="border-b border-gray-200 hover:bg-orange-100/25">
-    <a href="#">
-      <Container class="px-0">
-        <div class="pt-12 flex flex-col gap-4">
-          <div class="flex flex-col gap-5 w-[34rem] px-10">
-            <span class="inline max-w-max px-3 py-0.5 border-2 border-black rounded-full font-semibold text-sm text-gray-1100">Hoppy</span>
-            <div class="flex flex-col gap-2">
-              <h3 class="text-3xl font-bold">Keep your bills and subscriptions in order in one place</h3>
-              <p class="font-medium text-gray-600">You will be able to register and track bills and subscriptions, pause them at any time and get data on your expenses.</p>
-            </div>
-          </div>
-          <Image class="w-full pointer-events-none select-none" src={HoppyImage} alt="Hoppy" />
-        </div>
-      </Container>
-    </a>
-  </section>
-  <section class="border-b border-gray-200 hover:bg-orange-100/25">
-    <a href="#">
-      <Container class="px-0">
-        <div class="pt-16 flex flex-col gap-4">
-          <div class="flex flex-col gap-5 w-[34rem] px-10">
-            <span class="inline max-w-max px-3 py-0.5 border-2 border-black rounded-full font-semibold text-sm text-gray-1100">
-              Academia de baile ARIA
-            </span>
-            <div class="flex flex-col gap-2">
-              <h3 class="text-3xl font-bold">Learn to dance latin rhythms from zero with custom classes</h3>
-              <p class="font-medium text-gray-600">
-                Marketing site for a dance academy in Mexico City. The site is designed to attract new students and bring information about the academy.
-              </p>
-            </div>
-          </div>
-          <Image class="w-full pointer-events-none select-none" src={AriaImage} alt="Academia de baile ARIA" />
-        </div>
-      </Container>
-    </a>
-  </section>
+  <SectionWork entry={latestWork[2]} />
+  <SectionWork entry={latestWork[3]} />
   <section class="border-b border-gray-200">
     <Container class="px-0">
       <div class="py-16 flex gap-4">
@@ -315,39 +207,10 @@ import W3G from '@/assets/images/w3g.png';
             <span class="absolute left-0 -ml-10 -mt-16 top-0 mb-0 hidden font-mono text-[12rem] text-gray-600 leading-none opacity-5 lg:flex">*</span>
           </div>
           <div class="relative flex flex-col gap-2 z-10 -mx-2 mb-2">
-            <a href="#" class="py-2 hover:bg-gray-50 group hover:ring-4 hover:ring-gray-50 px-2 rounded-xl transition">
-              <article class="flex items-center gap-3">
-                <span class="block text-gray-500 text-sm tabular-nums">2024-03-20</span>
-                <h4 class="font-semibold underline underline-offset-2 decoration-gray-200 group-hover:decoration-orange-500 transition">2 years without a job: My experience</h4>
-              </article>
-            </a>
-            <a href="#" class="py-2 hover:bg-gray-50 group hover:ring-4 hover:ring-gray-50 px-2 rounded-xl transition">
-              <article class="flex items-center gap-3">
-                <span class="block text-gray-500 text-sm tabular-nums">2024-03-20</span>
-                <h4 class="font-semibold underline underline-offset-2 decoration-gray-200 group-hover:decoration-orange-500 transition">Tips and recommendations that I learned about SEO</h4>
-              </article>
-            </a>
-            <a href="#" class="py-2 hover:bg-gray-50 group hover:ring-4 hover:ring-gray-50 px-2 rounded-xl transition">
-              <article class="flex items-center gap-3">
-                <span class="block text-gray-500 text-sm tabular-nums">2024-03-20</span>
-                <h4 class="font-semibold underline underline-offset-2 decoration-gray-200 group-hover:decoration-orange-500 transition">How a disease change my life and work</h4>
-              </article>
-            </a>
-            <a href="#" class="py-2 hover:bg-gray-50 group hover:ring-4 hover:ring-gray-50 px-2 rounded-xl transition">
-              <article class="flex items-center gap-3">
-                <span class="block text-gray-500 text-sm tabular-nums">2024-03-20</span>
-                <h4 class="font-semibold underline underline-offset-2 decoration-gray-200 group-hover:decoration-orange-500 transition">Retrospective 2021</h4>
-              </article>
-            </a>
-            <a href="#" class="py-2 hover:bg-gray-50 group hover:ring-4 hover:ring-gray-50 px-2 rounded-xl transition">
-              <article class="flex items-center gap-3">
-                <span class="block text-gray-500 text-sm tabular-nums">2024-03-20</span>
-                <h4 class="font-semibold underline underline-offset-2 decoration-gray-200 group-hover:decoration-orange-500 transition">Improving performance for expanish.com</h4>
-              </article>
-            </a>
+            {latestPosts.map((note) => <NoteItem entry={note} />)}
           </div>
           <div class="flex items-center gap-2">
-            <a href="#" class="bg-gray-100 text-gray-600 hover:text-gray-900 hover:bg-orange-200/75 px-2.5 py-1 leading-snug text-sm rounded-full font-semibold transition">
+            <a href="/notes" class="bg-gray-100 text-gray-600 hover:text-gray-900 hover:bg-orange-200/75 px-2.5 py-1 leading-snug text-sm rounded-full font-semibold transition">
               Show all posts
             </a>
             <a href="#" class="bg-gray-100 text-gray-600 hover:text-gray-900 hover:bg-orange-200/75 px-2.5 py-1 leading-snug text-sm rounded-full font-semibold transition">
