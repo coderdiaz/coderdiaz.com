@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { getEntry, getCollection } from 'astro:content';
+import { motion } from 'framer-motion';
+import Container from '@/components/Container.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+// Clients
+import W3G from '@/assets/images/clients/w3g.png';
+import Codigofacilito from '@/assets/images/clients/codigofacilito.png';
+import Expanish from '@/assets/images/clients/expanish.png';
+import PandaSalud from '@/assets/images/clients/pandasalud.png';
+import SectionWork from '@/components/SectionWork.astro';
+
+const entry = await getEntry('pages', 'projects');
+const publishedWork = (await getCollection('work', ({ data }: CollectionEntry<'work'>) => data.draft !== true))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const latestWork = publishedWork.slice(0, 2);
+const most = publishedWork.slice(2);
+---
+<BaseLayout>
+  <section
+    class="border-b border-gray-200">
+    <Container>
+      <div class="flex flex-col gap-2 pt-12 pb-8">
+        <motion.h1
+          client:load
+          initial={{opacity:0, y:-20}}
+          animate={{opacity:1, y:0}}
+          transition={{ type: 'spring' }}
+          className="font-bold text-4xl">{entry.data.title}</motion.h1>
+        <motion.p
+          client:load
+          initial={{opacity:0, y:-20}}
+          animate={{opacity:1, y:0}}
+          transition={{ type: 'spring', delay: 0.2}}
+          className="font-medium text-gray-600 text-lg">{entry.data.description}</motion.p>
+      </div>
+    </Container>
+  </section>
+  {latestWork.map((work) => (
+    <SectionWork entry={work} showServices />
+  ))}
+  <section class="border-b border-gray-200">
+    <Container class="px-0">
+      <div class="pt-16 pb-20 flex gap-4">
+        <div class="flex flex-col gap-6 px-10 flex-grow text-gray-900">
+          <div class="relative flex flex-col gap-4">
+            <h3 class="text-4xl font-bold">Are you ready?</h3>
+            <p class="text-xl font-medium text-gray-500 max-w-[40rem]">
+              I've a lot of experience in the field of web development and design. I can help you with any project, no matter how big or small it is. These are some of clients who trusted.
+            </p>
+            <span class="absolute left-0 -ml-10 -mt-6 top-0 mb-0 hidden font-mono text-[12rem] text-gray-600 leading-none opacity-5 lg:flex -z-10">*</span>
+          </div>
+          <div class="flex items-center gap-5 flex-wrap z-10 mb-6">
+            <div class="relative block">
+              <Image class="w-24" src={W3G} alt="W3G" />
+            </div>
+            <div class="relative block">
+              <Image class="w-40" src={Codigofacilito} alt="Códigofacilito" />
+            </div>
+            <div class="relative block">
+              <Image class="w-28" src={Expanish} alt="Expanish" />
+            </div>
+            <div class="relative block">
+              <Image class="w-28" src={PandaSalud} alt="PandaSalud" />
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="#" class="relative px-4 py-3 rounded-2xl text-white bg-black text-lg shadow-lg shadow-[#F84F1A]/35 ring-2 ring-[#F84F1A]/20 hover:shadow-xl hover:shadow-[#F84F1A]/60 hover:ring-[#F84F1A]/30 font-semibold transition hover:scale-105 z-10 max-w-max">
+              Start from $599/week
+            </a>
+            <a href="#" class="px-4 py-3 w-max rounded-2xl text-black ring-2 ring-gray-100 font-semibold transition bg-gray-100 hover:bg-orange-200 hover:ring-orange-200 text-lg">
+              Read manifesto
+            </a>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+  {most.map((work) => (
+    <SectionWork entry={work} showServices />
+  ))}
+</BaseLayout>

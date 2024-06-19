@@ -1,0 +1,59 @@
+---
+import { getEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { motion } from 'framer-motion';
+import Container from '@/components/Container.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import NoteItem from '@/components/NoteItem.astro';
+
+const entry = await getEntry('pages', 'notes');
+const publishedNotes = (await getCollection('notes', ({ data }: CollectionEntry<'notes'>) => data.draft !== true))
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+---
+<BaseLayout>
+  <section>
+    <Container>
+      <div class="flex flex-col gap-2 pt-12 pb-12">
+        <motion.h1
+          client:load
+          initial={{opacity:0, y:-20}}
+          animate={{opacity:1, y:0}}
+          transition={{ type: 'spring' }}
+          className="font-bold text-4xl">{entry.data.title}</motion.h1>
+        <motion.p
+          client:load
+          initial={{opacity:0, y:-20}}
+          animate={{opacity:1, y:0}}
+          transition={{ type: 'spring', delay: 0.2}}
+          className="font-medium text-gray-600 text-lg">{entry.data.description}</motion.p>
+        <motion.div
+          client:load
+          initial={{opacity:0, y:-20}}
+          animate={{opacity:1, y:0}}
+          transition={{ type: 'spring', delay: 0.25}}
+          className="flex items-center gap-2 mt-5">
+          <a href="#" class="bg-gray-100 text-gray-600 hover:text-gray-900 hover:bg-orange-200/75 px-2.5 py-1 leading-snug text-sm rounded-full font-semibold transition">
+            Follow me on X.com
+          </a>
+          <a href="#" class="bg-gray-100 text-gray-600 hover:text-gray-900 hover:bg-orange-200/75 px-2.5 py-1 leading-snug text-sm rounded-full font-semibold transition">
+            Follow on LinkedIn
+          </a>
+        </motion.div>
+      </div>
+    </Container>
+  </section>
+  <section>
+    <Container>
+      <motion.div
+        client:load
+        initial={{opacity:0, y:-20}}
+        animate={{opacity:1, y:0}}
+        transition={{ type: 'spring', delay: 0.30}}
+        className="relative flex flex-col gap-2 z-10 -mx-2 mb-2">
+        {publishedNotes.map((note) => <NoteItem entry={note} />)}
+      </motion.div>
+    </Container>
+  </section>
+</BaseLayout>

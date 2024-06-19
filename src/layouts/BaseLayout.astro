@@ -1,8 +1,8 @@
 ---
+import {motion} from 'framer-motion';
 import Container from '@/components/Container.astro';
 import Mexico from '@/components/badges/Mexico.astro';
 ---
-
 <html lang="en" class="min-h-full antialiased">
   <head>
     <meta charset="utf-8" />
@@ -14,7 +14,7 @@ import Mexico from '@/components/badges/Mexico.astro';
   <body class="font-sans leading-relaxed h-full flex flex-col">
     <section class="border-b border-gray-200">
       <Container>
-        <a href="#" class="py-3 flex items-center justify-between text-sm">
+        <a href="https://aprendestrapi.com" target="_blank" rel="noreferrer" class="py-3 flex items-center justify-between text-sm">
           <p class="font-semibold">Introducing AprendeStrapi.com</p>
           <p>Join the course now <span aria-hidden="true">→</span></p>
         </a>
@@ -23,19 +23,24 @@ import Mexico from '@/components/badges/Mexico.astro';
     <header>
       <Container>
         <div class="flex items-center justify-between pt-8">
-          <span class="font-semibold">Javier Diaz — Engineering & Design</span>
+          <a href="/" class="font-semibold">Javier Diaz — Engineering & Design</a>
           <nav class="flex items-center gap-4">
-            <a class="text-sm font-medium text-gray-500 hover:text-gray-900" href="#">Projects</a>
-            <a class="text-sm font-medium text-gray-500 hover:text-gray-900" href="#">Services</a>
-            <a class="text-sm font-medium text-gray-500 hover:text-gray-900" href="#">Notes</a>
+            <a class="text-sm font-medium text-gray-500 hover:text-gray-900" href="/proyectos/">Projects</a>
+            <a class="text-sm font-medium text-gray-500 hover:text-gray-900" href="/servicios/">Services</a>
+            <a class="text-sm font-medium text-gray-500 hover:text-gray-900" href="/notas/">Notes</a>
           </nav>
         </div>
       </Container>
     </header>
-    <main class="h-full flex-1">
+    <main class="h-full flex-grow">
       <slot />
     </main>
-    <footer>
+    <motion.footer
+      client:load
+      initial={{opacity:0, y:-20}}
+      animate={{opacity:1, y:0}}
+      transition={{ type: 'spring', delay: 0.35}}
+    >
       <Container>
         <div class="flex flex-col gap-8 pt-16 pb-20">
           <p class="font-medium text-gray-500 flex items-center gap-2">
@@ -61,6 +66,6 @@ import Mexico from '@/components/badges/Mexico.astro';
           <p class="text-sm text-gray-400">Since &copy; 2015.</p>
         </div>
       </Container>
-    </footer>
+    </motion.footer>
   </body>
 </html>
