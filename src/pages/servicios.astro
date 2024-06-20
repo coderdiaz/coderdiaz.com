@@ -22,7 +22,7 @@ const { Content } = await entry.render();
           client:load
           initial={{opacity:0, y:-20}}
           animate={{opacity:1, y:0}}
-          transition={{ type: 'spring', delay: 0.2}}
+          transition={{ type: 'spring', delay: 0.05}}
           className="font-medium text-gray-600 text-lg">{entry.data.description}</motion.p>
         { entry.data.cta && (
           <motion.div
@@ -30,7 +30,7 @@ const { Content } = await entry.render();
             initial={{opacity:0, y:-20}}
             animate={{opacity:1, y:0}}
             transition={{ type: 'spring', delay: 0.25}}
-            className="mt-5 flex items-center gap-4"
+            className="mt-5 flex items-center gap-3"
           >
             <a
               href={entry.data.cta.url}
@@ -41,7 +41,7 @@ const { Content } = await entry.render();
               Request a quote
             </a>
           </motion.div>
-        )
+        )}
       </div>
     </Container>
   </section>
