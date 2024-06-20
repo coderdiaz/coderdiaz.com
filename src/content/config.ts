@@ -4,7 +4,7 @@ const seoSchema = (image: ImageFunction) => z.object({
   title: z.string(),
   description: z.string(),
   type: z.string().optional(),
-  image: image().refine((img) => img.width >= 1280, {
+  image: image().refine((img) => img.width >= 1080, {
     message: 'OG image must be at least 1280 pixels wide!',
   }).optional(),
   keywords: z.string().optional(),
@@ -21,6 +21,9 @@ const notesCollection = defineCollection({
   schema: ({ image }) => z.object({
     draft: z.boolean().default(false),
     title: z.string(),
+    featuredImage: image().refine((img) => img.width >= 1280, {
+      message: 'Featured image must be at least 1280 pixels wide!',
+    }).optional(),
     publishedAt: z.date().nullable(),
     seo: seoSchema(image).optional(),
   }),
