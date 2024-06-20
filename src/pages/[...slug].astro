@@ -1,0 +1,18 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ProyectLayout from '@/layouts/ProyectLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entries = (await getCollection('work')).filter(entry => entry.slug !== 'software-academia-baile');
+  return entries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+<ProyectLayout entry={entry}>
+  <Content />
+</ProyectLayout>
