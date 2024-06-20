@@ -55,8 +55,54 @@ export default {
           '95%': { clip: 'rect(7px,140px,1px,0)' },
           to: { clip: 'rect(19px,140px,2px,0)' },
         },
-      }
+      },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.base.900'),
+            'h1,h2': {
+              fontWeight: 700,
+              marginTop: theme('spacing.10'),
+              marginBottom: theme('spacing.5'),
+            },
+            'h3,h4,h5,h6': {
+              fontWeight: 600,
+              marginTop: theme('spacing.7'),
+              marginBottom: theme('spacing.4'),
+              color: theme('colors.black'),
+            },
+            'strong': {
+              fontSize: '1rem',
+            },
+            'a': {
+              fontSize: '1rem',
+              fontWeight: 600,
+              color: theme('colors.tones.or'),
+              textDecorationLine: 'underline',
+              textUnderlineOffset: 4,
+              '&:hover': {
+                opacity: 0.8,
+              }
+            },
+            img: {
+              borderRadius: 0,
+              borderWidth: 1,
+              borderColor: theme('colors.gray.200'),
+              borderStyle: 'solid',
+            },
+            'blockquote p': {
+              color: theme('colors.gray.600'),
+              fontSize: theme('fontSize.lg'),
+              fontStyle: 'normal',
+            },
+            'blockquote p:first-of-type::before': { content: 'unset' },
+            'blockquote p:first-of-type::after': { content: 'unset' },
+          }
+        },
+      }),
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
