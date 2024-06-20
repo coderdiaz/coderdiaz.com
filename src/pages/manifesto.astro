@@ -1,0 +1,39 @@
+---
+import { getEntry } from 'astro:content';
+import { motion } from 'framer-motion';
+import Container from '@/components/Container.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const entry = await getEntry('pages', 'manifesto');
+const { Content } = await entry.render();
+---
+<BaseLayout>
+  <article>
+    <Container class="flex flex-col gap-6">
+      <div class="flex flex-col gap-2 pt-12">
+        <motion.h1
+          client:load
+          initial={{opacity:0, y:-20}}
+          animate={{opacity:1, y:0}}
+          transition={{ type: 'spring' }}
+          className="font-bold text-4xl">{entry.data.title}</motion.h1>
+        <motion.div
+          client:load
+          initial={{opacity:0, y:-20}}
+          animate={{opacity:1, y:0}}
+          transition={{ type: 'spring', delay: 0.2}}>
+          <p class="font-medium text-gray-600 text-lg">{entry.data.description}</p>
+        </div>
+        
+      </div>
+      <motion.div
+        client:load
+        initial={{opacity:0, y:-20, rotateZ: 0}}
+        animate={{opacity:1, y:0, rotateZ: -1}}
+        transition={{ type: 'spring', delay: 0.3}}
+        className="px-8 py-2 bg-orange-200/75 transform shadow-lg w-full min-h-10 border border-orange-300 prose prose-2xl max-w-full font-serif font-bold [background-image:linear-gradient(#FFDFB560.1em,_transparent_.1em)] [background-size:_100%_1.4em] leading-[1.4em]">
+        <Content />
+      </motion.div>
+    </Container>
+  </article>
+</BaseLayout>

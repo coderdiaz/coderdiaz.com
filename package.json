@@ -13,6 +13,7 @@
     "@astrojs/mdx": "^3.1.1",
     "@astrojs/react": "^3.6.0",
     "@astrojs/tailwind": "^5.1.0",
+    "@fontsource-variable/caveat": "^5.0.18",
     "@fontsource/geist-sans": "^5.0.3",
     "@fontsource/inter": "^5.0.18",
     "@radix-ui/colors": "^3.0.0",
