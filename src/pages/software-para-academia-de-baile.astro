@@ -1,0 +1,179 @@
+---
+import { getEntry } from 'astro:content'
+import { Image } from 'astro:assets';
+import { motion } from 'framer-motion';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Container from '@/components/Container.astro';
+import DanceApp2 from '@/assets/images/dance-app-2.png';
+import Users from '@/components/svg/Users.astro';
+import Timer from '@/components/svg/Timer.astro';
+import Star from '@/components/svg/Star.astro';
+import Analytics from '@/components/svg/Analytics.astro';
+import UserDetails from '@/components/svg/UserDetails.astro';
+import BoxSearch from '@/components/svg/BoxSearch.astro';
+
+const entry = await getEntry('work', 'software-para-academia-de-baile');
+---
+<BaseLayout>
+  <section class="border-b border-gray-300 overflow-hidden">
+    <Container >
+      <div class="px-0 pt-12 flex gap-5 rounded-3xl">
+        <div class="flex flex-col gap-5">
+          { entry.data.tag && (
+            <motion.span
+              client:load
+              initial={{opacity:0,y:-20}}
+              animate={{opacity:1,y:0}}
+              transition={{ type: 'spring', delay: 0}}
+              className="inline max-w-max px-3 py-0.5 border-2 border-black rounded-full font-semibold text-sm text-gray-1100">
+              {entry.data.tag}
+            </motion.span>
+          ) }
+          <div class="flex flex-col gap-2 lg:w-[24rem]">
+            <motion.h3
+              client:load
+              initial={{opacity:0, y:-20}}
+              animate={{opacity:1, y:0}}
+              transition={{ type: 'spring', delay: 0.05}}
+              className="text-3xl font-bold">{entry.data.title}</motion.h3>
+            <motion.p
+              client:load
+              initial={{opacity:0, y:-20}}
+              animate={{opacity:1, y:0}}
+              transition={{ type: 'spring', delay: 0.1}}
+              className="font-medium text-gray-600">
+              {entry.data.description}
+            </motion.p>
+          </div>
+          <motion.div
+            client:load
+            initial={{opacity:0,y:-20}}
+            animate={{opacity:1,y:0}}
+            transition={{ type: 'spring', delay: 0.15}}
+            className="flex items-center gap-5">
+            <button class="max-w-max relative px-4 py-2.5 rounded-2xl text-white bg-black shadow-lg shadow-[#F84F1A]/35 ring-2 ring-[#F84F1A]/20 hover:shadow-xl hover:shadow-[#F84F1A]/60 hover:ring-[#F84F1A]/30 font-semibold transition hover:scale-105 z-10">
+              Book a demo call
+            </button>
+          </motion.div>
+          <motion.p
+            client:load
+            initial={{opacity:0,y:-20}}
+            animate={{opacity:1,y:0}}
+            transition={{ type: 'spring', delay: 0.20}}
+            className="text-sm text-gray-500">Only available for iOS devices</motion.p>
+        </div>
+        <motion.div
+          client:load
+          initial={{opacity:0,y:20}}
+          animate={{opacity:1,y:0}}
+          transition={{ type: 'spring', damping: 20, delay: 0.10}}
+          className="relative hidden md:block flex-grow h-full -mr-10">
+          <Image class="relative z-50" src={DanceApp2} alt="App for dance academies" />
+        </motion.div>
+      </div>
+    </Container>
+  </section>
+  <section class="border-b border-gray-300">
+    <Container>
+      <div class="grid grid-cols-3 gap-x-4 gap-y-8 pt-14 pb-20">
+        <div class="flex flex-col gap-2">
+          <div class="p-2 bg-orange-200/50 w-max rounded-xl text-orange-1000">
+            <Users size={20} />
+          </div>
+          <div class="flex flex-col gap-1">
+            <h3 class="text-lg font-bold">Manage your students</h3>
+            <p class="font-medium text-gray-600 text-sm mr-2">Register new students and manage their plans and attendance.</p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="p-2 bg-orange-200/50 w-max rounded-xl text-orange-1000">
+            <Timer size={20} />
+          </div>
+          <div class="flex flex-col gap-1">
+            <h3 class="text-lg font-bold">Track attendance</h3>
+            <p class="font-medium text-gray-600 text-sm mr-2">Keep track of your students' attendance and progress.</p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="p-2 bg-orange-200/50 w-max rounded-xl text-orange-1000">
+            <Star size={20} />
+          </div>
+          <div class="flex flex-col gap-1">
+            <h3 class="text-lg font-bold">Register plans and credits</h3>
+            <p class="font-medium text-gray-600 text-sm mr-2">Create plans and credits for your students and manage their expiration dates.</p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="p-2 bg-orange-200/50 w-max rounded-xl text-orange-1000">
+            <Analytics size={20} />
+          </div>
+          <div class="flex flex-col gap-1">
+            <h3 class="text-lg font-bold">Insights</h3>
+            <p class="font-medium text-gray-600 text-sm mr-2">Analize your students' attendance with our insights.</p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="p-2 bg-orange-200/50 w-max rounded-xl text-orange-1000">
+            <UserDetails size={20} />
+          </div>
+          <div class="flex flex-col gap-1">
+            <h3 class="text-lg font-bold">User details</h3>
+            <p class="font-medium text-gray-600 text-sm mr-2">Get all the details about your students in one place.</p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="p-2 bg-orange-200/50 w-max rounded-xl text-orange-1000">
+            <BoxSearch size={20} />
+          </div>
+          <div class="flex flex-col gap-1">
+            <h3 class="text-lg font-bold">Manage your products</h3>
+            <p class="font-medium text-gray-600 text-sm mr-2">Register and manage your products and services.</p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+  <section class="border-b border-gray-300">
+    <Container class="px-0">
+      <div class="pt-16 pb-20 flex gap-4">
+        <div class="flex flex-col gap-6 px-10 flex-grow text-gray-900">
+          <div class="relative flex flex-col gap-4">
+            <motion.h3
+              client:load
+              initial={{opacity:0,y:-20}}
+              animate={{opacity:1,y:0}}
+              transition={{ type: 'spring', delay: 0.75}}
+              className="text-4xl font-bold">The best software in your hands</motion.h3>
+            <motion.p
+              client:load
+              initial={{opacity:0,y:-20}}
+              animate={{opacity:1,y:0}}
+              transition={{ type: 'spring', delay: 0.8}}
+              className="text-xl font-medium text-gray-500 max-w-[40rem]">
+              We have created the best experience to manage your dance studio. Our software is designed to be easy to use and to help you manage your students and classes in a simple way.
+            </motion.p>
+            <motion.span
+              client:load
+              initial={{opacity:0,y:-20}}
+              animate={{opacity:0.05,y:0}}
+              transition={{ type: 'spring', delay: 0.8}}
+              className="absolute left-0 -ml-10 -mt-6 top-0 mb-0 hidden font-mono text-[12rem] text-gray-600 leading-none opacity-5 lg:flex -z-10">*</motion.span>
+          </div>
+          <motion.div
+            client:load
+            initial={{opacity:0,y:-20}}
+            animate={{opacity:1,y:0}}
+            transition={{ type: 'spring', delay: 0.9}}
+            className="flex items-center gap-4">
+            <a href="#" class="relative px-4 py-3 rounded-2xl text-white bg-black text-lg shadow-lg shadow-[#F84F1A]/35 ring-2 ring-[#F84F1A]/20 hover:shadow-xl hover:shadow-[#F84F1A]/60 hover:ring-[#F84F1A]/30 font-semibold transition hover:scale-105 z-10 max-w-max">
+              Book a call
+            </a>
+            <a href="#" class="px-4 py-3 w-max rounded-2xl text-black ring-2 ring-gray-100 font-semibold transition bg-gray-100 hover:bg-orange-200 hover:ring-orange-200 text-lg">
+              Read manifesto
+            </a>
+          </motion.div>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
