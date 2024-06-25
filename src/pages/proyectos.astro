@@ -29,13 +29,13 @@ const most = publishedWork.slice(2);
           client:load
           initial={{opacity:0, y:-20}}
           animate={{opacity:1, y:0}}
-          transition={{ type: 'spring' }}
+          transition={{ type: 'spring', stiffness: 250, damping: 20 }}
           className="font-bold text-4xl">{entry.data.title}</motion.h1>
         <motion.p
           client:load
           initial={{opacity:0, y:-20}}
           animate={{opacity:1, y:0}}
-          transition={{ type: 'spring', delay: 0.2}}
+          transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.05 }}
           className="font-medium text-gray-600 text-lg">{entry.data.description}</motion.p>
       </div>
     </Container>
@@ -43,7 +43,12 @@ const most = publishedWork.slice(2);
   {latestWork.map((work) => (
     <SectionWork entry={work} showServices />
   ))}
-  <section class="border-b border-gray-200">
+  <motion.section
+    client:load
+    initial={{opacity:0, y:-20}}
+    animate={{opacity:1, y:0}}
+    transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.10 }}
+    className="border-b border-gray-200">
     <Container class="px-0">
       <div class="pt-16 pb-20 flex gap-4">
         <div class="flex flex-col gap-6 px-10 flex-grow text-gray-900">
@@ -79,7 +84,7 @@ const most = publishedWork.slice(2);
         </div>
       </div>
     </Container>
-  </section>
+  </motion.section>
   {most.map((work) => (
     <SectionWork entry={work} showServices />
   ))}

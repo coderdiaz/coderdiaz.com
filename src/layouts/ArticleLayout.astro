@@ -18,7 +18,7 @@ const { entry } = Astro.props;
           client:load
           initial={{opacity:0,y:-20}}
           animate={{opacity:1,y:0}}
-          transition={{ type: 'spring'}}
+          transition={{ type: 'spring', stiffness: 250, damping: 20 }}
           className="font-medium text-gray-600"
           dateTime={entry.data.publishedAt.toISOString()}>
           Publicado el 
@@ -32,7 +32,7 @@ const { entry } = Astro.props;
           client:load
           initial={{opacity:0,y:-20}}
           animate={{opacity:1,y:0}}
-          transition={{ type: 'spring', delay: 0.1}}
+          transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.05 }}
           className="text-[2.5rem] leading-[1.1] font-bold mb-2">
           {entry.data.title}
         </motion.h1>
@@ -42,7 +42,7 @@ const { entry } = Astro.props;
           client:load
           initial={{opacity:0,y:-20}}
           animate={{opacity:1,y:0}}
-          transition={{ type: 'spring', delay: 0.2}}
+          transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.1 }}
           className="relative">
           <Image src={entry.data.featuredImage as ImageMetadata} alt={entry.data.title} />
         </motion.div>
@@ -51,7 +51,7 @@ const { entry } = Astro.props;
         client:load
         initial={{opacity:0,y:-20}}
         animate={{opacity:1,y:0}}
-        transition={{ type: 'spring', damping: 10, delay: 0.25}}
+        transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.15 }}
         className="max-w-full prose font-medium mx-5">
         <slot />
       </motion.div>

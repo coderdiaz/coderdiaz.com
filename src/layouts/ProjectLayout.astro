@@ -19,7 +19,7 @@ const { entry } = Astro.props;
             client:load
             initial={{opacity:0,y:-20}}
             animate={{opacity:1,y:0}}
-            transition={{ type: 'spring', damping: 20}}
+            transition={{ type: 'spring', stiffness: 250, damping: 20 }}
             className="font-medium text-gray-600 text-lg">
             {entry.data.tag}
           </motion.span>
@@ -27,7 +27,7 @@ const { entry } = Astro.props;
             client:load
             initial={{opacity:0,y:-20}}
             animate={{opacity:1,y:0}}
-            transition={{ type: 'spring', damping: 20, delay: 0.1}}
+            transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.05 }}
             className="text-[2.25rem] text-center leading-[1.2] font-bold mb-2">
             {entry.data.title}
           </motion.h1>
@@ -37,7 +37,7 @@ const { entry } = Astro.props;
             client:load
             initial={{opacity:0,y:20}}
             animate={{opacity:1,y:0}}
-            transition={{ type: 'spring', damping: 20, delay: 0.2}}
+            transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.1 }}
             className="md:-mx-16"
           >
             <Image
@@ -48,10 +48,15 @@ const { entry } = Astro.props;
         )}
       </Container>
     </section>
-    <section>
+    <motion.section
+      client:load
+      initial={{opacity:0,y:32}}
+      animate={{opacity:1,y:0}}
+      transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.15 }}
+      >
       <Container>
         <p class="text-lg text-gray-600 font-medium">{entry.data.description}</p>
       </Container>
-    </section>
+    </motion.section>
   </article>
 </BaseLayout>

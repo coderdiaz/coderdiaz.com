@@ -33,7 +33,7 @@ const latestWork = publishedWork.slice(0, 4);
               client:load
               initial={{opacity:0,y:-20}}
               animate={{opacity:1,y:0}}
-              transition={{ type: 'spring'}}
+              transition={{ type: 'spring', stiffness: 250, damping: 20 }}
               className="text-[1.9rem] leading-tight md:text-[2.75rem] md:leading-[0.9] font-bold"
             >
               Construyendo productos digitales, interfaces, sitios web, <div class="inline-flex items-baseline">apps<span class="hidden md:block relative top-2.5 ml-2 text-lime-700 rounded-2xl bg-white shadow-xl px-1 py-1"><Mobile client:load className="w-10 h-10"/></span></div> y <div class="inline-flex items-baseline">sistemas<span class="hidden md:block relative top-2.5 ml-2 text-black rounded-2xl bg-white shadow-xl px-1 py-1"><Terminal client:load className="w-10 h-10" /></span></div> para <span class="before:animate-glitch relative before:left-[3px] before:absolute before:top-0 before:w-full before:h-full before:overflow-hidden before:[text-shadow:-2px_0_red] before:[content:'web']">la www</span>.
@@ -42,7 +42,7 @@ const latestWork = publishedWork.slice(0, 4);
               client:load
               initial={{opacity:0,y:-20}}
               animate={{opacity:1,y:0}}
-              transition={{ type: 'spring', delay: 0.2}}
+              transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.05 }}
               className="text-gray-600 md:text-lg font-medium"
             >
               Soy la persona que puede construir productos moviendome entre ingeniería y diseño con una gran atención al detalle. Actualmente trabajando en mi propio estudio de ingeniería desde México.
@@ -51,14 +51,14 @@ const latestWork = publishedWork.slice(0, 4);
               client:load
               initial={{opacity:0,y:-20}}
               animate={{opacity:0.05,y:0}}
-              transition={{ type: 'spring', delay: 0.3}}
+              transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.1 }}
               className="absolute left-0 -ml-16 mt-9 top-0 mb-0 hidden font-mono text-[18rem] text-gray-600 leading-none opacity-5 lg:flex">*</motion.span>
           </div>
           <motion.div
             client:load
             initial={{opacity:0,y:-20}}
             animate={{opacity:1,y:0}}
-            transition={{ type: 'spring', delay: 0.5}}
+            transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.15 }}
             className="flex flex-col md:flex-row md:items-center gap-5">
             <button class="relative px-4 py-3 rounded-2xl text-white bg-black shadow-lg shadow-[#F84F1A]/35 ring-2 ring-[#F84F1A]/20 hover:shadow-xl hover:shadow-[#F84F1A]/60 hover:ring-[#F84F1A]/30 font-semibold transition hover:scale-105 z-10">
               Agendar una llamada
@@ -80,13 +80,13 @@ const latestWork = publishedWork.slice(0, 4);
               client:load
               initial={{opacity:0,y:-20}}
               animate={{opacity:1,y:0}}
-              transition={{ type: 'spring', delay: 0.75}}
+              transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.3 }}
               className="text-3xl md:text-4xl font-bold">Tu producto necesita de la mejor experiencia.</motion.h3>
             <motion.p
               client:load
               initial={{opacity:0,y:-20}}
               animate={{opacity:1,y:0}}
-              transition={{ type: 'spring', delay: 0.8}}
+              transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.35 }}
               className="text-lg md:text-xl font-medium text-gray-500 max-w-[40rem]">
               Llevemos tu idea de <span class="font-bold text-black">0 → 1</span> y hagámosla realidad. Puedo ayudarte con una variedad de servicios para que tu proyecto despegue y llegue a manos de tus usuarios.
             </motion.p>
@@ -94,14 +94,14 @@ const latestWork = publishedWork.slice(0, 4);
               client:load
               initial={{opacity:0,y:-20}}
               animate={{opacity:0.05,y:0}}
-              transition={{ type: 'spring', delay: 0.8}}
+              transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.4 }}
               className="absolute left-0 -ml-10 -mt-6 top-0 mb-0 hidden font-mono text-[12rem] text-gray-600 leading-none opacity-5 lg:flex -z-10">*</motion.span>
           </div>
           <motion.div
             client:load
             initial={{opacity:0,y:-20}}
             animate={{opacity:1,y:0}}
-            transition={{ type: 'spring', delay: 0.85}}
+            transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.45 }}
             className="flex items-center gap-3 flex-wrap z-10 mb-6">
             <span class="inline max-w-max px-3 py-1.5 bg-white/20 backdrop-blur-lg border border-gray-20 rounded-full font-semibold text-sm">
               Front-end Development
@@ -144,7 +144,7 @@ const latestWork = publishedWork.slice(0, 4);
             client:load
             initial={{opacity:0,y:-20}}
             animate={{opacity:1,y:0}}
-            transition={{ type: 'spring', delay: 0.9}}
+            transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.5 }}
             className="flex flex-col md:flex-row md:items-center gap-4">
             <a href="#" class="relative px-4 py-3 rounded-2xl text-white bg-black text-center md:text-left md:text-lg shadow-lg shadow-[#F84F1A]/35 ring-2 ring-[#F84F1A]/20 hover:shadow-xl hover:shadow-[#F84F1A]/60 hover:ring-[#F84F1A]/30 font-semibold transition hover:scale-105 z-10 md:w-max">
               Desde US$899/semana 

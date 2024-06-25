@@ -21,7 +21,7 @@ const { entry, showServices = false } = Astro.props;
               client:load
               initial={{opacity:0,y:-20}}
               animate={{opacity:1,y:0}}
-              transition={{ type: 'spring', delay: 0.55}}
+              transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.2 }}
               className="inline max-w-max px-3 py-0.5 border-2 border-black rounded-full font-semibold text-sm text-gray-1100">
               {entry.data.tag}
             </motion.span>
@@ -31,13 +31,13 @@ const { entry, showServices = false } = Astro.props;
               client:load
               initial={{opacity:0, y:-20}}
               animate={{opacity:1, y:0}}
-              transition={{ type: 'spring', delay: 0.6}}
+              transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.25 }}
               className="text-2xl md:text-3xl font-bold">{entry.data.title}</motion.h3>
             <motion.p
               client:load
               initial={{opacity:0, y:-20}}
               animate={{opacity:1, y:0}}
-              transition={{ type: 'spring', delay: 0.65}}
+              transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.3 }}
               className="font-medium text-gray-600">
               {entry.data.description}
             </motion.p>
@@ -47,7 +47,7 @@ const { entry, showServices = false } = Astro.props;
               client:load
               initial={{opacity:0, y:-20}}
               animate={{opacity:1, y:0}}
-              transition={{ type: 'spring', delay: 0.7}}
+              transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.35 }}
               className="flex items-center gap-3 flex-wrap z-10 mb-6">
               {entry.data.services.map((service) => (
                 <span class="inline max-w-max px-3 py-1.5 bg-white/20 backdrop-blur-lg border border-gray-20 rounded-full font-semibold text-sm">
@@ -62,7 +62,7 @@ const { entry, showServices = false } = Astro.props;
             client:load
             initial={{opacity:0,y:-20}}
             animate={{opacity:1,y:0}}
-            transition={{ type: 'spring', delay: 0.75}}
+            transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.4 }}
           >
             <Image
               class="w-full pointer-events-none select-none group-hover:scale-[1.03] transition-transform duration-300 ease-in-out"

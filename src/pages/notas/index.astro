@@ -20,19 +20,19 @@ const publishedNotes = (await getCollection('notes', ({ data }: CollectionEntry<
           client:load
           initial={{opacity:0, y:-20}}
           animate={{opacity:1, y:0}}
-          transition={{ type: 'spring' }}
+          transition={{ type: 'spring', stiffness: 250, damping: 20 }}
           className="font-bold text-4xl">{entry.data.title}</motion.h1>
         <motion.p
           client:load
           initial={{opacity:0, y:-20}}
           animate={{opacity:1, y:0}}
-          transition={{ type: 'spring', delay: 0.2}}
+          transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.05 }}
           className="font-medium text-gray-600 text-lg">{entry.data.description}</motion.p>
         <motion.div
           client:load
           initial={{opacity:0, y:-20}}
           animate={{opacity:1, y:0}}
-          transition={{ type: 'spring', delay: 0.25}}
+          transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.1 }}
           className="flex items-center gap-2 mt-5">
           <a href="#" class="bg-gray-100 text-gray-600 hover:text-gray-900 hover:bg-orange-200/75 px-2.5 py-1 leading-snug text-sm rounded-full font-semibold transition">
             Sígueme en X
@@ -50,7 +50,7 @@ const publishedNotes = (await getCollection('notes', ({ data }: CollectionEntry<
         client:load
         initial={{opacity:0, y:-20}}
         animate={{opacity:1, y:0}}
-        transition={{ type: 'spring', delay: 0.30}}
+        transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.15 }}
         className="relative flex flex-col gap-2 z-10 -mx-2 mb-2">
         {publishedNotes.map((note) => <NoteItem entry={note} />)}
       </motion.div>

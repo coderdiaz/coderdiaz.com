@@ -16,13 +16,13 @@ const { Content } = await entry.render();
           client:load
           initial={{opacity:0, y:-20}}
           animate={{opacity:1, y:0}}
-          transition={{ type: 'spring' }}
+          transition={{ type: 'spring', stiffness: 250, damping: 20}}
           className="font-bold text-[2.8rem] leading-[1.1]">{entry.data.title}</motion.h1>
         <motion.p
           client:load
           initial={{opacity:0, y:-20}}
           animate={{opacity:1, y:0}}
-          transition={{ type: 'spring', delay: 0.05}}
+          transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.05 }}
           className="font-medium text-gray-600 text-lg">{entry.data.description}</motion.p>
       </div>
     </Container>

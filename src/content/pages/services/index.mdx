@@ -16,24 +16,24 @@ import Mentoring from '@/components/svg/Mentoring.astro';
         client:load
         initial={{opacity:0, y:-20}}
         animate={{opacity:1, y:0}}
-        transition={{ type: 'spring', delay: 0.35}}
+        transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.15 }}
         className="font-bold text-2xl">Tres formas de trabajo a tu alcance</motion.h2>
       <motion.div
         client:load
         initial={{opacity:0, y:-20}}
         animate={{opacity:1, y:0}}
-        transition={{ type: 'spring', delay: 0.40}}
+        transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.2 }}
         className="grid grid-cols-2gap-6 gap-y-8">
         <div class="flex flex-col gap-4">
           <div class="flex flex-col gap-1">
             <span class="font-semibold text-lg">Por proyecto</span>
-            <p class="font-medium text-gray-500">Si tienes un proyecto, requerimiento o idea y necesitas ayuda para llevarlo a cabo, puedo ayudarte a diseñar, desarrollar y lanzar tu producto. <span class="font-semibold text-black">Solicita una cotización.</span></p>
+            <p class="font-medium text-gray-500">Si tienes un proyecto, requerimiento o idea y necesitas ayuda para llevarlo a cabo, puedo ayudarte a diseñar, desarrollar y lanzar tu producto. <a class="font-semibold text-black underline underline-offset-2">Solicita una cotización.</a></p>
           </div>
         </div>
         <div class="flex flex-col gap-4">
           <div class="flex flex-col gap-1">
             <span class="font-semibold text-lg">Por hora</span>
-            <p class="font-medium text-gray-500">Si necesitas ayuda con un problema técnico o de diseño, una revisión de código o una consulta técnica, puedo ayudarte a resolverlo por tan solo <span class="font-semibold text-black">US$55/hora</span>.</p>
+            <p class="font-medium text-gray-500">Si necesitas ayuda con un problema técnico o de diseño, una revisión de código o una consulta técnica, puedo ayudarte a resolverlo por tan solo <span class="font-semibold text-black">US$60/hora</span>.</p>
           </div>
         </div>
         <div class="col-span-2 flex flex-col gap-4">
@@ -47,8 +47,8 @@ import Mentoring from '@/components/svg/Mentoring.astro';
         client:load
         initial={{opacity:0, y:-20}}
         animate={{opacity:1, y:0}}
-        transition={{ type: 'spring', delay: 0.5}}
-        className="mt-5 flex items-center gap-3"
+        transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.25 }}
+        className="flex items-center gap-3"
       >
         <a
           href="#"
@@ -69,7 +69,7 @@ import Mentoring from '@/components/svg/Mentoring.astro';
         client:load
         initial={{opacity:0, y:-20}}
         animate={{opacity:1, y:0}}
-        transition={{ type: 'spring', delay: 0.45}}
+        transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.3 }}
         className="flex flex-col border-r border-gray-200">
         <BlockRow title="Diseño y estrategia" class="py-8">
           <span slot="icon" class="bg-orange-900 text-white p-1 rounded-lg">
@@ -124,7 +124,7 @@ import Mentoring from '@/components/svg/Mentoring.astro';
         client:load
         initial={{opacity:0, y:-20}}
         animate={{opacity:1, y:0}}
-        transition={{ type: 'spring', delay: 0.45}}
+        transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.35 }}
       >
         <BlockRow title="Software Development" class="py-8 pl-12">
           <span slot="icon" class="bg-black text-white p-1 rounded-lg">
