@@ -11,37 +11,19 @@ const { Content } = await entry.render();
   <section
     class="border-b border-gray-200">
     <Container>
-      <div class="flex flex-col gap-2 pt-12 pb-12 w-[40rem]">
+      <div class="flex flex-col gap-4 pt-12 pb-12 w-[40rem]">
         <motion.h1
           client:load
           initial={{opacity:0, y:-20}}
           animate={{opacity:1, y:0}}
           transition={{ type: 'spring' }}
-          className="font-bold text-4xl leading-[1]">{entry.data.title}</motion.h1>
+          className="font-bold text-[2.8rem] leading-[1.1]">{entry.data.title}</motion.h1>
         <motion.p
           client:load
           initial={{opacity:0, y:-20}}
           animate={{opacity:1, y:0}}
           transition={{ type: 'spring', delay: 0.05}}
           className="font-medium text-gray-600 text-lg">{entry.data.description}</motion.p>
-        { entry.data.cta && (
-          <motion.div
-            client:load
-            initial={{opacity:0, y:-20}}
-            animate={{opacity:1, y:0}}
-            transition={{ type: 'spring', delay: 0.25}}
-            className="mt-5 flex items-center gap-3"
-          >
-            <a
-              href={entry.data.cta.url}
-              class="w-max relative px-4 py-3 rounded-2xl text-white bg-black shadow-lg shadow-[#F84F1A]/35 ring-2 ring-[#F84F1A]/20 hover:shadow-xl hover:shadow-[#F84F1A]/60 hover:ring-[#F84F1A]/30 font-semibold transition hover:scale-105 z-10">
-              {entry.data.cta.label}
-            </a>
-            <a href="#" class="px-4 py-3 w-max rounded-2xl text-black ring-2 ring-gray-100 font-semibold transition bg-gray-100 hover:bg-orange-200 hover:ring-orange-200">
-              Request a quote
-            </a>
-          </motion.div>
-        )}
       </div>
     </Container>
   </section>

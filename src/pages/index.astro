@@ -25,24 +25,27 @@ const latestWork = publishedWork.slice(0, 4);
     <Container>
       <div class="pt-12 pb-16">
         <div class="flex flex-col items-start gap-8">
-          <div class="relative flex items-start flex-col gap-3 w-[44rem]">
-            <motion.h1
+          <div class="relative flex items-start flex-col gap-3 md:w-[44rem]">
+            <h1 class="sr-only">
+              Construyendo productos digitales, interfaces, sitios web, apps y sistemas para la www.
+            </h1>
+            <motion.div
               client:load
               initial={{opacity:0,y:-20}}
               animate={{opacity:1,y:0}}
               transition={{ type: 'spring'}}
-              className="text-[2.75rem] leading-[0.9] font-bold"
+              className="text-[1.9rem] leading-tight md:text-[2.75rem] md:leading-[0.9] font-bold"
             >
-              Building people-first interfaces, websites, <div class="inline-flex items-baseline">mobile apps<span class="relative top-2.5 ml-2 text-lime-700 rounded-2xl bg-white shadow-xl px-1 py-1"><Mobile client:load size={40} /></span></div> and <div class="inline-flex items-baseline">systems<span class="relative top-2.5 ml-2 text-black rounded-2xl bg-white shadow-xl px-1 py-1"><Terminal client:load size={40} /></span></div> for the <span class="before:animate-glitch relative before:left-[3px] before:absolute before:top-0 before:w-full before:h-full before:overflow-hidden before:[text-shadow:-2px_0_red] before:[content:'web']">web</span>.
-            </motion.h1>
+              Construyendo productos digitales, interfaces, sitios web, <div class="inline-flex items-baseline">apps<span class="hidden md:block relative top-2.5 ml-2 text-lime-700 rounded-2xl bg-white shadow-xl px-1 py-1"><Mobile client:load className="w-10 h-10"/></span></div> y <div class="inline-flex items-baseline">sistemas<span class="hidden md:block relative top-2.5 ml-2 text-black rounded-2xl bg-white shadow-xl px-1 py-1"><Terminal client:load className="w-10 h-10" /></span></div> para <span class="before:animate-glitch relative before:left-[3px] before:absolute before:top-0 before:w-full before:h-full before:overflow-hidden before:[text-shadow:-2px_0_red] before:[content:'web']">la www</span>.
+            </motion.div>
             <motion.p
               client:load
               initial={{opacity:0,y:-20}}
               animate={{opacity:1,y:0}}
               transition={{ type: 'spring', delay: 0.2}}
-              className="text-gray-600 text-lg font-medium"
+              className="text-gray-600 md:text-lg font-medium"
             >
-              I'm the person who can build products between engineering and design with a big attention to detail against the competitors. Currently founding my own engineering studio from Mexico.
+              Soy la persona que puede construir productos moviendome entre ingeniería y diseño con una gran atención al detalle. Actualmente trabajando en mi propio estudio de ingeniería desde México.
             </motion.p>
             <motion.span
               client:load
@@ -56,11 +59,11 @@ const latestWork = publishedWork.slice(0, 4);
             initial={{opacity:0,y:-20}}
             animate={{opacity:1,y:0}}
             transition={{ type: 'spring', delay: 0.5}}
-            className="flex items-center gap-5">
-            <button class="relative px-4 py-2.5 rounded-2xl text-white bg-black shadow-lg shadow-[#F84F1A]/35 ring-2 ring-[#F84F1A]/20 hover:shadow-xl hover:shadow-[#F84F1A]/60 hover:ring-[#F84F1A]/30 font-semibold transition hover:scale-105 z-10">
-              Book a 30 min call
+            className="flex flex-col md:flex-row md:items-center gap-5">
+            <button class="relative px-4 py-3 rounded-2xl text-white bg-black shadow-lg shadow-[#F84F1A]/35 ring-2 ring-[#F84F1A]/20 hover:shadow-xl hover:shadow-[#F84F1A]/60 hover:ring-[#F84F1A]/30 font-semibold transition hover:scale-105 z-10">
+              Agendar una llamada
             </button>
-            <div class="text-sm text-gray-500 font-medium">Use <span class="mx-0.5 px-1.5 py-1 border border-gray-300 rounded-lg">⌘K</span> for a best experience</div>
+            <div class="text-sm text-gray-500 font-medium">Utiliza <span class="mx-0.5 px-1.5 py-1 border border-gray-300 rounded-lg">⌘K</span> para una mejor experiencia</div>
           </motion.div>
         </div>
       </div>
@@ -78,14 +81,14 @@ const latestWork = publishedWork.slice(0, 4);
               initial={{opacity:0,y:-20}}
               animate={{opacity:1,y:0}}
               transition={{ type: 'spring', delay: 0.75}}
-              className="text-4xl font-bold">Your product needs the best experience.</motion.h3>
+              className="text-3xl md:text-4xl font-bold">Tu producto necesita de la mejor experiencia.</motion.h3>
             <motion.p
               client:load
               initial={{opacity:0,y:-20}}
               animate={{opacity:1,y:0}}
               transition={{ type: 'spring', delay: 0.8}}
-              className="text-xl font-medium text-gray-500 max-w-[40rem]">
-              Let's bring your idea from <span class="font-bold text-black">0 → 1</span> and do it. I can help you with a variety of services to get your project off the ground and into the hands of your users.
+              className="text-lg md:text-xl font-medium text-gray-500 max-w-[40rem]">
+              Llevemos tu idea de <span class="font-bold text-black">0 → 1</span> y hagámosla realidad. Puedo ayudarte con una variedad de servicios para que tu proyecto despegue y llegue a manos de tus usuarios.
             </motion.p>
             <motion.span
               client:load
@@ -142,12 +145,12 @@ const latestWork = publishedWork.slice(0, 4);
             initial={{opacity:0,y:-20}}
             animate={{opacity:1,y:0}}
             transition={{ type: 'spring', delay: 0.9}}
-            className="flex items-center gap-4">
-            <a href="#" class="relative px-4 py-3 rounded-2xl text-white bg-black text-lg shadow-lg shadow-[#F84F1A]/35 ring-2 ring-[#F84F1A]/20 hover:shadow-xl hover:shadow-[#F84F1A]/60 hover:ring-[#F84F1A]/30 font-semibold transition hover:scale-105 z-10 max-w-max">
-              Start from $799/week
+            className="flex flex-col md:flex-row md:items-center gap-4">
+            <a href="#" class="relative px-4 py-3 rounded-2xl text-white bg-black text-center md:text-left md:text-lg shadow-lg shadow-[#F84F1A]/35 ring-2 ring-[#F84F1A]/20 hover:shadow-xl hover:shadow-[#F84F1A]/60 hover:ring-[#F84F1A]/30 font-semibold transition hover:scale-105 z-10 md:w-max">
+              Desde US$899/semana 
             </a>
-            <a href="#" class="px-4 py-3 w-max rounded-2xl text-black ring-2 ring-gray-100 font-semibold transition bg-gray-100 hover:bg-orange-200 hover:ring-orange-200 text-lg">
-              Read manifesto
+            <a href="#" class="px-4 py-3 md:w-max rounded-2xl text-black ring-2 ring-gray-100 font-semibold transition bg-gray-100 hover:bg-orange-200 hover:ring-orange-200 text-center md:text-left md:text-lg">
+              Leer manifesto
             </a>
           </motion.div>
         </div>
@@ -158,31 +161,31 @@ const latestWork = publishedWork.slice(0, 4);
   <SectionWork entry={latestWork[3]} />
   <section class="border-b border-gray-200">
     <Container class="px-0">
-      <div class="py-16 flex gap-4">
-        <div class="flex flex-col gap-4 w-[60rem] px-10 flex-grow">
-          <h3 class="text-2xl font-bold">Hey!, I'm Javier Diaz</h3>
+      <div class="py-16 flex flex-col-reverse md:flex-row gap-12  md:gap-4 items-center">
+        <div class="flex flex-col gap-4 md:w-[60rem] px-10 flex-grow">
+          <h3 class="text-2xl font-bold">Hola!, Soy Javier Diaz</h3>
           <div class="relative flex flex-col gap-1.5 font-medium text-gray-600">
             <p>
-              A Mexican freelancer working with various startups, companies, agencies and individuals to build products and services for the web.
+              Un freelancer mexicano que trabaja con varias startups, empresas, agencias y particulares para construir productos y servicios para la web.
             </p>
             <p>
-              I love collaborate with people and teams to create fantastical experiences and products that are easy to use.
+              Me gusta colaborar con personas y equipos para crear experiencias y productos fantásticos que sean fáciles de usar.
             </p>
             <p>
-              In my free time, you'll usually find me reading, watching movies, playing video games, or learning something new.
+              En mi tiempo libre, usualmente podrás encontrarme leyendo, viendo películas, jugando videojuegos o aprendiendo algo nuevo.
             </p>
             <span class="absolute left-0 -ml-10 mt-4 top-0 mb-0 hidden font-mono text-[12rem] text-gray-600 leading-none opacity-5 lg:flex">*</span>
           </div>
-          <div class="flex items-center gap-4">
-            <a href="#" class="mt-2 px-4 py-2.5 w-max rounded-2xl text-white bg-black shadow-lg shadow-blue-900/60 ring-2 ring-blue-400/20 hover:shadow-xl hover:shadow-blue-700/50 hover:ring-blue-400/30 font-semibold transition hover:scale-105">
-              Start a project
+          <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+            <a href="#" class="mt-2 px-4 py-2.5 text-center md:text-left md:w-max rounded-2xl text-white bg-black shadow-lg shadow-blue-900/60 ring-2 ring-blue-400/20 hover:shadow-xl hover:shadow-blue-700/50 hover:ring-blue-400/30 font-semibold transition hover:scale-105">
+              Comenzar un proyecto
             </a>
-            <a href="#" class="mt-2 px-4 py-2 w-max rounded-2xl text-black ring-2 ring-gray-100 font-semibold transition bg-gray-100 hover:bg-orange-200 hover:ring-orange-200">
-              Discover my services
+            <a href="#" class="mt-2 px-4 py-2.5 text-center md:text-left md:w-max rounded-2xl text-black ring-2 ring-gray-100 font-semibold transition bg-gray-100 hover:bg-orange-200 hover:ring-orange-200">
+              Descubre mis servicios
             </a>
           </div>
         </div>
-        <div class="w-[28rem] h-80 overflow-hidden shadow-xl bg-white p-3 pb-9 rotate-[4deg] border border-gray-100">
+        <div class="w-[16rem] md:w-[28rem] h-80 overflow-hidden shadow-xl bg-white p-3 pb-9 rotate-[4deg] border border-gray-100">
           <Image class="h-full w-full object-cover object-top pointer-events-none select-none" src={ProfileAvatar} alt="Avatar of Javier Diaz" />
         </div>
       </div>
@@ -190,9 +193,9 @@ const latestWork = publishedWork.slice(0, 4);
   </section>
   <section class="border-b border-gray-200">
     <Container>
-      <div class="py-6 flex items-center gap-4">
-        <span class="font-semibold text-gray-1100">Let's connect</span>
-        <div class="flex items-center gap-2">
+      <div class="py-8 md:py-6 flex flex-col md:flex-row md:items-center gap-4">
+        <span class="font-semibold text-gray-1100">Conecta conmigo</span>
+        <div class="flex items-center flex-wrap gap-2">
           <a href="#" class="px-4 py-2 rounded-xl bg-gray-100 hover:bg-gray-200/70 text-sm text-gray-600 hover:text-gray-900 font-medium transition">
             X.com
           </a>
@@ -223,26 +226,26 @@ const latestWork = publishedWork.slice(0, 4);
             <span class="bg-orange-800 p-1 rounded-lg">
               <Ship />
             </span>
-            <h3 class="text-2xl font-bold">My travel life</h3>
+            <h3 class="text-xl md:text-2xl font-bold">Mi vida viajera</h3>
           </div>
           <div class="relative flex flex-col gap-1.5 font-medium text-gray-600 mb-3">
             <p>
-              Sometimes I write about my experiences, thoughts, and things I've learned. I'm not a writer, but I try to share my knowledge with others.
+              A veces escribo sobre mis experiencias, pensamientos y cosas que he aprendido. No soy escritor, pero intento compartir mis conocimientos con los demás.
             </p>
             <span class="absolute left-0 -ml-10 -mt-16 top-0 mb-0 hidden font-mono text-[12rem] text-gray-600 leading-none opacity-5 lg:flex">*</span>
           </div>
           <div class="relative flex flex-col gap-2 z-10 -mx-2 mb-2">
             {latestPosts.map((note) => <NoteItem entry={note} />)}
           </div>
-          <div class="flex items-center gap-2">
-            <a href="/notes" class="bg-gray-100 text-gray-600 hover:text-gray-900 hover:bg-orange-200/75 px-2.5 py-1 leading-snug text-sm rounded-full font-semibold transition">
-              Show all posts
+          <div class="flex items-center flex-wrap gap-2.5">
+            <a href="/notas/" class="bg-gray-100 text-gray-600 hover:text-gray-900 hover:bg-orange-200/75 px-2.5 py-1 leading-snug text-sm rounded-full font-semibold transition">
+              Ver publicaciones
             </a>
             <a href="#" class="bg-gray-100 text-gray-600 hover:text-gray-900 hover:bg-orange-200/75 px-2.5 py-1 leading-snug text-sm rounded-full font-semibold transition">
-              Follow me on X.com
+              Sígueme en X
             </a>
             <a href="#" class="bg-gray-100 text-gray-600 hover:text-gray-900 hover:bg-orange-200/75 px-2.5 py-1 leading-snug text-sm rounded-full font-semibold transition">
-              Follow on LinkedIn
+              Sígueme en LinkedIn
             </a>
           </div>
         </div>

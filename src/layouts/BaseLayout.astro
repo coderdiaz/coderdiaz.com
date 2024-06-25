@@ -15,20 +15,20 @@ import Mexico from '@/components/svg/Mexico.astro';
   <body class="font-sans leading-relaxed h-full flex flex-col">
     <section class="border-b border-gray-200">
       <Container>
-        <a href="https://aprendestrapi.com" target="_blank" rel="noreferrer" class="py-3 flex items-center justify-between text-sm">
-          <p class="font-semibold">Introducing AprendeStrapi.com</p>
-          <p>Join the course now <span aria-hidden="true">→</span></p>
+        <a href="https://aprendestrapi.com" target="_blank" rel="noreferrer" class="py-3 flex flex-col md:flex-row md:items-center md:justify-between text-sm font-medium">
+          <p class="font-semibold">Presentando AprendeStrapi.com</p>
+          <p class="underline underline-offset-2">Únete al curso ahora <span aria-hidden="true">→</span></p>
         </a>
       </Container>
     </section>
     <header>
       <Container>
-        <div class="flex items-center justify-between pt-8">
-          <a href="/" class="font-semibold">Javier Diaz — Engineering & Design</a>
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-3 pt-8">
+          <a href="/" class="font-semibold">Javier Diaz — Ingeniería & Diseño</a>
           <nav class="flex items-center gap-4">
-            <a class="text-sm font-medium text-gray-500 hover:text-gray-900" href="/proyectos/">Projects</a>
-            <a class="text-sm font-medium text-gray-500 hover:text-gray-900" href="/servicios/">Services</a>
-            <a class="text-sm font-medium text-gray-500 hover:text-gray-900" href="/notas/">Notes</a>
+            <a class="md:text-sm font-medium text-gray-500 hover:text-gray-900" href="/proyectos/">Proyectos</a>
+            <a class="md:text-sm font-medium text-gray-500 hover:text-gray-900" href="/servicios/">Servicios</a>
+            <a class="md:text-sm font-medium text-gray-500 hover:text-gray-900" href="/notas/">Notas</a>
           </nav>
         </div>
       </Container>
@@ -44,17 +44,17 @@ import Mexico from '@/components/svg/Mexico.astro';
     >
       <Container>
         <div class="flex flex-col gap-8 pt-16 pb-20">
-          <p class="font-medium text-gray-500 flex items-center gap-2">
-            Shipped from Mexico
+          <p class="font-medium text-gray-500 flex items-center gap-2 text-sm md:text-base">
+            Lanzando productos desde Mexico
             <Mexico />
           </p>
           <div class="flex flex-col gap-3">
             <div class="flex items-center gap-4 flex-wrap">
-              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">About</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Sobre mí</a>
               <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Manifesto</a>
-              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Services</a>
-              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Notes</a>
-              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Contact</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Servicios</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Notas</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Contacto</a>
             </div>
             <div class="flex items-center gap-4 flex-wrap">
               <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">X.com</a>
@@ -64,7 +64,7 @@ import Mexico from '@/components/svg/Mexico.astro';
               <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Read.cv</a>
             </div>
           </div>
-          <p class="text-sm text-gray-400">Since &copy; 2015.</p>
+          <p class="text-sm text-gray-400">Desde &copy; 2015.</p>
         </div>
       </Container>
     </motion.footer>
