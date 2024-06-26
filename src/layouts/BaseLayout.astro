@@ -3,6 +3,7 @@ import '@fontsource-variable/caveat';
 import {motion} from 'framer-motion';
 import Container from '@/components/Container.astro';
 import Mexico from '@/components/svg/Mexico.astro';
+import { social } from '@/lib/constants';
 ---
 <html lang="en" class="min-h-full antialiased">
   <head>
@@ -12,20 +13,21 @@ import Mexico from '@/components/svg/Mexico.astro';
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body class="font-sans leading-relaxed h-full flex flex-col">
+  <body class="font-sans leading-relaxed h-full flex flex-col text-[#39301B]">
     <section class="border-b border-gray-200">
       <Container>
         <a href="https://aprendestrapi.com" target="_blank" rel="noreferrer" class="py-3 flex flex-col md:flex-row md:items-center md:justify-between text-sm font-medium">
           <p class="font-semibold">Presentando AprendeStrapi.com</p>
-          <p class="underline underline-offset-2">Únete al curso ahora <span aria-hidden="true">→</span></p>
+          <p>Únete al curso ahora <span aria-hidden="true">→</span></p>
         </a>
       </Container>
     </section>
     <header>
       <Container>
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-3 pt-8">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-3 pt-8">
           <a href="/" class="font-semibold">Javier Diaz — Ingeniería & Diseño</a>
           <nav class="flex items-center gap-4">
+            <a class="block md:hidden md:text-sm font-medium text-gray-500 hover:text-gray-900" href="/">Inicio</a>
             <a class="md:text-sm font-medium text-gray-500 hover:text-gray-900" href="/proyectos/">Proyectos</a>
             <a class="md:text-sm font-medium text-gray-500 hover:text-gray-900" href="/servicios/">Servicios</a>
             <a class="md:text-sm font-medium text-gray-500 hover:text-gray-900" href="/notas/">Notas</a>
@@ -50,18 +52,18 @@ import Mexico from '@/components/svg/Mexico.astro';
           </p>
           <div class="flex flex-col gap-3">
             <div class="flex items-center gap-4 flex-wrap">
-              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Sobre mí</a>
-              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Manifesto</a>
-              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Servicios</a>
-              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Notas</a>
-              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Contacto</a>
+              <!-- <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Sobre mí</a> -->
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="/manifesto/">Manifesto</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="/servicios/">Servicios</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="/notas/">Notas</a>
+              <!-- <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Contacto</a> -->
             </div>
             <div class="flex items-center gap-4 flex-wrap">
-              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">X.com</a>
-              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">GitHub</a>
-              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">LinkedIn</a>
-              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Dribbble</a>
-              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href="#">Read.cv</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href={social.x} target="_blank" rel="noreferrer">X.com</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href={social.github} target="_blank" rel="noreferrer">GitHub</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href={social.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href={social.dribbble} target="_blank" rel="noreferrer">Dribbble</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href={social.cv} target="_blank" rel="noreferrer">Read.cv</a>
             </div>
           </div>
           <p class="text-sm text-gray-400">Desde &copy; 2015.</p>

@@ -8,6 +8,7 @@ import BlockRow from '@/components/BlockRow.astro';
 import { Terminal } from '@/components/svg/Terminal';
 import Design from '@/components/svg/Design.astro';
 import Mentoring from '@/components/svg/Mentoring.astro';
+import { SUB_PAYMENT } from '@/lib/constants';
 
 <section class="border-b border-gray-200">
   <Container>
@@ -23,11 +24,11 @@ import Mentoring from '@/components/svg/Mentoring.astro';
         initial={{opacity:0, y:-20}}
         animate={{opacity:1, y:0}}
         transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.2 }}
-        className="grid grid-cols-2gap-6 gap-y-8">
+        className="grid md:grid-cols-2 gap-6 gap-y-8">
         <div class="flex flex-col gap-4">
           <div class="flex flex-col gap-1">
             <span class="font-semibold text-lg">Por proyecto</span>
-            <p class="font-medium text-gray-500">Si tienes un proyecto, requerimiento o idea y necesitas ayuda para llevarlo a cabo, puedo ayudarte a diseñar, desarrollar y lanzar tu producto. <a class="font-semibold text-black underline underline-offset-2">Solicita una cotización.</a></p>
+            <p class="font-medium text-gray-500">Si tienes un proyecto, requerimiento o idea y necesitas ayuda para llevarlo a cabo, puedo ayudarte a diseñar, desarrollar y lanzar tu producto. <a href="/contacto/" class="font-semibold text-black underline underline-offset-2">Solicita una cotización.</a></p>
           </div>
         </div>
         <div class="flex flex-col gap-4">
@@ -36,7 +37,7 @@ import Mentoring from '@/components/svg/Mentoring.astro';
             <p class="font-medium text-gray-500">Si necesitas ayuda con un problema técnico o de diseño, una revisión de código o una consulta técnica, puedo ayudarte a resolverlo por tan solo <span class="font-semibold text-black">US$60/hora</span>.</p>
           </div>
         </div>
-        <div class="col-span-2 flex flex-col gap-4">
+        <div class="md:col-span-2 flex flex-col gap-4">
           <div class="flex flex-col gap-1">
             <span class="font-semibold text-lg">Costo fijo por semana</span>
             <p class="font-medium text-gray-500">Accede a 30 horas de trabajo semanales para tu proyecto. Diseño, desarrollo y lanzamiento de tu producto. Lo necesario para llevar tu idea al mundo digital.</p>
@@ -48,14 +49,15 @@ import Mentoring from '@/components/svg/Mentoring.astro';
         initial={{opacity:0, y:-20}}
         animate={{opacity:1, y:0}}
         transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.25 }}
-        className="flex items-center gap-3"
+        className="flex flex-col md:flex-row md:items-center gap-3"
       >
         <a
-          href="#"
-          class="w-max relative px-4 py-3 rounded-2xl text-white bg-black shadow-lg shadow-[#F84F1A]/35 ring-2 ring-[#F84F1A]/20 hover:shadow-xl hover:shadow-[#F84F1A]/60 hover:ring-[#F84F1A]/30 font-semibold transition hover:scale-105 z-10">
+          href={SUB_PAYMENT}
+          target="_blank"
+          class="md:w-max relative px-4 py-3 rounded-2xl text-white bg-black shadow-lg shadow-[#F84F1A]/35 ring-2 ring-[#F84F1A]/20 hover:shadow-xl hover:shadow-[#F84F1A]/60 hover:ring-[#F84F1A]/30 font-semibold transition hover:scale-105 z-10 text-center">
           Desde US$899/semana
         </a>
-        <a href="#" class="px-4 py-3 w-max rounded-2xl text-black ring-2 ring-gray-100 font-semibold transition bg-gray-100 hover:bg-orange-200 hover:ring-orange-200">
+        <a href="/contacto/" class="px-4 py-3 md:w-max rounded-2xl text-black ring-2 ring-gray-100 font-semibold transition bg-gray-100 hover:bg-orange-200 hover:ring-orange-200 text-center">
           Solicitar una cotización
         </a>
       </motion.div>
@@ -64,13 +66,13 @@ import Mentoring from '@/components/svg/Mentoring.astro';
 </section>
 <section class="border-b border-gray-200">
   <Container>
-    <div class="grid grid-cols-2 gap-0">
+    <div class="grid md:grid-cols-2 gap-0">
       <motion.div
         client:load
         initial={{opacity:0, y:-20}}
         animate={{opacity:1, y:0}}
         transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.3 }}
-        className="flex flex-col border-r border-gray-200">
+        className="flex flex-col md:border-r border-gray-200">
         <BlockRow title="Diseño y estrategia" class="py-8">
           <span slot="icon" class="bg-orange-900 text-white p-1 rounded-lg">
             <Design />
@@ -126,7 +128,7 @@ import Mentoring from '@/components/svg/Mentoring.astro';
         animate={{opacity:1, y:0}}
         transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.35 }}
       >
-        <BlockRow title="Software Development" class="py-8 pl-12">
+        <BlockRow title="Software Development" class="py-8 md:pl-12">
           <span slot="icon" class="bg-black text-white p-1 rounded-lg">
             <Terminal />
           </span>
