@@ -12,7 +12,7 @@ import { SUB_PAYMENT } from '@/lib/constants';
 
 <section class="border-b border-gray-200">
   <Container>
-    <div class="flex flex-col gap-6 pt-12 pb-16">
+    <div class="flex flex-col gap-8 pt-12 pb-16">
       <motion.h2
         client:load
         initial={{opacity:0, y:-20}}
@@ -24,7 +24,7 @@ import { SUB_PAYMENT } from '@/lib/constants';
         initial={{opacity:0, y:-20}}
         animate={{opacity:1, y:0}}
         transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.2 }}
-        className="grid md:grid-cols-2 gap-6 gap-y-8">
+        className="grid md:grid-cols-2 gap-8 gap-y-10">
         <div class="flex flex-col gap-4">
           <div class="flex flex-col gap-1">
             <span class="font-semibold text-lg">Por proyecto</span>
@@ -54,10 +54,10 @@ import { SUB_PAYMENT } from '@/lib/constants';
         <a
           href={SUB_PAYMENT}
           target="_blank"
-          class="md:w-max relative px-4 py-3 rounded-2xl text-white bg-black shadow-lg shadow-[#F84F1A]/35 ring-2 ring-[#F84F1A]/20 hover:shadow-xl hover:shadow-[#F84F1A]/60 hover:ring-[#F84F1A]/30 font-semibold transition hover:scale-105 z-10 text-center">
+          class="md:w-max relative px-4 py-3 rounded-2xl bg-amber-400 text-amber-1000 font-semibold transition hover:scale-105 z-10 text-center">
           Desde US$899/semana
         </a>
-        <a href="/contacto/" class="px-4 py-3 md:w-max rounded-2xl text-black ring-2 ring-gray-100 font-semibold transition bg-gray-100 hover:bg-orange-200 hover:ring-orange-200 text-center">
+        <a href="/contacto/" class="px-4 py-3 md:w-max rounded-2xl text-black ring-2 ring-gray-100 font-semibold transition bg-gray-100 hover:bg-amber-100 hover:ring-amber-100 text-center">
           Solicitar una cotización
         </a>
       </motion.div>

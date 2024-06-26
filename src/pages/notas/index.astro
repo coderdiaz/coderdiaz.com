@@ -3,6 +3,7 @@ import { getEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { motion } from 'framer-motion';
+import { ArrowUpRightIcon } from 'lucide-react';
 import Container from '@/components/Container.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import NoteItem from '@/components/NoteItem.astro';
@@ -10,8 +11,10 @@ import { social } from '@/lib/constants';
 
 const entry = await getEntry('pages', 'notes');
 const publishedNotes = (await getCollection('notes', ({ data }: CollectionEntry<'notes'>) => data.draft !== true))
-  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+  .sort((a: any, b: any) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
+const talks = (await Astro.glob('../../content/talks/*.json'))
+  .sort((a: any, b: any) => a.position - b.position);
 ---
 <BaseLayout>
   <section>
@@ -53,7 +56,32 @@ const publishedNotes = (await getCollection('notes', ({ data }: CollectionEntry<
         animate={{opacity:1, y:0}}
         transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.15 }}
         className="relative flex flex-col gap-2 z-10 -mx-2 mb-2">
-        {publishedNotes.map((note) => <NoteItem entry={note} />)}
+        {publishedNotes.map((note: any) => <NoteItem entry={note} />)}
+      </motion.div>
+    </Container>
+  </section>
+  <section class="">
+    <Container>
+      <motion.div
+        client:load
+        initial={{opacity:0, y:-20}}
+        animate={{opacity:1, y:0}}
+        transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.2 }}
+        className="py-10 flex flex-col gap-3"
+      >
+        <h2 class="font-semibold text-xl">Talks</h2>
+        <div class="flex flex-col gap-1 -mx-2">
+          {talks.map((talk) => (
+            <a href={talk.url} target="_blank" rel="noreferrer" class="py-2 hover:bg-gray-50 group hover:ring-4 hover:ring-gray-50 px-2 rounded-xl transition">
+              <article class="flex items-center gap-3">
+                <span class="hidden md:block text-gray-500 text-sm tabular-nums">
+                  {talk.date}
+                </span>
+                <h4 class="font-semibold underline underline-offset-2 decoration-gray-200 group-hover:decoration-amber-500 transition-all">{talk.title}</h4>
+              </article>
+            </a>
+          ))}
+        </div>
       </motion.div>
     </Container>
   </section>

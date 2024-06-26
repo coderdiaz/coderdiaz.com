@@ -6,7 +6,7 @@ import Mexico from '@/components/svg/Mexico.astro';
 import { social } from '@/lib/constants';
 import Head from '@/includes/Head.astro';
 ---
-<html lang="en" class="min-h-full antialiased">
+<html lang="en" class="min-h-full antialiased bg-[#FCFCF9]">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -16,7 +16,7 @@ import Head from '@/includes/Head.astro';
       <script defer is:inline>
         (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === 'string' ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, 'https://app.cal.com/embed/embed.js', 'init');
         Cal('init', 'intro', {origin:'https://cal.com'});
-        Cal.ns['intro']('ui', {'styles':{'branding':{'brandColor':'#000'}},'hideEventTypeDetails':false,'layout':'month_view'});
+        Cal.ns['intro']('ui', {'styles':{'branding':{'brandColor':'#FBBF25'}},'hideEventTypeDetails':false,'layout':'month_view'});
       </script>
     </Head>
     <title>Astro</title>
@@ -34,11 +34,10 @@ import Head from '@/includes/Head.astro';
       <Container>
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-3 pt-8">
           <a href="/" class="font-semibold">Javier Diaz — Ingeniería & Diseño</a>
-          <nav class="flex items-center gap-4">
-            <a class="block md:hidden md:text-sm font-medium text-gray-500 hover:text-gray-900" href="/">Inicio</a>
+          <nav class="flex items-center gap-4 gap-y-1 flex-wrap">
             <a class="md:text-sm font-medium text-gray-500 hover:text-gray-900" href="/proyectos/">Proyectos</a>
             <a class="md:text-sm font-medium text-gray-500 hover:text-gray-900" href="/servicios/">Servicios</a>
-            <a class="md:text-sm font-medium text-gray-500 hover:text-gray-900" href="/notas/">Notas</a>
+            <a class="md:text-sm font-medium text-gray-500 hover:text-gray-900" href="/notas/">Jardín Digital</a>
           </nav>
         </div>
       </Container>
@@ -54,7 +53,7 @@ import Head from '@/includes/Head.astro';
     >
       <Container>
         <div class="flex flex-col gap-8 pt-16 pb-20">
-          <p class="font-medium text-gray-500 flex items-center gap-2 text-sm md:text-base">
+          <p class="font-medium text-gray-500 flex items-center gap-2 text-sm">
             Lanzando productos desde Mexico
             <Mexico />
           </p>
