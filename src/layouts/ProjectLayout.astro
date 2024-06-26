@@ -20,7 +20,7 @@ const { entry } = Astro.props;
             initial={{opacity:0,y:-20}}
             animate={{opacity:1,y:0}}
             transition={{ type: 'spring', stiffness: 250, damping: 20 }}
-            className="font-medium text-gray-600 text-lg">
+            className="font-medium text-gray-600 md:text-lg">
             {entry.data.tag}
           </motion.span>
           <motion.h1
@@ -28,7 +28,7 @@ const { entry } = Astro.props;
             initial={{opacity:0,y:-20}}
             animate={{opacity:1,y:0}}
             transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.05 }}
-            className="text-[2.25rem] text-center leading-[1.2] font-bold mb-2">
+            className="text-[2rem] md:text-[2.25rem] text-center leading-[1.2] font-bold mb-2">
             {entry.data.title}
           </motion.h1>
         </div>
@@ -38,7 +38,7 @@ const { entry } = Astro.props;
             initial={{opacity:0,y:20}}
             animate={{opacity:1,y:0}}
             transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.1 }}
-            className="md:-mx-16"
+            className="-mx-4 md:-mx-8 lg:-mx-16"
           >
             <Image
               class="w-full pointer-events-none select-none group-hover:scale-[1.03] transition-transform duration-300 ease-in-out"
@@ -50,12 +50,12 @@ const { entry } = Astro.props;
     </section>
     <motion.section
       client:load
-      initial={{opacity:0,y:32}}
+      initial={{opacity:0,y:-20}}
       animate={{opacity:1,y:0}}
       transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.15 }}
       >
       <Container>
-        <p class="text-lg text-gray-600 font-medium">{entry.data.description}</p>
+        <p class="md:text-lg text-gray-600 font-medium">{entry.data.description}</p>
       </Container>
     </motion.section>
   </article>

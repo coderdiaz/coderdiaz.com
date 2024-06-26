@@ -50,7 +50,7 @@ const { entry, showServices = false } = Astro.props;
               transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.35 }}
               className="flex items-center gap-3 flex-wrap z-10 mb-6">
               {entry.data.services.map((service) => (
-                <span class="inline max-w-max px-3 py-1.5 bg-white/20 backdrop-blur-lg border border-gray-20 rounded-full font-semibold text-sm">
+                <span class="inline max-w-max px-3 py-1 md:py-1.5 bg-white/20 backdrop-blur-lg border border-gray-20 rounded-full font-semibold text-sm">
                   {service}
                 </span>
               ))}
