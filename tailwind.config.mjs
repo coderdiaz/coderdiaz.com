@@ -1,5 +1,5 @@
 import { orange } from '@radix-ui/colors';
-import { stone, rose, blue, lime } from 'tailwindcss/colors';
+import { stone, rose, blue, lime, amber } from 'tailwindcss/colors';
 
 export function generateRadixColors(colors) {
   let count = 50;
@@ -23,6 +23,7 @@ export default {
       lime,
       rose,
       blue,
+      amber: generateRadixColors(amber),
     },
     fontFamily: {
       sans: ['ui-sans-serif', 'system-ui', 'sans-serif', '"Apple Color Emoji"','"Segoe UI Emoji"', 'Segoe UI Symbol','"Noto Color Emoji"'],
