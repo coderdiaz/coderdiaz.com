@@ -80,7 +80,7 @@ export default {
               fontWeight: 600,
               color: theme('colors.tones.or'),
               textDecorationLine: 'underline',
-              textUnderlineOffset: 4,
+              textUnderlineOffset: 2,
               '&:hover': {
                 opacity: 0.8,
               }

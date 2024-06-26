@@ -61,7 +61,11 @@ const latestWork = publishedWork.slice(0, 4);
             animate={{opacity:1,y:0}}
             transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.15 }}
             className="flex flex-col md:flex-row md:items-center gap-5">
-            <button class="relative px-4 py-3 rounded-2xl text-white bg-black shadow-lg shadow-[#F84F1A]/35 ring-2 ring-[#F84F1A]/20 hover:shadow-xl hover:shadow-[#F84F1A]/60 hover:ring-[#F84F1A]/30 font-semibold transition hover:scale-105 z-10">
+            <button
+              data-cal-link="coderdiaz/intro"
+              data-cal-namespace="intro"
+              data-cal-config='{"layout":"month_view"}'
+              class="relative px-4 py-3 rounded-2xl text-white bg-black shadow-lg shadow-[#F84F1A]/35 ring-2 ring-[#F84F1A]/20 hover:shadow-xl hover:shadow-[#F84F1A]/60 hover:ring-[#F84F1A]/30 font-semibold transition hover:scale-105 z-10">
               Agendar una llamada
             </button>
             <!-- <div class="text-sm text-gray-500 font-medium">Utiliza <span class="mx-0.5 px-1.5 py-1 border border-gray-300 rounded-lg">⌘K</span> para una mejor experiencia</div> -->

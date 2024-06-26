@@ -4,6 +4,7 @@ import {motion} from 'framer-motion';
 import Container from '@/components/Container.astro';
 import Mexico from '@/components/svg/Mexico.astro';
 import { social } from '@/lib/constants';
+import Head from '@/includes/Head.astro';
 ---
 <html lang="en" class="min-h-full antialiased">
   <head>
@@ -11,6 +12,13 @@ import { social } from '@/lib/constants';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <Head>
+      <script defer is:inline>
+        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === 'string' ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, 'https://app.cal.com/embed/embed.js', 'init');
+        Cal('init', 'intro', {origin:'https://cal.com'});
+        Cal.ns['intro']('ui', {'styles':{'branding':{'brandColor':'#000'}},'hideEventTypeDetails':false,'layout':'month_view'});
+      </script>
+    </Head>
     <title>Astro</title>
   </head>
   <body class="font-sans leading-relaxed h-full flex flex-col text-[#39301B]">

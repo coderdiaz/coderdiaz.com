@@ -1,0 +1,7 @@
+---
+const analytics = import.meta.env.ENABLED_ANALYTICS;
+---
+{ analytics && (
+  <script defer data-domain="coderdiaz.com" src="https://analy.fun/js/script.js"></script>
+)}
+<slot />
