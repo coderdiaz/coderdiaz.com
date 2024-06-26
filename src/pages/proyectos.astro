@@ -5,6 +5,7 @@ import { getEntry, getCollection } from 'astro:content';
 import { motion } from 'framer-motion';
 import Container from '@/components/Container.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SUB_PAYMENT } from '@/lib/constants';
 
 // Clients
 import W3G from '@/assets/images/clients/w3g.png';
@@ -53,8 +54,8 @@ const most = publishedWork.slice(2);
       <div class="pt-16 pb-20 flex gap-4">
         <div class="flex flex-col gap-6 px-10 flex-grow text-gray-900">
           <div class="relative flex flex-col gap-4">
-            <h3 class="text-4xl font-bold">¿Estás listo?</h3>
-            <p class="text-xl font-medium text-gray-500 max-w-[40rem]">
+            <h3 class="text-2xl md:text-4xl font-bold">¿Estás listo?</h3>
+            <p class="md:text-xl font-medium text-gray-500 max-w-[40rem]">
               Tengo mucha experiencia en el campo del desarrollo y diseño web. Puedo ayudarte con cualquier proyecto, no importa lo grande o pequeño que sea. Estos son algunos de los clientes que confiaron.
             </p>
             <span class="absolute left-0 -ml-10 -mt-6 top-0 mb-0 hidden font-mono text-[12rem] text-gray-600 leading-none opacity-5 lg:flex -z-10">*</span>
@@ -73,11 +74,11 @@ const most = publishedWork.slice(2);
               <Image class="w-28" src={PandaSalud} alt="PandaSalud" />
             </div>
           </div>
-          <div class="flex items-center gap-4">
-            <a href="#" class="relative px-4 py-3 rounded-2xl text-white bg-black text-lg shadow-lg shadow-[#F84F1A]/35 ring-2 ring-[#F84F1A]/20 hover:shadow-xl hover:shadow-[#F84F1A]/60 hover:ring-[#F84F1A]/30 font-semibold transition hover:scale-105 z-10 max-w-max">
+          <div class="flex flex-col md:flex-row md:items-center gap-5">
+            <a href={SUB_PAYMENT} target="_blank" rel="noreferrer" class="relative px-4 py-3 rounded-2xl text-white bg-black text-lg shadow-lg shadow-[#F84F1A]/35 ring-2 ring-[#F84F1A]/20 hover:shadow-xl hover:shadow-[#F84F1A]/60 hover:ring-[#F84F1A]/30 font-semibold transition hover:scale-105 z-10 md:w-max text-center">
               Desde US$899/week
             </a>
-            <a href="#" class="px-4 py-3 w-max rounded-2xl text-black ring-2 ring-gray-100 font-semibold transition bg-gray-100 hover:bg-orange-200 hover:ring-orange-200 text-lg">
+            <a href="/manifesto/" class="px-4 py-3 md:w-max text-center rounded-2xl text-black ring-2 ring-gray-100 font-semibold transition bg-gray-100 hover:bg-orange-200 hover:ring-orange-200 text-lg">
               Leer manifesto
             </a>
           </div>

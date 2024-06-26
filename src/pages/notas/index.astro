@@ -22,13 +22,13 @@ const publishedNotes = (await getCollection('notes', ({ data }: CollectionEntry<
           initial={{opacity:0, y:-20}}
           animate={{opacity:1, y:0}}
           transition={{ type: 'spring', stiffness: 250, damping: 20 }}
-          className="font-bold text-4xl">{entry.data.title}</motion.h1>
+          className="font-bold text-3xl md:text-4xl">{entry.data.title}</motion.h1>
         <motion.p
           client:load
           initial={{opacity:0, y:-20}}
           animate={{opacity:1, y:0}}
           transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.05 }}
-          className="font-medium text-gray-600 text-lg">{entry.data.description}</motion.p>
+          className="font-medium text-gray-600 md:text-lg">{entry.data.description}</motion.p>
         <motion.div
           client:load
           initial={{opacity:0, y:-20}}
