@@ -33,7 +33,7 @@ const { entry } = Astro.props;
           initial={{opacity:0,y:-20}}
           animate={{opacity:1,y:0}}
           transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.05 }}
-          className="text-[2.5rem] leading-[1.1] font-bold mb-2">
+          className="text-[1.9rem] md:text-[2.5rem] leading-[1.1] font-bold mb-2">
           {entry.data.title}
         </motion.h1>
       </div>
@@ -52,7 +52,7 @@ const { entry } = Astro.props;
         initial={{opacity:0,y:-20}}
         animate={{opacity:1,y:0}}
         transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.15 }}
-        className="max-w-full prose font-medium mx-5">
+        className="max-w-full prose font-medium md:mx-5">
         <slot />
       </motion.div>
     </article>
