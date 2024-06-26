@@ -13,10 +13,10 @@ import SectionWork from '@/components/SectionWork.astro';
 import NoteItem from '@/components/NoteItem.astro';
 
 const publishedNotes = (await getCollection('notes', ({ data }: CollectionEntry<'notes'>) => data.draft !== true))
-  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+  .sort((a: any, b: any) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
 const publishedWork = (await getCollection('work', ({ data }: CollectionEntry<'work'>) => data.draft !== true))
-  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+  .sort((a: any, b: any) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
 const latestPosts = publishedNotes.slice(0, 5);
 const latestWork = publishedWork.slice(0, 4);
