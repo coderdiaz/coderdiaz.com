@@ -38,10 +38,10 @@ const talks = (await Astro.glob('../../content/talks/*.json'))
           animate={{opacity:1, y:0}}
           transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.1 }}
           className="flex items-center gap-2 mt-5">
-          <a href={social.x} target="_blank" rel="noreferrer" class="bg-gray-100 text-gray-600 hover:text-gray-900 hover:bg-orange-200/75 px-2.5 py-1 leading-snug text-sm rounded-full font-semibold transition">
+          <a href={social.x} target="_blank" rel="noreferrer" class="bg-gray-100 text-gray-600 hover:bg-amber-100 hover:text-amber-900 px-2.5 py-1 leading-snug text-sm rounded-full font-semibold transition">
             Sígueme en X
           </a>
-          <a href={social.linkedin} target="_blank" rel="noreferrer" class="bg-gray-100 text-gray-600 hover:text-gray-900 hover:bg-orange-200/75 px-2.5 py-1 leading-snug text-sm rounded-full font-semibold transition">
+          <a href={social.linkedin} target="_blank" rel="noreferrer" class="bg-gray-100 text-gray-600 hover:bg-amber-100 hover:text-amber-900 px-2.5 py-1 leading-snug text-sm rounded-full font-semibold transition">
             Sígueme en LinkedIn
           </a>
         </motion.div>

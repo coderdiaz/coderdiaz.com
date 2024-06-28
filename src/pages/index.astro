@@ -46,7 +46,7 @@ const latestWork = publishedWork.slice(0, 4);
               transition={{ type: 'spring', stiffness: 250, damping: 20 }}
               className="hidden md:block text-[2.25rem] leading-tight md:text-[2.75rem] md:leading-[0.9] font-bold"
             >
-              Transformo tus ideas en productos digitales, sitios web, <div class="inline-flex items-baseline">apps<span class="hidden md:block relative top-2.5 ml-2 text-lime-700 rounded-2xl bg-white shadow-xl px-1 py-1"><Mobile client:load className="w-10 h-10"/></span></div> y <div class="inline-flex items-baseline">sistemas<span class="hidden md:block relative top-2.5 ml-2 text-black rounded-2xl bg-white shadow-xl px-1 py-1"><Terminal client:load className="w-10 h-10" /></span></div> para <span class="before:animate-glitch relative before:left-[3px] before:absolute before:top-0 before:w-full before:h-full before:overflow-hidden before:[text-shadow:-2px_0_red] before:[content:'web']">la web</span>
+              Transformo tus ideas en productos digitales, sitios web, <div class="inline-flex items-baseline">apps<span class="hidden md:block relative top-2.5 ml-2 text-lime-700 rounded-full bg-white shadow-xl px-1 py-1"><Mobile client:load className="w-10 h-10"/></span></div> y <div class="inline-flex items-baseline">sistemas<span class="hidden md:block relative top-2.5 ml-2 text-black rounded-full bg-white shadow-xl px-1 py-1"><Terminal client:load className="w-10 h-10" /></span></div> para <span class="before:animate-glitch relative before:left-[3px] before:absolute before:top-0 before:w-full before:h-full before:overflow-hidden before:[text-shadow:-2px_0_red] before:[content:'web']">la web</span>
             </motion.div>
             <motion.p
               client:load
@@ -55,14 +55,14 @@ const latestWork = publishedWork.slice(0, 4);
               transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.05 }}
               className="text-gray-600 md:text-lg font-medium"
             >
-              Si estás buscando un partner en software y diseño para tu early-startup o empresa para mejorar la experiencia de tu producto o tu presencia en la web.
+              Si estás buscando un partner en software y diseño para tu early-startup o empresa para mejorar la experiencia de tu producto o tu presencia en la web, no dudes en contactarme, te ayudaré a llevarlo a las manos de tus usuarios.
             </motion.p>
             <motion.span
               client:load
               initial={{opacity:0,y:-20}}
               animate={{opacity:0.05,y:0}}
               transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.1 }}
-              className="absolute left-0 -ml-16 mt-9 top-0 mb-0 hidden font-mono text-[18rem] text-amber-600 leading-none opacity-5 lg:flex">*</motion.span>
+              className="absolute left-0 -ml-16 mt-9 top-0 mb-0 hidden font-mono text-[18rem] text-amber-600 leading-none opacity-5 lg:flex pointer-events-none select-none">*</motion.span>
           </div>
           <motion.div
             client:load
@@ -75,9 +75,9 @@ const latestWork = publishedWork.slice(0, 4);
               data-cal-namespace="intro"
               data-cal-config='{"layout":"month_view"}'
               aria-label="Agendar una llamada con Javier Diaz"
-              class="relative px-1.5 pr-6 py-1.5 bg-amber-400 text-amber-1000 font-semibold transition hover:scale-105 z-10 w-full md:w-auto flex gap-3 items-center rounded-full">
+              class="relative px-1.5 pr-6 py-1.5 bg-amber-400 text-amber-1000 font-semibold transition hover:scale-105 z-10 w-max md:w-auto flex gap-3 items-center rounded-full">
               <Image class="w-12 h-12 flex-shrink-0 rounded-full object-cover object-top" src={ProfileAvatar} alt="Avatar de Javier Diaz" />
-              <div class="flex flex-col items-start gap-1 w-full">
+              <div class="flex flex-col items-start gap-0.5 w-full">
                 <span class="leading-none inline-flex">Agendar una llamada</span>
                 <span class="text-center leading-none text-sm text-amber-800 inline-flex">con Javier Diaz</span>
               </div>
@@ -167,10 +167,10 @@ const latestWork = publishedWork.slice(0, 4);
             animate={{opacity:1,y:0}}
             transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.5 }}
             className="flex flex-col md:flex-row md:items-center gap-4">
-            <a href={SUB_PAYMENT} target="_blank" rel="noreferrer" class="relative px-4 py-3 rounded-2xl bg-amber-400 text-amber-1000 text-center md:text-left font-semibold transition hover:scale-105 z-10 md:w-max">
-              Desde US$899/semana 
+            <a href={SUB_PAYMENT} target="_blank" rel="noreferrer" class="relative px-6 py-3 rounded-full bg-amber-400 text-amber-1000 text-center md:text-left font-semibold transition hover:scale-105 z-10 md:w-max">
+              Desde US$799/semana 
             </a>
-            <a href="/manifesto/" class="px-4 py-3 md:w-max rounded-2xl text-black ring-2 ring-gray-100 font-semibold transition bg-gray-100 hover:bg-amber-100 hover:ring-amber-100 text-center md:text-left">
+            <a href="/manifesto/" class="px-6 py-3 md:w-max rounded-full text-black ring-2 ring-gray-100 font-semibold transition bg-gray-100 hover:bg-amber-100 hover:ring-amber-100 text-center md:text-left">
               Leer manifesto
             </a>
           </motion.div>
@@ -198,10 +198,10 @@ const latestWork = publishedWork.slice(0, 4);
             <span class="absolute left-0 -ml-10 mt-4 top-0 mb-0 hidden font-mono text-[12rem] text-gray-600 leading-none opacity-5 lg:flex">*</span>
           </div>
           <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
-            <a href="/contacto/" class="mt-2 px-4 py-2.5 text-center md:text-left md:w-max rounded-2xl bg-amber-400 text-amber-1000 font-semibold transition hover:scale-105">
+            <a href="/contacto/" class="mt-2 px-6 py-2.5 text-center md:text-left md:w-max rounded-full bg-amber-400 text-amber-1000 font-semibold transition hover:scale-105">
               Comenzar un proyecto
             </a>
-            <a href="/servicios/" class="mt-2 px-4 py-2.5 text-center md:text-left md:w-max rounded-2xl text-black ring-2 ring-gray-100 font-semibold transition bg-gray-100 hover:bg-amber-100 hover:ring-amber-100">
+            <a href="/servicios/" class="mt-2 px-6 py-2.5 text-center md:text-left md:w-max rounded-full text-black ring-2 ring-gray-100 font-semibold transition bg-gray-100 hover:bg-amber-100 hover:ring-amber-100">
               Descubre mis servicios
             </a>
           </div>
