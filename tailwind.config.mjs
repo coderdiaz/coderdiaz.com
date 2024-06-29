@@ -23,7 +23,25 @@ export default {
       lime,
       rose,
       blue,
-      amber: generateRadixColors(amber),
+      accent: generateRadixColors(amber),
+      tones: {
+        50: '#fff7ed',
+        100: '#ebe3da',
+        200: '#d8d0c7',
+        300: '#c5bdb4',
+        400: '#b2aba2',
+        500: '#a09990',
+        600: '#8e877e',
+        700: '#7d766d',
+        800: '#6b655c',
+        900: '#5b544c',
+        1000: '#4b443c',
+        1100: '#3b352d',
+        1200: '#2c261f',
+        1300: '#1e1811',
+        1400: '#110b06',
+        1500: '#010000',
+      }
     },
     fontFamily: {
       sans: ['ui-sans-serif', 'system-ui', 'sans-serif', '"Apple Color Emoji"','"Segoe UI Emoji"', 'Segoe UI Symbol','"Noto Color Emoji"'],
@@ -62,17 +80,18 @@ export default {
         DEFAULT: {
           css: {
             fontFamily: `'ui-sans-serif', 'system-ui', 'sans-serif', '"Apple Color Emoji"','"Segoe UI Emoji"', 'Segoe UI Symbol','"Noto Color Emoji"'`,
-            color: theme('colors.base.900'),
+            color: theme('colors.tones.900'),
             'h1,h2': {
               fontWeight: 700,
               marginTop: theme('spacing.10'),
               marginBottom: theme('spacing.5'),
+              color: theme('colors.tones.1300'),
             },
             'h3,h4,h5,h6': {
               fontWeight: 600,
               marginTop: theme('spacing.7'),
               marginBottom: theme('spacing.4'),
-              color: theme('colors.black'),
+              color: theme('colors.tones.1300'),
             },
             'strong': {
               fontSize: '1rem',
@@ -80,7 +99,7 @@ export default {
             'a': {
               fontSize: '1rem',
               fontWeight: 600,
-              color: theme('colors.tones.or'),
+              color: theme('colors.accent.900'),
               textDecorationLine: 'underline',
               textUnderlineOffset: 2,
               '&:hover': {
@@ -88,15 +107,14 @@ export default {
               }
             },
             img: {
-              borderRadius: 0,
+              borderRadius: 20,
               borderWidth: 1,
-              borderColor: theme('colors.gray.200'),
+              borderColor: theme('colors.tones.200'),
               borderStyle: 'solid',
             },
             'blockquote p': {
-              color: theme('colors.gray.600'),
-              fontSize: theme('fontSize.lg'),
-              fontStyle: 'normal',
+              color: theme('colors.tones.900'),
+              fontStyle: 'italic',
             },
             'blockquote p:first-of-type::before': { content: 'unset' },
             'blockquote p:first-of-type::after': { content: 'unset' },

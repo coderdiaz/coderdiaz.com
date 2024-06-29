@@ -32,7 +32,7 @@ export default function FormQuote() {
       <fieldset className="col-span-2 flex flex-col gap-2">
         <label className="block font-semibold">¿Cómo te llamas?</label>
         <input
-          className="px-4 py-2.5 bg-white border rounded-xl w-full border-gray-400/50 hover:border-amber-500/50 hover:ring-2 hover:ring-amber-500/20 focus:border-amber-500/75 focus:ring-4 focus:ring-amber-500/20 focus:outline-none peer-focus:border-amber-500 peer-focus:ring-4 peer-focus:ring-outline peer-focus:outline-none checked:bg-outline disabled:opacity-60 disabled:pointer-events-none"
+          className="px-4 py-2.5 bg-white border rounded-xl w-full border-gray-400/50 hover:border-accent-500/50 hover:ring-2 hover:ring-accent-500/20 focus:border-accent-500/75 focus:ring-4 focus:ring-accent-500/20 focus:outline-none peer-focus:border-accent-500 peer-focus:ring-4 peer-focus:ring-outline peer-focus:outline-none checked:bg-outline disabled:opacity-60 disabled:pointer-events-none"
           type="text"
           placeholder="Juan Perez"
           name="fullName"
@@ -42,7 +42,7 @@ export default function FormQuote() {
       <fieldset className="col-span-2 flex flex-col gap-2">
         <label className="block font-semibold">Empresa</label>
         <input
-          className="px-4 py-2.5 bg-white border rounded-xl w-full border-gray-400/50 hover:border-amber-500/50 hover:ring-2 hover:ring-amber-500/20 focus:border-amber-500/75 focus:ring-4 focus:ring-amber-500/20 focus:outline-none peer-focus:border-amber-500 peer-focus:ring-4 peer-focus:ring-outline peer-focus:outline-none checked:bg-outline disabled:opacity-60 disabled:pointer-events-none"
+          className="px-4 py-2.5 bg-white border rounded-xl w-full border-gray-400/50 hover:border-accent-500/50 hover:ring-2 hover:ring-accent-500/20 focus:border-accent-500/75 focus:ring-4 focus:ring-accent-500/20 focus:outline-none peer-focus:border-accent-500 peer-focus:ring-4 peer-focus:ring-outline peer-focus:outline-none checked:bg-outline disabled:opacity-60 disabled:pointer-events-none"
           type="text"
           placeholder="Startup Inc."
           name="company"
@@ -52,7 +52,7 @@ export default function FormQuote() {
       <fieldset className="col-span-4 flex flex-col gap-2">
         <label className="block font-semibold">Correo Electrónico</label>
         <input
-          className="px-4 py-2.5 bg-white border rounded-xl w-full border-gray-400/50 hover:border-amber-500/50 hover:ring-2 hover:ring-amber-500/20 focus:border-amber-500/75 focus:ring-4 focus:ring-amber-500/20 focus:outline-none peer-focus:border-amber-500 peer-focus:ring-4 peer-focus:ring-outline peer-focus:outline-none checked:bg-outline disabled:opacity-60 disabled:pointer-events-none"
+          className="px-4 py-2.5 bg-white border rounded-xl w-full border-gray-400/50 hover:border-accent-500/50 hover:ring-2 hover:ring-accent-500/20 focus:border-accent-500/75 focus:ring-4 focus:ring-accent-500/20 focus:outline-none peer-focus:border-accent-500 peer-focus:ring-4 peer-focus:ring-outline peer-focus:outline-none checked:bg-outline disabled:opacity-60 disabled:pointer-events-none"
           type="email"
           placeholder="ceo@startupinc.com"
           name="email"
@@ -63,42 +63,42 @@ export default function FormQuote() {
       <div className="flex col-span-4 items-center flex-wrap gap-x-3 gap-y-4">
         <input type="hidden" name="service" value={services.join(',')} />
         <button onClick={() => toggleService('Diseño web')} type="button" className={cn('inline max-w-max px-4 py-1 bg-white backdrop-blur-lg border border-gray-400/50 rounded-full font-semibold', {
-          'bg-amber-400 text-amber-1000': services.includes('Diseño web'),
+          'bg-accent-400 text-accent-1000': services.includes('Diseño web'),
         })}>
           Diseño web
         </button>
         <button onClick={() => toggleService('Landing Pages')} type="button" className={cn('inline max-w-max px-4 py-1 bg-white backdrop-blur-lg border border-gray-400/50 rounded-full font-semibold', {
-          'bg-amber-400 text-amber-1000': services.includes('Landing Pages'),
+          'bg-accent-400 text-accent-1000': services.includes('Landing Pages'),
         })}>
           Landing Pages
         </button>
         <button onClick={() => toggleService('Marketing Site')} type="button" className={cn('inline max-w-max px-4 py-1 bg-white backdrop-blur-lg border border-gray-400/50 rounded-full font-semibold', {
-          'bg-amber-400 text-amber-1000': services.includes('Marketing Site'),
+          'bg-accent-400 text-accent-1000': services.includes('Marketing Site'),
         })}>
           Marketing Site
         </button>
         <button onClick={() => toggleService('Interface Design')} type="button" className={cn('inline max-w-max px-4 py-1 bg-white backdrop-blur-lg border border-gray-400/50 rounded-full font-semibold', {
-          'bg-amber-400 text-amber-1000': services.includes('Interface Design'),
+          'bg-accent-400 text-accent-1000': services.includes('Interface Design'),
         })}>
           Interface Design
         </button>
         <button onClick={() => toggleService('E-commerce')} type="button" className={cn('inline max-w-max px-4 py-1 bg-white backdrop-blur-lg border border-gray-400/50 rounded-full font-semibold', {
-          'bg-amber-400 text-amber-1000': services.includes('E-commerce'),
+          'bg-accent-400 text-accent-1000': services.includes('E-commerce'),
         })}>
           E-commerce
         </button>
         <button onClick={() => toggleService('Aplicación Web')} type="button" className={cn('inline max-w-max px-4 py-1 bg-white backdrop-blur-lg border border-gray-400/50 rounded-full font-semibold', {
-          'bg-amber-400 text-amber-1000': services.includes('Aplicación Web'),
+          'bg-accent-400 text-accent-1000': services.includes('Aplicación Web'),
         })}>
           Aplicación Web
         </button>
         <button onClick={() => toggleService('Aplicación móvil')} type="button" className={cn('inline max-w-max px-4 py-1 bg-white backdrop-blur-lg border border-gray-400/50 rounded-full font-semibold', {
-          'bg-amber-400 text-amber-1000': services.includes('Aplicación móvil'),
+          'bg-accent-400 text-accent-1000': services.includes('Aplicación móvil'),
         })}>
           Aplicación móvil
         </button>
         <button onClick={() => toggleService('Otro')} type="button" className={cn('inline max-w-max px-4 py-1 bg-white backdrop-blur-lg border border-gray-400/50 rounded-full font-semibold', {
-          'bg-amber-400 text-amber-1000': services.includes('Otro'),
+          'bg-accent-400 text-accent-1000': services.includes('Otro'),
         })}>
           Otro
         </button>
@@ -107,7 +107,7 @@ export default function FormQuote() {
       <fieldset className="inline-flex items-center gap-4 col-span-4 md:col-span-2">
         <label className="font-semibold flex-shrink-0">Presupuesto</label>
         <select
-          className="flex-1 w-full md:w-max px-4 py-2.5 py-whitegray-100 rounded-xl border border-gray-400/50 hover:border-amber-500/50 hover:ring-2 hover:ring-amber-500/20 focus:border-amber-500/75 focus:ring-4 focus:ring-amber-500/20 focus:outline-none peer-focus:border-amber-500 peer-focus:ring-4 peer-focus:ring-outline peer-focus:outline-none checked:bg-outline disabled:opacity-60 disabled:pointer-events-none"
+          className="flex-1 w-full md:w-max px-4 py-2.5 py-whitegray-100 rounded-xl border border-gray-400/50 hover:border-accent-500/50 hover:ring-2 hover:ring-accent-500/20 focus:border-accent-500/75 focus:ring-4 focus:ring-accent-500/20 focus:outline-none peer-focus:border-accent-500 peer-focus:ring-4 peer-focus:ring-outline peer-focus:outline-none checked:bg-outline disabled:opacity-60 disabled:pointer-events-none"
           name="budget"
           required
         >
@@ -122,7 +122,7 @@ export default function FormQuote() {
       <fieldset className="col-span-4 flex flex-col gap-2">
         <label className="block font-semibold">Mensaje</label>
         <textarea
-          className="px-4 py-2.5 bg-white border rounded-xl w-full border-gray-400/50 hover:border-amber-500/50 hover:ring-2 hover:ring-amber-500/20 focus:border-amber-500/75 focus:ring-4 focus:ring-amber-500/20 focus:outline-none peer-focus:border-amber-500 peer-focus:ring-4 peer-focus:ring-outline peer-focus:outline-none checked:bg-outline disabled:opacity-60 disabled:pointer-events-none"
+          className="px-4 py-2.5 bg-white border rounded-xl w-full border-gray-400/50 hover:border-accent-500/50 hover:ring-2 hover:ring-accent-500/20 focus:border-accent-500/75 focus:ring-4 focus:ring-accent-500/20 focus:outline-none peer-focus:border-accent-500 peer-focus:ring-4 peer-focus:ring-outline peer-focus:outline-none checked:bg-outline disabled:opacity-60 disabled:pointer-events-none"
           rows={4}
           placeholder="Describe tu proyecto en algunos párrafos..."
           name="message"

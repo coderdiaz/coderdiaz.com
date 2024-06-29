@@ -6,11 +6,11 @@ interface Props {
 }
 const { entry } = Astro.props;
 ---
-<a href={`/notas/${entry.slug}`} class="py-2 hover:bg-gray-50 group hover:ring-4 hover:ring-gray-50 px-2 rounded-xl transition">
+<a href={`/notas/${entry.slug}`} class="py-2 hover:bg-tones-50 group hover:ring-4 hover:ring-tones-50 px-2 rounded-xl transition">
   <article class="flex items-center gap-3">
-    <span class="hidden md:block text-gray-500 text-sm tabular-nums">
+    <span class="hidden md:block text-tones-700 text-sm tabular-nums">
       {entry.data.publishedAt.getFullYear()}-{entry.data.publishedAt.getMonth().toString().padStart(2, '0')}-{(entry.data.publishedAt.getDate()+1).toString().padStart(2, '0')}
     </span>
-    <h4 class="font-semibold underline underline-offset-2 decoration-gray-200 group-hover:decoration-amber-500 transition-all">{entry.data.title}</h4>
+    <h4 class="font-semibold underline underline-offset-2 decoration-tones-200 group-hover:decoration-accent-500 transition-all">{entry.data.title}</h4>
   </article>
 </a>
