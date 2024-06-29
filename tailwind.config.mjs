@@ -12,7 +12,7 @@ export function generateRadixColors(colors) {
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx}'],
+  content: ['./src/**/*.{astro,html,js,jsx,tsx,md,mdx}'],
   theme: {
     colors: {
       transparent: 'transparent',
@@ -61,6 +61,7 @@ export default {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            fontFamily: `'ui-sans-serif', 'system-ui', 'sans-serif', '"Apple Color Emoji"','"Segoe UI Emoji"', 'Segoe UI Symbol','"Noto Color Emoji"'`,
             color: theme('colors.base.900'),
             'h1,h2': {
               fontWeight: 700,
