@@ -10,7 +10,7 @@ const { title, class: className } = Astro.props;
 <div class={cn('flex flex-col items-start gap-6', className)}>
   <div class="min-w-[16rem] max-w-[20rem] flex items-center gap-2">
     <slot name="icon" />
-    <h3 class="font-semibold text-lg text-gray-600">{title}</h3>
+    <h3 class="font-semibold text-lg text-tones-1500">{title}</h3>
   </div>
   <div class="flex-grow-0 w-full">
     <slot />

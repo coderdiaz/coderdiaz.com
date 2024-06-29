@@ -11,12 +11,18 @@ export default function FormQuote() {
   });
 
   useEffect(() => {
+    let timer: any;
+
     if (state.submitted && formRef.current) {
       formRef.current.reset();
       setServices([]);
-      setTimeout(() => {
+      timer = setTimeout(() => {
         state.submitted = false;
       }, 1500)
+    }
+
+    return () => {
+      clearTimeout(timer);
     }
   }, [state.submitted]);
 

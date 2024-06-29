@@ -10,7 +10,7 @@ import Design from '@/components/svg/Design.astro';
 import Mentoring from '@/components/svg/Mentoring.astro';
 import { SUB_PAYMENT } from '@/lib/constants';
 
-<section class="border-b border-gray-200">
+<section class="border-b border-tones-200">
   <Container>
     <div class="flex flex-col gap-8 pt-12 pb-16">
       <motion.h2
@@ -28,19 +28,19 @@ import { SUB_PAYMENT } from '@/lib/constants';
         <div class="flex flex-col gap-4">
           <div class="flex flex-col gap-1">
             <span class="font-semibold text-lg">Por proyecto</span>
-            <p class="font-medium text-gray-500">Si tienes un proyecto, requerimiento o idea y necesitas ayuda para llevarlo a cabo, puedo ayudarte a diseñar, desarrollar y lanzar tu producto. <a href="/contacto/" class="font-semibold text-black underline underline-offset-2">Solicita una cotización.</a></p>
+            <p class="font-medium text-tones-700">Si tienes un proyecto, requerimiento o idea y necesitas ayuda para llevarlo a cabo, puedo ayudarte a diseñar, desarrollar y lanzar tu producto. <a href="/contacto/" class="font-semibold text-black underline underline-offset-2">Solicita una cotización.</a></p>
           </div>
         </div>
         <div class="flex flex-col gap-4">
           <div class="flex flex-col gap-1">
             <span class="font-semibold text-lg">Por hora</span>
-            <p class="font-medium text-gray-500">Si necesitas ayuda con un problema técnico o de diseño, una revisión de código o una consulta técnica, puedo ayudarte a resolverlo por tan solo <span class="font-semibold text-black">US$50/hora</span>.</p>
+            <p class="font-medium text-tones-700">Si necesitas ayuda con un problema técnico o de diseño, una revisión de código o una consulta técnica, puedo ayudarte a resolverlo por tan solo <span class="font-semibold text-black">US$50/hora</span>.</p>
           </div>
         </div>
         <div class="md:col-span-2 flex flex-col gap-4">
           <div class="flex flex-col gap-1">
             <span class="font-semibold text-lg">Costo fijo por semana</span>
-            <p class="font-medium text-gray-500">Accede a 30 horas de trabajo semanales para tu proyecto. Diseño, desarrollo y lanzamiento de tu producto. Lo necesario para llevar tu idea al mundo digital.</p>
+            <p class="font-medium text-tones-700">Accede a 30 horas de trabajo semanales para tu proyecto. Diseño, desarrollo y lanzamiento de tu producto. Lo necesario para llevar tu idea al mundo digital.</p>
           </div>
         </div>
       </motion.div>
@@ -66,7 +66,7 @@ import { SUB_PAYMENT } from '@/lib/constants';
     </div>
   </Container>
 </section>
-<section class="border-b border-gray-200">
+<section class="border-b border-tones-200">
   <Container>
     <div class="grid md:grid-cols-2 gap-0">
       <motion.div
@@ -74,36 +74,36 @@ import { SUB_PAYMENT } from '@/lib/constants';
         initial={{opacity:0, y:-20}}
         animate={{opacity:1, y:0}}
         transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.3 }}
-        className="flex flex-col md:border-r border-gray-200">
+        className="flex flex-col md:border-r border-tones-200">
         <BlockRow title="Diseño y estrategia" class="py-8">
-          <span slot="icon" class="bg-accent-400 text-accent-1000 p-1 rounded-lg">
+          <span slot="icon" class="bg-accent-400 text-accent-1500 p-1 rounded-lg">
             <Design />
           </span>
           <div class="flex flex-col gap-5 text-lg">
             <div class="flex flex-col gap-3">
-              <h4 class="font-semibold text-gray-800">Interfaces</h4>
+              <h4 class="font-semibold text-tones-1000">Interfaces</h4>
               <ul class="flex flex-col gap-2 z-10">
-                <li class="font-medium text-gray-600">Diseño de interfaces</li>
-                <li class="font-medium text-gray-600">Sistemas de Diseño</li>
-                <li class="font-medium text-gray-600">Diseño de experiencia</li>
-                <li class="font-medium text-gray-600">Landing Pages</li>
-                <li class="font-medium text-gray-600">Diseño web</li>
+                <li class="font-medium text-tones-800">Diseño de interfaces</li>
+                <li class="font-medium text-tones-800">Sistemas de Diseño</li>
+                <li class="font-medium text-tones-800">Diseño de experiencia</li>
+                <li class="font-medium text-tones-800">Landing Pages</li>
+                <li class="font-medium text-tones-800">Diseño web</li>
               </ul>
             </div>
             <div class="flex flex-col gap-3">
-              <h4 class="font-semibold text-gray-800">Producto</h4>
+              <h4 class="font-semibold text-tones-1000">Producto</h4>
               <ul class="flex flex-col gap-2 z-10">
-                <li class="font-medium text-gray-600">Prueba de concepto</li>
-                <li class="font-medium text-gray-600">MVP</li>
-                <li class="font-medium text-gray-600">Benchmarking</li>
-                <li class="font-medium text-gray-600">Gestión de proyectos</li>
+                <li class="font-medium text-tones-800">Prueba de concepto</li>
+                <li class="font-medium text-tones-800">MVP</li>
+                <li class="font-medium text-tones-800">Benchmarking</li>
+                <li class="font-medium text-tones-800">Gestión de proyectos</li>
               </ul>
             </div>
             <div class="flex flex-col gap-3">
-              <h4 class="font-semibold text-gray-800">Estrategía</h4>
+              <h4 class="font-semibold text-tones-1000">Estrategía</h4>
               <ul class="flex flex-col gap-2 z-10">
-                <li class="font-medium text-gray-600">Conversion rate optimisation</li>
-                <li class="font-medium text-gray-600">SEO optimisation</li>
+                <li class="font-medium text-tones-800">Conversion rate optimisation</li>
+                <li class="font-medium text-tones-800">SEO optimisation</li>
               </ul>
             </div>
           </div>
@@ -114,11 +114,11 @@ import { SUB_PAYMENT } from '@/lib/constants';
           </span>
           <div class="flex flex-col gap-5 text-lg">
             <div class="flex flex-col gap-3">
-              <h4 class="font-semibold text-gray-800">Entrenamiento</h4>
+              <h4 class="font-semibold text-tones-1000">Entrenamiento</h4>
               <ul class="flex flex-col gap-2 z-10">
-                <li class="font-medium text-gray-600">Capacitación técnica</li>
-                <li class="font-medium text-gray-600">Consultorías</li>
-                <li class="font-medium text-gray-600">Mentorship</li>
+                <li class="font-medium text-tones-800">Capacitación técnica</li>
+                <li class="font-medium text-tones-800">Consultorías</li>
+                <li class="font-medium text-tones-800">Mentorship</li>
               </ul>
             </div>
           </div>
@@ -136,44 +136,44 @@ import { SUB_PAYMENT } from '@/lib/constants';
           </span>
           <div class="flex flex-col gap-5 text-lg">
             <div class="flex flex-col gap-3">
-              <h4 class="font-semibold text-gray-800">Front-end</h4>
+              <h4 class="font-semibold text-tones-1000">Front-end</h4>
               <ul class="flex flex-col gap-2 z-10">
-                <li class="font-medium text-gray-600">React.js</li>
-                <li class="font-medium text-gray-600">Next.js</li>
-                <li class="font-medium text-gray-600">React Native</li>
-                <li class="font-medium text-gray-600">Astro</li>
-                <li class="font-medium text-gray-600">Tailwind CSS</li>
-                <li class="font-medium text-gray-600">HTML/CSS</li>
+                <li class="font-medium text-tones-800">React.js</li>
+                <li class="font-medium text-tones-800">Next.js</li>
+                <li class="font-medium text-tones-800">React Native</li>
+                <li class="font-medium text-tones-800">Astro</li>
+                <li class="font-medium text-tones-800">Tailwind CSS</li>
+                <li class="font-medium text-tones-800">HTML/CSS</li>
               </ul>
             </div>
             <div class="flex flex-col gap-3">
-              <h4 class="font-semibold text-gray-800">Back-end</h4>
+              <h4 class="font-semibold text-tones-1000">Back-end</h4>
               <ul class="flex flex-col gap-2 z-10">
-                <li class="font-medium text-gray-600">Node.js</li>
-                <li class="font-medium text-gray-600">Nest.js</li>
-                <li class="font-medium text-gray-600">GraphQL</li>
-                <li class="font-medium text-gray-600">API Rest</li>
-                <li class="font-medium text-gray-600">Strapi CMS</li>
-                <li class="font-medium text-gray-600">Payload CMS</li>
-                <li class="font-medium text-gray-600">Medusa</li>
+                <li class="font-medium text-tones-800">Node.js</li>
+                <li class="font-medium text-tones-800">Nest.js</li>
+                <li class="font-medium text-tones-800">GraphQL</li>
+                <li class="font-medium text-tones-800">API Rest</li>
+                <li class="font-medium text-tones-800">Strapi CMS</li>
+                <li class="font-medium text-tones-800">Payload CMS</li>
+                <li class="font-medium text-tones-800">Medusa</li>
               </ul>
             </div>
             <div class="flex flex-col gap-3">
-              <h4 class="font-semibold text-gray-800">Devops</h4>
+              <h4 class="font-semibold text-tones-1000">Devops</h4>
               <ul class="flex flex-col gap-2 z-10">
-                <li class="font-medium text-gray-600">Docker</li>
-                <li class="font-medium text-gray-600">Northflank</li>
-                <li class="font-medium text-gray-600">GraphQL</li>
-                <li class="font-medium text-gray-600">Cloudflare</li>
-                <li class="font-medium text-gray-600">Git</li>
+                <li class="font-medium text-tones-800">Docker</li>
+                <li class="font-medium text-tones-800">Northflank</li>
+                <li class="font-medium text-tones-800">GraphQL</li>
+                <li class="font-medium text-tones-800">Cloudflare</li>
+                <li class="font-medium text-tones-800">Git</li>
               </ul>
             </div>
             <div class="flex flex-col gap-3">
-              <h4 class="font-semibold text-gray-800">Lenguajes</h4>
+              <h4 class="font-semibold text-tones-1000">Lenguajes</h4>
               <ul class="flex flex-col gap-2 z-10">
-                <li class="font-medium text-gray-600">JavaScript</li>
-                <li class="font-medium text-gray-600">TypeScript</li>
-                <li class="font-medium text-gray-600">Go</li>
+                <li class="font-medium text-tones-800">JavaScript</li>
+                <li class="font-medium text-tones-800">TypeScript</li>
+                <li class="font-medium text-tones-800">Go</li>
               </ul>
             </div>
           </div>
