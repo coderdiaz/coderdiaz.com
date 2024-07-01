@@ -40,6 +40,7 @@ const workCollection = defineCollection({
     featuredImage: image().refine((img) => img.width >= 1280, {
       message: 'Featured image must be at least 1280 pixels wide!',
     }).optional(),
+    live: z.string().optional(),
     services: z.array(z.string()).default([]),
     seo: seoSchema(image).optional(),
   }),
