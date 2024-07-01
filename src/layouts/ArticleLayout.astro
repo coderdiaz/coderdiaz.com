@@ -43,7 +43,7 @@ const { entry } = Astro.props;
           initial={{opacity:0,y:-20}}
           animate={{opacity:1,y:0}}
           transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.1 }}
-          className="relative overflow-hidden rounded-2xl">
+          className="relative overflow-hidden rounded-2xl aspect-video">
           <Image class="object-cover" src={entry.data.featuredImage as ImageMetadata} alt={entry.data.title} />
         </motion.div>
       )}

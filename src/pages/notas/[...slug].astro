@@ -1,9 +1,10 @@
 ---
 import ArticleLayout from '@/layouts/ArticleLayout.astro';
+import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('notes');
+  const entries = await getCollection('notes') as Array<CollectionEntry<'notes'>>;
   return entries.map(entry => ({
     params: { slug: entry.slug }, props: { entry },
   }));

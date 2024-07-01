@@ -4,17 +4,19 @@ import { motion } from 'framer-motion';
 import BaseLayout from './BaseLayout.astro';
 import Container from '@/components/Container.astro';
 import { Image } from 'astro:assets';
+import { ArrowUpRightIcon } from 'lucide-react';
 
 interface Props {
   entry: CollectionEntry<'work'>;
 }
 const { entry } = Astro.props;
+const { Content } = await entry.render();
 ---
 <BaseLayout>
   <article class="flex flex-col gap-5">
     <section class="border-b border-gray-300 overflow-hidden">
       <Container>
-        <div class="pt-16 flex flex-col items-center gap-2">
+        <div class="pt-16 flex flex-col items-center gap-2 md:mx-16">
           <motion.span
             client:load
             initial={{opacity:0,y:-20}}
@@ -48,6 +50,22 @@ const { entry } = Astro.props;
         )}
       </Container>
     </section>
+    <section
+      >
+      <Container>
+        { entry.data.live && (
+          <div class="flex items-center justify-center py-6 -mt-[5rem] mb-2 md:mb-6">
+            <div class="p-2 bg-white/50 border border-tones-200 w-full md:w-[20rem] rounded-full backdrop-blur-lg">
+              <a class="flex items-center justify-center gap-3 px-6 py-3.5 rounded-full bg-accent-500 text-tones-1500 font-semibold text-lg border border-accent-800 w-full text-center" href={entry.data.live} target="_blank" rel="noreferrer">
+                <span>Ver en vivo</span>
+                <ArrowUpRightIcon className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
+        )}
+        <p class="md:text-lg text-gray-600 font-medium">{entry.data.description}</p>
+      </Container>
+    </section>
     <motion.section
       client:load
       initial={{opacity:0,y:-20}}
@@ -55,7 +73,9 @@ const { entry } = Astro.props;
       transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.15 }}
       >
       <Container>
-        <p class="md:text-lg text-gray-600 font-medium">{entry.data.description}</p>
+        <div class="max-w-full prose font-medium md:mx-5">
+          <Content />
+        </div>
       </Container>
     </motion.section>
   </article>
