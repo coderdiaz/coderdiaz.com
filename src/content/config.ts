@@ -41,6 +41,7 @@ const workCollection = defineCollection({
       message: 'Featured image must be at least 1280 pixels wide!',
     }).optional(),
     live: z.string().optional(),
+    year: z.number().default(2024),
     services: z.array(z.string()).default([]),
     seo: seoSchema(image).optional(),
   }),
