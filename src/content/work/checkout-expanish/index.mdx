@@ -13,7 +13,9 @@ services:
   - Backend Development
   - Frontend Development
 ---
+import Quote from '@/components/Quote.astro';
 import OptionsVideo from './options-component.webm';
+import Agustin from './agustin.avif';
 
 Durante varios años Expanish ha sido una de las academias del idioma Español más reconocidas en Argentina y España, debido a este crecimiento, Expanish vio la necesidad de mejorar su proceso de compra en línea para que los usuarios pudieran tener una experiencia de compra más amigable y satisfactoria.
 
@@ -39,6 +41,14 @@ De esta forma, usuarios que no tienen conocimientos técnicos pueden administrar
 ## Diseño y experiencia
 
 Para el diseño y experiencia de usuario, nos enfocamos en crear un proceso de compra muy sencillo y rápido, donde el usuario pudiera ver toda la información de los cursos, precios y disponibilidad de forma clara y concisa. Sin embargo, durante el proceso de compra, hay una variedad de cursos y precios disponibles para cada uno de ellos, por lo que era muy importante que el usuario pudiera ver toda la información de forma clara y concisa.
+
+<Quote
+  content="En Expanish, buscamos siempre brindar la mejor experiencia de compra para nuestros estudiantes, para que así, no haya dudas al momento de elegir un curso."
+  avatar={Agustin}
+  avatarAlt="Avatar de Agustin Vignale"
+  author="Agustin Vignale"
+  jobTitle="Co-fundador y Director comercial"
+/>
 
 Para solucionarlo, creamos este componente que permite visualizar la información concreta de cada opción y seleccionarla muy fácil.
 
