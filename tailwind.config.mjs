@@ -132,6 +132,9 @@ export default {
             },
             'p+p': {
               marginBottom: `${theme('spacing.1')} !important`,
+            },
+            img: {
+              border: '1px solid #000',
             }
           },
         },

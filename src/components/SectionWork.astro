@@ -11,7 +11,7 @@ interface Props {
 
 const { entry, showServices = false } = Astro.props;
 ---
-<section class="border-b border-tones-200 hover:bg-tones-50/75 overflow-hidden group transition-all">
+<section class="border-b border-tones-200 hover:bg-accent-50/25 overflow-hidden group transition-all">
   <a href={`/${entry.slug}/`} target="_self">
     <Container class="md:px-0">
       <div class="pt-16 flex flex-col gap-0">
@@ -50,7 +50,7 @@ const { entry, showServices = false } = Astro.props;
               transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.35 }}
               className="flex items-center gap-3 flex-wrap z-10 mb-6">
               {entry.data.services.map((service: any) => (
-                <span class="inline max-w-max px-3 py-1 md:py-1.5 bg-white/20 backdrop-blur-lg border border-gray-20 rounded-full font-semibold text-sm">
+                <span class="inline max-w-max px-3 py-1 md:py-1.5  border border-gray-20 rounded-full font-semibold text-sm bg-white">
                   {service}
                 </span>
               ))}
