@@ -80,7 +80,7 @@ export default {
         DEFAULT: {
           css: {
             fontFamily: `'ui-sans-serif', 'system-ui', 'sans-serif', '"Apple Color Emoji"','"Segoe UI Emoji"', 'Segoe UI Symbol','"Noto Color Emoji"'`,
-            color: theme('colors.tones.900'),
+            color: theme('colors.tones.1000'),
             'h1,h2': {
               fontWeight: 700,
               marginTop: theme('spacing.10'),
@@ -119,6 +119,21 @@ export default {
             'blockquote p:first-of-type::before': { content: 'unset' },
             'blockquote p:first-of-type::after': { content: 'unset' },
           }
+        },
+        'lg': {
+          css: {
+            'h1,h2': {
+              marginTop: theme('spacing.10'),
+              marginBottom: theme('spacing.5'),
+            },
+            'h3,h4,h5,h6': {
+              marginTop: theme('spacing.8'),
+              marginBottom: theme('spacing.5'),
+            },
+            'p+p': {
+              marginBottom: `${theme('spacing.1')} !important`,
+            }
+          },
         },
       }),
     },
