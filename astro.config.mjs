@@ -15,6 +15,10 @@ export default defineConfig({
   },
   trailingSlash: 'always',
   redirects: {
+    '/jardin/': '/notas/',
+    '/jardin/2021-en-retrospectiva/': '/notas/2021-en-retrospectiva/',
+    '/jardin/actualizacion-octubre-2023/': '/notas/actualizacion-octubre-2023/',
+    '/jardin/mejorando-el-rendimiento-del-sitio-expanish': '/notas/mejorando-el-rendimiento-del-sitio-expanish/',
     '/web-expanish/': '/expanish-website/',
     '/checkout-expanish/': '/expanish-checkout/',
   },
