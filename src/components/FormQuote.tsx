@@ -67,7 +67,7 @@ export default function FormQuote() {
       </fieldset>
       <span className="font-semibold text-gray-500 col-span-4 text-lg">Estoy buscando...</span>
       <div className="flex col-span-4 items-center flex-wrap gap-x-3 gap-y-4">
-        <input type="hidden" name="service" value={services.join(',')} />
+        <input type="hidden" name="service" value={services.join(', ')} />
         <button onClick={() => toggleService('Diseño web')} type="button" className={cn('inline max-w-max px-4 py-1 bg-white backdrop-blur-lg border border-gray-400/50 rounded-full font-semibold', {
           'bg-accent-400 text-accent-1000': services.includes('Diseño web'),
         })}>
