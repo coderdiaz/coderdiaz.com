@@ -13,6 +13,7 @@ export default defineConfig({
       },
     },
   },
+  trailingSlash: 'always',
   redirects: {
     '/web-expanish/': '/expanish-website/',
     '/checkout-expanish/': '/expanish-checkout/',
