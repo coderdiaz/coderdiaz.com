@@ -1,5 +1,6 @@
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import { constants } from './constants';
 
 /**
  * Merges class names using tailwind-merge and clsx
@@ -9,3 +10,5 @@ import { twMerge } from 'tailwind-merge';
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+
+export const generateAbsoluteUrl = (path: string) => constants.BASE_URL.concat(path);

@@ -1,4 +1,8 @@
 ---
+import { getImage } from 'astro:assets';
+import { defaultSeo, } from '@/lib/constants';
+import { generateAbsoluteUrl } from '@/lib/utils';
+
 type Props = {
   title?: string;
   seo?: any;
@@ -6,12 +10,13 @@ type Props = {
 
 const analytics = import.meta.env.ENABLED_ANALYTICS;
 const { title, seo } = Astro.props;
+
+const image = await getImage({ src: defaultSeo.image, format: 'png'});
+const defaultSeoImage = generateAbsoluteUrl(image.src);
 ---
 <head>
   <meta charset="utf-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width" />
-  <meta name="generator" content={Astro.generator} />
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
@@ -29,7 +34,29 @@ const { title, seo } = Astro.props;
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
-  <title>{title || 'Javier Diaz — Ingeniería y diseño'}</title>
+  <title>{title || defaultSeo.title}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content={Astro.generator} />
+  <meta name="description" content={defaultSeo.description} />
+  <slot name="keywords">
+    <meta name="keywords" content={defaultSeo.keywords} />
+  </slot>
+  <meta name="robots" content={defaultSeo.robots} />
+  <!-- OpenGraph Meta -->
+  <meta property="og:type" content={seo?.type ?? 'website'} />
+  <meta property="og:site_name" content={defaultSeo.title} />
+  <meta property="og:title" content={defaultSeo.title} />
+  <meta property="og:description" content={defaultSeo.description} />
+  <meta property="og:image" content={defaultSeoImage} />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="720" />
+  <!-- Twitter Meta -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:creator" content="@coderdiaz" />
+  <meta property="twitter:site" content="@coderdiaz" />
+  <meta property="twitter:title" content={defaultSeo.title} />
+  <meta property="twitter:description" content={defaultSeo.description} />
+  <meta property="twitter:image" content={defaultSeoImage} />
   { analytics && (
     <script defer data-domain="coderdiaz.com" src="https://analy.fun/js/script.js"></script>
   )}
