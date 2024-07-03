@@ -133,6 +133,19 @@ export default {
             'p+p': {
               marginBottom: `${theme('spacing.1')} !important`,
             },
+            'strong': {
+              fontSize: theme('fontSize.lg'),
+            },
+            'a': {
+              fontSize: theme('fontSize.lg'),
+              fontWeight: 600,
+              color: theme('colors.accent.900'),
+              textDecorationLine: 'underline',
+              textUnderlineOffset: 2,
+              '&:hover': {
+                opacity: 0.8,
+              }
+            },
             img: {
               border: '1px solid #000',
             }
