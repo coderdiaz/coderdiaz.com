@@ -12,6 +12,7 @@ export const social = {
   dribbble: 'https://dribbble.com/coderdiaz',
   youtube: 'https://youtube.com/@coderdiaz',
   email: 'mailto:hey@coderdiaz.com',
+  layers: 'https://layers.com/coderdiaz',
 }
 
 export const defaultSeo = {

@@ -6,7 +6,7 @@ import Mexico from '@/components/svg/Mexico.astro';
 import { social } from '@/lib/constants';
 import Head from '@/includes/Head.astro';
 ---
-<html lang="en" class="min-h-full antialiased selection:bg-accent-300 selection:text-accent-900">
+<html lang="es" class="min-h-full antialiased selection:bg-accent-300 selection:text-accent-900">
   <Head>
     <script defer is:inline>
       (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === 'string' ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, 'https://app.cal.com/embed/embed.js', 'init');
@@ -65,6 +65,7 @@ import Head from '@/includes/Head.astro';
               <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href={social.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
               <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href={social.dribbble} target="_blank" rel="noreferrer">Dribbble</a>
               <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href={social.cv} target="_blank" rel="noreferrer">Read.cv</a>
+              <a class="font-medium text-gray-500 hover:text-gray-900 text-sm" href={social.layers} target="_blank" rel="noreferrer">Layers</a>
             </div>
             <span class="font-medium text-sm text-gray-400 mt-6">Ciudad de México, México (UTC-6)</span>
           </div>
