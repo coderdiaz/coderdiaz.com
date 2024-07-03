@@ -29,7 +29,7 @@ export default defineConfig({
     '/expanish-post/': '/notas/',
     '/expanish-sitio-web/': '/expanish-website/',
     '/live': 'https://www.twitch.tv/coderdiaz',
-    '/github': 'https://github.com/coderdiaz',
+    '/git': 'https://github.com/coderdiaz',
     '/meet': 'https://cal.com/coderdiaz/intro',
   },
   integrations: [react(), tailwind(), sitemap(), mdx({
