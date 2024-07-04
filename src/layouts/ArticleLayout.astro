@@ -22,7 +22,7 @@ const { entry, seo } = Astro.props;
           transition={{ type: 'spring', stiffness: 250, damping: 20 }}
           className="font-medium text-gray-600"
           dateTime={entry.data.publishedAt.toISOString()}>
-          Publicado el {(entry.data.publishedAt.getDate()+1).toString().padStart(2, '0')} de 
+          Publicado el {(entry.data.publishedAt.getDate()).toString().padStart(2, '0')} de 
           {' '}{['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'][entry.data.publishedAt.getMonth()]} de {entry.data.publishedAt.getFullYear()}
         </motion.time>
         <motion.h1
