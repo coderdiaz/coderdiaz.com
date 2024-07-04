@@ -40,14 +40,14 @@ export default function Cursor() {
       cursorProject.style.transform = 'scale(1)';
       cursorProject.style.opacity = '1';
       document.body.classList.add('cursor-none');
-      document.body.classList.remove('cursor-default');
+      document.body.classList.remove('cursor-auto');
     }
 
     const onMouseLeaveProject = (event: MouseEvent) => {
       event.preventDefault();
       cursorProject.style.transform = 'scale(0)';
       cursorProject.style.opacity = '0';
-      document.body.classList.add('cursor-default');
+      document.body.classList.add('cursor-auto');
       document.body.classList.remove('cursor-none');
     }
 
