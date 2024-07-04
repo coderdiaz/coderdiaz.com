@@ -16,8 +16,8 @@ export const social = {
 }
 
 export const defaultSeo = {
-  title: 'Javier Diaz — Freelance Product Engineer & Designer',
-  description: 'Te ayudo a transformar tus ideas y mejorar la experiencia de tus productos digitales, desde el diseño hasta su desarrollo, para que puedas llevarlo a las manos de tus usuarios',
+  title: 'Coderdiaz Studio — Solo-studio de diseño y desarrollo web',
+  description: 'Transformamos tus ideas y mejoramos la experiencia de tus productos digitales, desde el diseño hasta su desarrollo, para que puedas llevarlo rápidamente a las manos de tus usuarios',
   robots: 'index, follow',
   keywords: 'coderdiaz, desarrollo web, portfolio web, transforma tus ideas a soluciones, freelancer, diseño web, agencia digital, desarrollo a la medida, diseño de producto, software, jardin digital, javier diaz, coderdiaz.com',
   image: meta,

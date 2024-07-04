@@ -1,4 +1,5 @@
 ---
+import '@/styles/global.css';
 import '@fontsource-variable/caveat';
 import {motion} from 'framer-motion';
 import { cn } from '@/lib/utils';
@@ -7,6 +8,7 @@ import Container from '@/components/Container.astro';
 import Mexico from '@/components/svg/Mexico.astro';
 import { social } from '@/lib/constants';
 import Head from '@/includes/Head.astro';
+import Cursor from '@/components/Cursor';
 
 interface Props {
   seo?: any;
@@ -94,5 +96,6 @@ const { seo } = Astro.props;
       </Container>
     </motion.footer>
     <div class="fixed inset-0 z-40 w-full h-screen pointer-events-none mix-blend-overlay bg-[url(/spread.svg)] [background-size:4px_4px] bg-repeat opacity-30" style="opacity: 0.15;"></div>
+    <Cursor client:load />
   </body>
 </html>
