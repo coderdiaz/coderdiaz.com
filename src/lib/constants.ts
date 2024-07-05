@@ -16,9 +16,9 @@ export const social = {
 }
 
 export const defaultSeo = {
-  title: 'Coderdiaz Studio — Solo-studio de diseño y desarrollo web',
-  description: 'Transformamos tus ideas y mejoramos la experiencia de tus productos digitales, desde el diseño hasta su desarrollo, para que puedas llevarlo rápidamente a las manos de tus usuarios',
+  title: 'Coderdiaz Studio — Servicios de desarrollo web, diseño UX/UI, y software',
+  description: 'Transformamos tus ideas y mejoramos la experiencia de tus productos digitales, desde el diseño hasta su desarrollo para que puedas llevarlo rápidamente a las manos de tus usuarios',
   robots: 'index, follow',
-  keywords: 'coderdiaz, desarrollo web, portfolio web, transforma tus ideas a soluciones, freelancer, diseño web, agencia digital, desarrollo a la medida, diseño de producto, software, jardin digital, javier diaz, coderdiaz.com',
+  keywords: 'coderdiaz, desarrollo web, portfolio web, transforma tus ideas a soluciones, freelancer, diseño web, agencia digital, desarrollo a la medida, diseño de producto, software, jardin digital, javier diaz, coderdiaz.com, desarrollo de software a medida, estudio de diseño, estudio de software, software studio, design studio',
   image: meta,
 }
