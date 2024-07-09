@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content'
 import { motion } from 'framer-motion';
 import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import BaseLayout from './BaseLayout.astro'
 import Container from '@/components/Container.astro';
 
@@ -9,12 +10,18 @@ interface Props {
   entry: CollectionEntry<'notes'>;
   seo?: any;
 }
+
 const { entry, seo } = Astro.props;
+const notes = (await getCollection('notes', ({ data }: CollectionEntry<'notes'>) => data.draft !== true))
+  .filter((note) => note.slug !== entry.slug);
+
+// random
+const randomNote = notes.sort(() => Math.random() - 0.5).slice(0, 1)[0];
 ---
 <BaseLayout seo={seo}>
   <Container>
     <article class="py-16 flex flex-col gap-5">
-      <div class="flex flex-col gap-2">
+      <div class="relative flex flex-col gap-2">
         <motion.time
           client:load
           initial={{opacity:0,y:-20}}
@@ -51,6 +58,37 @@ const { entry, seo } = Astro.props;
         transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.15 }}
         className="max-w-full prose font-medium md:mx-5">
         <slot />
+      </motion.div>
+      <motion.div
+        client:load
+        initial={{opacity:0,y:-20}}
+        animate={{opacity:1,y:0}}
+        transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.2 }}
+        className="flex flex-col gap-3 mt-8"
+      >
+        <span class="text-tones-500 font-medium text-sm">Más desde Coderdiaz Studio</span>
+        {randomNote && (
+          <a href={`/notas/${randomNote.slug}/`}>
+            <div class="flex items-center gap-4 bg-gray-50 hover:bg-gray-100 transition p-1.5 rounded-xl">
+              { randomNote.data.featuredImage && (
+                <motion.div
+                  client:load
+                  initial={{opacity:0,y:-20}}
+                  animate={{opacity:1,y:0}}
+                  transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.1 }}
+                  className="relative overflow-hidden rounded-lg w-32 aspect-[1.5/1] border border-notes-100 flex-shrink-0">
+                  <Image
+                    class="object-cover w-full h-full"
+                    src={randomNote.data.featuredImage as ImageMetadata}
+                    alt={randomNote.data.title} />
+                </motion.div>
+              )}
+              <div class="flex flex-col">
+                <span class="font-semibold md:text-lg inline-block">{randomNote.data.title}</span>
+              </div>
+            </div>
+          </a>
+        )}
       </motion.div>
     </article>
   </Container>
