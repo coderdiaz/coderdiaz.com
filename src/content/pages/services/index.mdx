@@ -18,17 +18,51 @@ import Check from '@/components/svg/Check.astro'
         initial={{opacity:0, y:-20}}
         animate={{opacity:1, y:0}}
         transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.15 }}
-        className="font-bold text-2xl">Tres formas de trabajo a tu alcance</motion.h2>
+        className="font-bold text-2xl">Diferentes formas de trabajo a tu alcance</motion.h2>
       <motion.div
         client:load
         initial={{opacity:0, y:-20}}
         animate={{opacity:1, y:0}}
         transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.2 }}
         className="grid md:grid-cols-2 gap-8 gap-y-10">
+        <div class="md:col-span-2 flex flex-col gap-4 bg-accent-50 border-2 border-black p-6 rounded-2xl">
+          <div class="flex flex-col gap-1">
+            <span class="font-semibold text-accent-1000 text-lg">Házme parte de tu equipo</span>
+            <p class="font-medium text-accent-900">Seré el copiloto de tu proyecto junto a tu equipo para lograr que tu producto llegue a las manos de tus usuarios tan pronto como empecemos. Esto incluye:</p>
+            <ul class="mt-2 flex flex-col gap-1">
+              <li class="flex items-center gap-2 text-black">
+                <Check class="fill-accent-300" size={20} />
+                <span>30 hrs por semana</span>
+              </li>
+              <li class="flex items-center gap-2 text-black">
+                <Check class="fill-accent-300" size={20} />
+                <span>Una solicitud a la vez</span>
+              </li>
+              <li class="flex items-center gap-2 text-black">
+                <Check class="fill-accent-300" size={20} />
+                <span>Servicios de diseño y software</span>
+              </li>
+              <li class="flex items-center gap-2 text-black">
+                <Check class="fill-accent-300" size={20} />
+                <span>Cancela en cualquier momento</span>
+              </li>
+            </ul>
+            <div className="flex flex-col md:flex-row md:items-center gap-3 mt-6">
+              <button
+                data-cal-link="coderdiaz/intro"
+                data-cal-namespace="intro"
+                data-cal-config='{"layout":"month_view"}'
+                aria-label="Agendar una llamada con Javier Diaz"
+                class="md:w-max relative px-6 py-3 rounded-full bg-accent-400 text-accent-1000 font-semibold transition hover:scale-105 z-10 text-center border-2 border-black">
+                Desde US$899/semana
+              </button>
+            </div>
+          </div>
+        </div>
         <div class="flex flex-col gap-4">
           <div class="flex flex-col gap-1">
             <span class="font-semibold text-lg">Por proyecto</span>
-            <p class="font-medium text-tones-700">Si tienes un proyecto, requerimiento o idea y necesitas ayuda para llevarlo a cabo, puedo ayudarte a diseñar, desarrollar y lanzar tu producto. <a href="/contacto/" class="font-semibold text-black underline underline-offset-2">Solicita una cotización.</a></p>
+            <p class="font-medium text-tones-700">Si tienes un proyecto, requerimiento o idea y necesitas ayuda para llevarlo a cabo, puedo ayudarte a diseñar, desarrollar y lanzar tu producto.</p>
           </div>
         </div>
         <div class="flex flex-col gap-4">
@@ -37,46 +71,6 @@ import Check from '@/components/svg/Check.astro'
             <p class="font-medium text-tones-700">Si necesitas ayuda con un problema técnico o de diseño, una revisión de código o una consulta técnica, puedo ayudarte a resolverlo por tan solo <span class="font-semibold text-black">US$50/hora</span>.</p>
           </div>
         </div>
-        <div class="md:col-span-2 flex flex-col gap-4">
-          <div class="flex flex-col gap-1">
-            <span class="font-semibold text-lg">Házme parte de tu equipo</span>
-            <p class="font-medium text-tones-700">Seré el copiloto de tu proyecto junto a tu equipo para lograr que tu producto llegue a las manos de tus usuarios tan pronto como empecemos. Esto incluye:</p>
-            <ul class="mt-2 flex flex-col gap-1">
-              <li class="flex items-center gap-2">
-                <Check class="text-black fill-accent-300" size={20} />
-                <span>30 hrs por semana</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <Check class="text-black fill-accent-300" size={20} />
-                <span>Una solicitud a la vez</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <Check class="text-black fill-accent-300" size={20} />
-                <span>Servicios de diseño y software</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <Check class="text-black fill-accent-300" size={20} />
-                <span>Cancela en cualquier momento</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </motion.div>
-      <motion.div
-        client:load
-        initial={{opacity:0, y:-20}}
-        animate={{opacity:1, y:0}}
-        transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.25 }}
-        className="flex flex-col md:flex-row md:items-center gap-3"
-      >
-        <button
-          data-cal-link="coderdiaz/intro"
-          data-cal-namespace="intro"
-          data-cal-config='{"layout":"month_view"}'
-          aria-label="Agendar una llamada con Javier Diaz"
-          class="md:w-max relative px-6 py-3 rounded-full bg-accent-400 text-accent-1000 font-semibold transition hover:scale-105 z-10 text-center border-2 border-black">
-          Desde US$899/semana
-        </button>
         <a href="/contacto/" class="px-6 py-3 md:w-max rounded-full text-black ring-4 ring-tones-100/50 bg-tones-100/50 font-semibold transition hover:bg-accent-100 hover:ring-accent-100 text-center">
           Solicitar una cotización
         </a>
