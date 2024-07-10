@@ -113,15 +113,15 @@ export default function FormQuote() {
       <fieldset className="inline-flex items-center gap-4 col-span-4 md:col-span-2">
         <label className="font-semibold flex-shrink-0">Presupuesto</label>
         <select
-          className="flex-1 w-full md:w-max px-4 py-2.5 py-whitegray-100 rounded-xl border border-gray-400/50 hover:border-accent-500/50 hover:ring-2 hover:ring-accent-500/20 focus:border-accent-500/75 focus:ring-4 focus:ring-accent-500/20 focus:outline-none peer-focus:border-accent-500 peer-focus:ring-4 peer-focus:ring-outline peer-focus:outline-none checked:bg-outline disabled:opacity-60 disabled:pointer-events-none"
+          className="appearance-none flex-1 w-full md:w-max px-4 py-2.5 py-whitegray-100 rounded-xl border border-gray-400/50 hover:border-accent-500/50 hover:ring-2 hover:ring-accent-500/20 focus:border-accent-500/75 focus:ring-4 focus:ring-accent-500/20 focus:outline-none peer-focus:border-accent-500 peer-focus:ring-4 peer-focus:ring-outline peer-focus:outline-none checked:bg-outline disabled:opacity-60 disabled:pointer-events-none"
           name="budget"
           required
         >
-          <option value="De US$500 a US$800">De US$500 a US$800</option>
           <option value="De US$800 a US$1200">De US$800 a US$1200</option>
           <option value="De US$1200 a US$2000">De US$1200 a US$2000</option>
           <option value="De US$2000 a US$4000">De US$2000 a US$4000</option>
-          <option value="Más de US$4000">Más de US$4000</option>
+          <option value="De US$4000 a US$8000">De US$4000 a US$8000</option>
+          <option value="Más de US$8000">Más de US$8000</option>
           <option value="Sin definir">Sin definir</option>
         </select>
       </fieldset>
