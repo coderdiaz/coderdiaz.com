@@ -21,7 +21,7 @@ const links = (await Astro.glob('../../content/links/*.json'))
 <BaseLayout>
   <section>
     <Container>
-      <div class="flex flex-col gap-2 pt-12 pb-12">
+      <div class="relative flex flex-col gap-2 pt-12 pb-12">
         <motion.h1
           client:load
           initial={{opacity:0, y:-20}}
@@ -34,6 +34,12 @@ const links = (await Astro.glob('../../content/links/*.json'))
           animate={{opacity:1, y:0}}
           transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.05 }}
           className="font-medium text-gray-600 md:text-lg">{entry.data.description}</motion.p>
+        <motion.span
+          client:load
+          initial={{opacity:0,y:-20}}
+          animate={{opacity:0.05,y:0}}
+          transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.1 }}
+          className="absolute left-0 -ml-16 mt-9 top-0 mb-0 hidden font-mono text-[18rem] text-accent-600 leading-none opacity-5 lg:flex pointer-events-none select-none">*</motion.span>
         <motion.div
           client:load
           initial={{opacity:0, y:-20}}
@@ -94,7 +100,7 @@ const links = (await Astro.glob('../../content/links/*.json'))
         initial={{opacity:0, y:-20}}
         animate={{opacity:1, y:0}}
         transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.2 }}
-        className="py-10 flex flex-col gap-3"
+        className="pb-10 flex flex-col gap-3"
       >
         <h2 class="font-semibold text-xl">Otros</h2>
         <div class="flex flex-col gap-1 -mx-2">

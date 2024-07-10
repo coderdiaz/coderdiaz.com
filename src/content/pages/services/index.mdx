@@ -8,7 +8,7 @@ import BlockRow from '@/components/BlockRow.astro';
 import { Terminal } from '@/components/svg/Terminal';
 import Design from '@/components/svg/Design.astro';
 import Mentoring from '@/components/svg/Mentoring.astro';
-import { SUB_PAYMENT } from '@/lib/constants';
+import Check from '@/components/svg/Check.astro'
 
 <section class="border-b border-tones-200">
   <Container>
@@ -40,7 +40,25 @@ import { SUB_PAYMENT } from '@/lib/constants';
         <div class="md:col-span-2 flex flex-col gap-4">
           <div class="flex flex-col gap-1">
             <span class="font-semibold text-lg">Házme parte de tu equipo</span>
-            <p class="font-medium text-tones-700">Accede a 30 horas de trabajo semanales para tu proyecto. Puedo trabajar en diseño, desarrollo y el lanzamiento de tu producto, lo necesario para llevar tu idea al mundo digital. Trabajaré contigo y tu equipo con una solicitud a la vez para lograr que tu producto llegue a las manos de tus usuarios.</p>
+            <p class="font-medium text-tones-700">Seré el copiloto de tu proyecto junto a tu equipo para lograr que tu producto llegue a las manos de tus usuarios tan pronto como empecemos. Esto incluye:</p>
+            <ul class="mt-2 flex flex-col gap-1">
+              <li class="flex items-center gap-2">
+                <Check class="text-black fill-accent-300" size={20} />
+                <span>30 hrs por semana</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <Check class="text-black fill-accent-300" size={20} />
+                <span>Una solicitud a la vez</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <Check class="text-black fill-accent-300" size={20} />
+                <span>Servicios de diseño y software</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <Check class="text-black fill-accent-300" size={20} />
+                <span>Cancela en cualquier momento</span>
+              </li>
+            </ul>
           </div>
         </div>
       </motion.div>
@@ -56,10 +74,10 @@ import { SUB_PAYMENT } from '@/lib/constants';
           data-cal-namespace="intro"
           data-cal-config='{"layout":"month_view"}'
           aria-label="Agendar una llamada con Javier Diaz"
-          class="md:w-max relative px-6 py-3 rounded-full bg-accent-400 text-accent-1000 font-semibold transition hover:scale-105 z-10 text-center">
+          class="md:w-max relative px-6 py-3 rounded-full bg-accent-400 text-accent-1000 font-semibold transition hover:scale-105 z-10 text-center border-2 border-black">
           Desde US$899/semana
         </button>
-        <a href="/contacto/" class="px-6 py-3 md:w-max rounded-full text-black ring-2 ring-tones-100/50 bg-tones-100/50 font-semibold transition hover:bg-accent-100 hover:ring-accent-100 text-center">
+        <a href="/contacto/" class="px-6 py-3 md:w-max rounded-full text-black ring-4 ring-tones-100/50 bg-tones-100/50 font-semibold transition hover:bg-accent-100 hover:ring-accent-100 text-center">
           Solicitar una cotización
         </a>
       </motion.div>
