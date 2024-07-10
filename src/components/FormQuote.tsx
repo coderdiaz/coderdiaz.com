@@ -76,7 +76,7 @@ export default function FormQuote() {
         <button onClick={() => toggleService('Landing Pages')} type="button" className={cn('inline max-w-max px-4 py-1 bg-white backdrop-blur-lg border border-gray-400/50 rounded-full font-semibold', {
           'bg-accent-400 text-accent-1000': services.includes('Landing Pages'),
         })}>
-          Landing Pages
+          Landing Page
         </button>
         <button onClick={() => toggleService('Marketing Site')} type="button" className={cn('inline max-w-max px-4 py-1 bg-white backdrop-blur-lg border border-gray-400/50 rounded-full font-semibold', {
           'bg-accent-400 text-accent-1000': services.includes('Marketing Site'),
@@ -86,12 +86,17 @@ export default function FormQuote() {
         <button onClick={() => toggleService('Interface Design')} type="button" className={cn('inline max-w-max px-4 py-1 bg-white backdrop-blur-lg border border-gray-400/50 rounded-full font-semibold', {
           'bg-accent-400 text-accent-1000': services.includes('Interface Design'),
         })}>
-          Interface Design
+          Diseño de interfaz (UX/UI)
         </button>
         <button onClick={() => toggleService('E-commerce')} type="button" className={cn('inline max-w-max px-4 py-1 bg-white backdrop-blur-lg border border-gray-400/50 rounded-full font-semibold', {
           'bg-accent-400 text-accent-1000': services.includes('E-commerce'),
         })}>
           E-commerce
+        </button>
+        <button onClick={() => toggleService('E-commerce')} type="button" className={cn('inline max-w-max px-4 py-1 bg-white backdrop-blur-lg border border-gray-400/50 rounded-full font-semibold', {
+          'bg-accent-400 text-accent-1000': services.includes('E-commerce'),
+        })}>
+          CMS
         </button>
         <button onClick={() => toggleService('Aplicación Web')} type="button" className={cn('inline max-w-max px-4 py-1 bg-white backdrop-blur-lg border border-gray-400/50 rounded-full font-semibold', {
           'bg-accent-400 text-accent-1000': services.includes('Aplicación Web'),
