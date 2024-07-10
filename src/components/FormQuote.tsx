@@ -110,7 +110,7 @@ export default function FormQuote() {
         </button>
       </div>
       <span className="font-semibold text-gray-500 col-span-4 text-lg">Información del proyecto</span>
-      <fieldset className="inline-flex items-center gap-4 col-span-4 md:col-span-2">
+      <fieldset className="inline-flex flex-col md:flex-row md:items-center gap-2 md:gap-4 col-span-4 md:col-span-2">
         <label className="font-semibold flex-shrink-0">Presupuesto</label>
         <select
           className="appearance-none flex-1 w-full md:w-max px-4 py-2.5 py-whitegray-100 rounded-xl border border-gray-400/50 hover:border-accent-500/50 hover:ring-2 hover:ring-accent-500/20 focus:border-accent-500/75 focus:ring-4 focus:ring-accent-500/20 focus:outline-none peer-focus:border-accent-500 peer-focus:ring-4 peer-focus:ring-outline peer-focus:outline-none checked:bg-outline disabled:opacity-60 disabled:pointer-events-none"
