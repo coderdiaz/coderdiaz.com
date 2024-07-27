@@ -12,7 +12,7 @@ interface Props {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
-<BaseLayout>
+<BaseLayout seo={entry.data.seo}>
   <article class="flex flex-col">
     <section class="border-b border-tones-100 overflow-hidden">
       <Container>
