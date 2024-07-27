@@ -8,7 +8,7 @@ const entry = await getEntry('pages', 'contact');
 const { Content } = await entry.render();
 ---
 
-<BaseLayout>
+<BaseLayout seo={entry.data.seo}>
   <section>
     <Container>
       <div class="relative flex flex-col gap-2 pt-12 pb-12">

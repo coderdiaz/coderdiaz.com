@@ -18,7 +18,7 @@ const talks = (await Astro.glob('../../content/talks/*.json'))
 const links = (await Astro.glob('../../content/links/*.json'))
   .sort((a: any, b: any) => a.position - b.position);
 ---
-<BaseLayout>
+<BaseLayout seo={entry.data.seo}>
   <section>
     <Container>
       <div class="relative flex flex-col gap-2 pt-12 pb-12">

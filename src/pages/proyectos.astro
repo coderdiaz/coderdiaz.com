@@ -20,7 +20,7 @@ const publishedWork = (await getCollection('work', ({ data }: CollectionEntry<'w
 const latestWork = publishedWork.slice(0, 2);
 const most = publishedWork.slice(2);
 ---
-<BaseLayout>
+<BaseLayout seo={entry.data.seo}>
   <section
     class="border-b border-gray-200">
     <Container>
