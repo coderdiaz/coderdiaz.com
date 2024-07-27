@@ -11,11 +11,12 @@ import { Terminal } from '@/components/svg/Terminal.tsx';
 import ProfileAvatar from '@/assets/images/profile.jpg';
 import SectionWork from '@/components/SectionWork.astro';
 import NoteItem from '@/components/NoteItem.astro';
+import { includeDraft } from '@/lib/utils';
 
-const publishedNotes = (await getCollection('notes', ({ data }: CollectionEntry<'notes'>) => data.draft !== true))
+const publishedNotes = (await getCollection('notes', ({ data }: CollectionEntry<'notes'>) => includeDraft(data.draft)))
   .sort((a: any, b: any) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
-const publishedWork = (await getCollection('work', ({ data }: CollectionEntry<'work'>) => data.draft !== true))
+const publishedWork = (await getCollection('work', ({ data }: CollectionEntry<'work'>) => includeDraft(data.draft)))
   .sort((a: any, b: any) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
 const latestPosts = publishedNotes.slice(0, 5);

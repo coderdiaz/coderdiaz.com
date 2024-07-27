@@ -12,9 +12,10 @@ import Codigofacilito from '@/assets/images/clients/codigofacilito.png';
 import Expanish from '@/assets/images/clients/expanish.png';
 import PandaSalud from '@/assets/images/clients/pandasalud.png';
 import SectionWork from '@/components/SectionWork.astro';
+import { includeDraft } from '@/lib/utils';
 
 const entry = await getEntry('pages', 'projects');
-const publishedWork = (await getCollection('work', ({ data }: CollectionEntry<'work'>) => data.draft !== true))
+const publishedWork = (await getCollection('work', ({ data }: CollectionEntry<'work'>) => includeDraft(data.draft)))
   .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
 const latestWork = publishedWork.slice(0, 2);

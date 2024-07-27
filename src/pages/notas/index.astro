@@ -7,9 +7,10 @@ import Container from '@/components/Container.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import NoteItem from '@/components/NoteItem.astro';
 import { social } from '@/lib/constants';
+import { includeDraft } from '@/lib/utils';
 
 const entry = await getEntry('pages', 'notes');
-const publishedNotes = (await getCollection('notes', ({ data }: CollectionEntry<'notes'>) => data.draft !== true))
+const publishedNotes = (await getCollection('notes', ({ data }: CollectionEntry<'notes'>) => includeDraft(data.draft)))
   .sort((a: any, b: any) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
 const talks = (await Astro.glob('../../content/talks/*.json'))

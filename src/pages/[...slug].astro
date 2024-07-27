@@ -2,10 +2,11 @@
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import ProyectLayout from '@/layouts/ProjectLayout.astro';
+import { includeDraft } from '@/lib/utils';
 
 export async function getStaticPaths() {
   // const entries = (await getCollection('work')).filter(entry => entry.slug !== 'software-para-academia-de-baile');
-  const entries = (await getCollection('work', ({ data }: CollectionEntry<'work'>) => data.draft !== true))
+  const entries = (await getCollection('work', ({ data }: CollectionEntry<'work'>) => includeDraft(data.draft)))
   return entries.map(entry => ({
     params: { slug: entry.slug }, props: { entry },
   }));
