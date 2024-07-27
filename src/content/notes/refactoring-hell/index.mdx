@@ -9,7 +9,7 @@ seo:
   type: article
   image: ./meta.jpg
   keywords: refactoring, refactor, refactor code, refactorizando código, mejorando nuestro código, software
-  canonicalUrl: https://coderdiaz.com/notas/ciclo-de-refactorizacion-infinita/
+  canonicalUrl: https://coderdiaz.com/notas/refactoring-hell/
 ---
 import Callout from '@/components/Callout.astro';
 
@@ -22,7 +22,7 @@ En este artículo, te compartiré mi experiencia lídiando con este problema y a
 Antes de partir, es importante dar en contexto sobre lo que implica una refactorización:
 
 <Callout class="bg-blue-50 text-ble-800 border-blue-300 leading-normal">
-  La **refactorización** es un proceso en el cuál se busca mejorar una parte en el código con el objetivo de implementar mejores prácticas que permitan su mantenimiento y legibilidad, permitiendo así poder escalarlo.
+  La **refactorización** es un proceso en el cual se busca mejorar una parte en el código con el objetivo de implementar mejores prácticas que permitan su mantenimiento y legibilidad, permitiendo así poder escalarlo.
 </Callout>
 
 En general, cada que tocamos un proyecto o empezamos uno nuevo, habrá momentos en los cuales los tiempos y las premuras de las cosas se postran frente a nosotros y tenemos que implementar soluciones que podemos posteriomente mejorar. Sin embargo, aquí es donde comienza el problema.
@@ -46,20 +46,18 @@ Al determinar un objetivo claro de lo que vas a trabajar, te permitirá mantener
     Template de Pitch con Shape Up
   </figcaption>
 </figure>
-
-
-También, hay otro tipos de documentos que pueden ayudarte a establecer un alcance específico, como los "RFC" (Request for Comments) que son muy utilizados en empresas de tecnología para proponer cambios en el código, o un Design Document que te permitirá establecer un alcance más técnico.
+También, hay otros tipos de documentos que pueden ayudarte a establecer un alcance específico, como los "RFC" (Request for Comments) que son muy utilizados en empresas de tecnología para proponer cambios en el código, o un Design Document que te permitirá establecer un alcance más técnico.
 
 ### 1. Aplica un tiempo de implementación
-Se que esto no va a ser nada fácil por que siempre las prioridades del negocio son más importantes, pero también es parte de tu experiencia como desarrollador el plantear la problematica de tener código que no se puede mantener y que a la larga puede ser un problema para el negocio. Por lo que, debe ir muy de la mano con la primera para que tengas evidencias de cuál es el problema, cuánto tiempo te llevará y cuál es el beneficio que se obtendrá.
+Sé que esto no va a ser nada fácil porque siempre las prioridades del negocio son más importantes, pero también es parte de tu experiencia como desarrollador el plantear la problemática de tener código que no se puede mantener y que a la larga puede ser un problema para el negocio. Por lo tanto, debe ir muy de la mano con la primera para que tengas evidencias de cuál es el problema, cuánto tiempo te llevará y cuál es el beneficio que se obtendrá.
 
-### 2. Se crítico con el code review
+### 2. Sé crítico con el code review
 Aunque este podría considerarse como prevención, es muy importante mencionarlo, ya que muchas veces podemos prevenir código inestable si somos críticos con lo que estamos revisando. Siempre es importante preguntarse si lo que hace ese bloque está bien, y si no es así, adaptarlo para que sea fácil de mover cuando sea necesario y no haya la necesidad de cambiarlo en su totalidad.
 
 De esta forma, también podemos aprender de las experiencias de nuestros colegas desarrolladores y mejorar nuestro código de manera constante para que ocurra con menos frecuencia.
 
 ### 3. Define pruebas en tu código
-Las pruebas son una parte fundamental en el desarrollo de software, ya que nos permiten asegurarnos de que el código que estamos escribiendo funciona correctamente. Por lo que, si definimos pruebas para nuestro código, podremos refactorizarlo con mayor seguridad y confianza.
+Las pruebas son una parte fundamental en el desarrollo de software, ya que nos permiten asegurarnos de que el código que estamos escribiendo funciona correctamente. Por lo tanto, si definimos pruebas para nuestro código, podremos refactorizarlo con mayor seguridad y confianza.
 
 ## La evolución
 Sin duda, siempre habrá que refactorizar algo en nuestro código, es algo casi inevitable ya que los negocios cambian y las necesidades de los usuarios también, pero siempre es importante reducirlo a lo necesario y fundamental para que no caigamos en un ciclo infinito de refactorizaciones que no nos permitan avanzar.
@@ -70,4 +68,4 @@ Recuerda que el código es un reflejo de cómo trabajamos y si no lo cuidamos, p
 
 Espero que este artículo te haya ayudado, y nos vemos pronto en el siguiente.
 
-Muchas gracias por leer.
+¡Muchas gracias por leer!
