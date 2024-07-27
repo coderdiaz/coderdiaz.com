@@ -1,3 +1,14 @@
-<div class="p-5 not-prose flex flex-col gap-3 bg-accent-50 border text-accent-800 border-accent-500/30 rounded-xl">
+---
+import { cn } from '@/lib/utils';
+
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+---
+<div class={cn(
+  'p-5 not-prose flex flex-col gap-3 bg-accent-50 border text-accent-800 border-accent-500/30 rounded-xl',
+  className
+)}>
   <slot />
 </div>
