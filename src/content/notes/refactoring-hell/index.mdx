@@ -1,0 +1,32 @@
+---
+draft: false
+title: Refactoring Hell
+publishedAt: 2024-07-16
+featuredImage: ./meta.jpg
+seo:
+  title: El cíclo de la refactorización infinita
+  description: Descubre como lidiar con el problema de las refactorizaciones en el código para no caer en un ciclo infinito del cuál no puedas salir después
+  type: article
+  image: ./meta.jpg
+  keywords: refactoring, refactor, refactor code, refactorizando código, mejorando nuestro código, software
+  canonicalUrl: https://coderdiaz.com/notas/ciclo-de-refactorizacion-infinita/
+---
+import Callout from '@/components/Callout.astro';
+
+Ocasionalmente, nos encontramos trabajando en algún proyecto y nos encontramos con deuda técnica que sigue sin atenderse y creciendo constantemente, provocando que el código comience a complejizarse cada vez más.
+
+En este artículo, te compartiré mi experiencia lídiando con este problema y algunas técnicas que me ayudaron a salir de este bucle.
+
+## El cíclo de la refactorización infinita
+
+Antes de partir, es importante dar en contexto sobre lo que implica una refactorización:
+
+<Callout>
+  <p>La refactorización es un proceso en el cuál se busca mejorar una parte en el código con el objetivo de implementar mejores prácticas que permitan su mantenimiento y legibilidad, permitiendo así poder escalarlo.</p>
+</Callout>
+
+En general, cada que tocamos un proyecto o empezamos uno nuevo, habrá momentos en los cuales los tiempos y las premuras de las cosas se postran frente a nosotros y tenemos que implementar soluciones que podemos posteriomente mejorar. Sin embargo, aquí es donde comienza el problema.
+
+Aunque nosotros pretendamos agregar un bonito `TODO` en nuestro código para volver aquí y mejorarlo, al final terminarmos por no hacerlo debido a muchas circunstancias que se presentan en el proceso de desarrollar un producto.
+
+Esto frecuentemente sucede ya que el negocio tiene otras prioridades o nuevas cosas que busca implementar y debes enfocarte en seguir produciendo nuevos features, por cual, se comienza a generar deuda técnica al no poder realizar estas mejoras.
