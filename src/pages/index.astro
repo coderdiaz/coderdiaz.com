@@ -26,18 +26,15 @@ const latestWork = publishedWork.slice(0, 4);
       <div class="pt-8 pb-12 md:pt-12 md:pb-16">
         <div class="flex flex-col items-start gap-8">
           <div class="relative flex items-start flex-col gap-3 md:gap-4 w-full md:w-[44rem]">
-            <h1 class="sr-only">
-              Transformo tus ideas en productos que tus usuarios necesitarán desde el diseño hasta el desarrollo.
-            </h1>
-            <motion.div
+            <motion.h1
               client:load
               initial={{opacity:0,y:-20}}
               animate={{opacity:1,y:0}}
               transition={{ type: 'spring', stiffness: 250, damping: 20 }}
-              className="text-[2.25rem] leading-snug md:text-[2.8rem] md:leading-[1.05] font-bold"
+              className="text-[2.25rem] leading-tight md:text-[2.8rem] md:leading-[1.05] font-bold"
             >
               Transformo tus ideas en productos que tus usuarios necesitarán
-            </motion.div>
+            </motion.h1>
             <motion.p
               client:load
               initial={{opacity:0,y:-20}}
@@ -88,7 +85,7 @@ const latestWork = publishedWork.slice(0, 4);
     transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.2 }}
   >
     <Container class="pb-4">
-      <h2 class="text-3xl font-bold text-gray-600">Proyectos destacados</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-600">Proyectos destacados</h2>
     </Container>
   </motion.section>
   <SectionWork entry={latestWork[0]} />
