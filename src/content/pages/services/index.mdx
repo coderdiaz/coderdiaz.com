@@ -31,10 +31,10 @@ import Check from '@/components/svg/Check.astro'
         animate={{opacity:1, y:0}}
         transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.2 }}
         className="grid md:grid-cols-2 gap-8 gap-y-10">
-        <div class="md:col-span-2 flex flex-col gap-4 bg-accent-50 border-2 border-black p-6 rounded-2xl">
+        <div class="md:col-span-2 flex flex-col gap-4 border-b pb-6">
           <div class="flex flex-col gap-1">
-            <span class="font-semibold text-accent-1000 text-lg">Házme parte de tu equipo</span>
-            <p class="font-medium text-accent-900">Seré el copiloto de tu proyecto junto a tu equipo para lograr que tu producto llegue a las manos de tus usuarios tan pronto como empecemos. Esto incluye:</p>
+            <span class="font-semibold text-gray-950 text-lg">Házme parte de tu equipo</span>
+            <p class="font-medium text-gray-600">Seré el copiloto de tu proyecto junto a tu equipo para lograr que tu producto llegue a las manos de tus usuarios tan pronto como empecemos. Esto incluye:</p>
             <ul class="mt-2 flex flex-col gap-1">
               <li class="flex items-center gap-2 text-black">
                 <Check class="fill-accent-300" size={20} />
@@ -59,7 +59,7 @@ import Check from '@/components/svg/Check.astro'
                 data-cal-namespace="intro"
                 data-cal-config='{"layout":"month_view"}'
                 aria-label="Agendar una llamada con Javier Diaz"
-                class="md:w-max relative px-6 py-3 rounded-full bg-accent-400 text-accent-1000 font-semibold transition hover:scale-105 z-10 text-center border-2 border-black">
+                class="md:w-max relative px-6 py-3 rounded-full bg-accent-400 text-accent-1000 font-semibold transition hover:bg-accent-400/75 z-10 text-center">
                 Desde US$899/semana
               </button>
             </div>
@@ -77,7 +77,7 @@ import Check from '@/components/svg/Check.astro'
             <p class="font-medium text-tones-700">Si necesitas ayuda con un problema técnico o de diseño, una revisión de código o una consulta técnica, puedo ayudarte a resolverlo por tan solo <span class="font-semibold text-black">US$50/hora</span>.</p>
           </div>
         </div>
-        <a href="/contacto/" class="px-6 py-3 md:w-max rounded-full text-black ring-4 ring-tones-100/50 bg-tones-100/50 font-semibold transition hover:bg-accent-100 hover:ring-accent-100 text-center">
+        <a href="/contacto/" class="px-6 py-3 md:w-max rounded-full text-black bg-tones-100/50 font-semibold transition hover:bg-accent-100 text-center">
           Solicitar una cotización
         </a>
       </motion.div>
