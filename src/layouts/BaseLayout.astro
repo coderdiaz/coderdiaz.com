@@ -17,7 +17,7 @@ interface Props {
 const currentPath = Astro.url.pathname;
 const { seo } = Astro.props;
 ---
-<html lang="es" class="min-h-full antialiased selection:bg-accent-300 selection:text-accent-900">
+<html lang="es" class="min-h-full antialiased selection:bg-accent-300 selection:text-accent-1000">
   <Head seo={seo}>
     <script defer is:inline>
       (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === 'string' ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, 'https://app.cal.com/embed/embed.js', 'init');
@@ -25,7 +25,7 @@ const { seo } = Astro.props;
       Cal.ns['intro']('ui', {'styles':{'branding':{'brandColor':'#FBBF25'}},'hideEventTypeDetails':false,'layout':'month_view'});
     </script>
   </Head>
-  <body class="font-sans leading-relaxed h-full flex flex-col text-[#39301B]">
+  <body class="font-sans leading-relaxed h-full flex flex-col">
     <section class="border-b border-gray-200">
       <Container>
         <a href="https://aprendestrapi.com" target="_blank" rel="noreferrer" class="py-3 flex flex-col md:flex-row md:items-center md:justify-between text-sm font-medium">
