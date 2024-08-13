@@ -51,28 +51,6 @@ const latestWork = publishedWork.slice(0, 4);
               transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.1 }}
               className="absolute left-0 -ml-16 mt-9 top-0 mb-0 hidden font-mono text-[18rem] text-accent-600 leading-none opacity-5 lg:flex pointer-events-none select-none">*</motion.span>
           </div>
-          <motion.div
-            client:load
-            initial={{opacity:0,y:-20}}
-            animate={{opacity:1,y:0}}
-            transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.15 }}
-            className="flex flex-col md:flex-row md:items-center gap-4 w-full md:w-auto">
-            <button
-              data-cal-link="coderdiaz/intro"
-              data-cal-namespace="intro"
-              data-cal-config='{"layout":"month_view"}'
-              aria-label="Agendar una llamada con Javier Diaz"
-              class="relative px-1.5 pr-6 py-1.5 bg-accent-400 text-accent-1000 font-semibold transition hover:scale-105 z-10 w-max md:w-auto flex gap-3 items-center rounded-full border-2 border-black">
-              <Image class="w-12 h-12 flex-shrink-0 rounded-full object-cover object-top" src={ProfileAvatar} alt="Avatar de Javier Diaz" />
-              <div class="flex flex-col items-start gap-0.5 w-full">
-                <span class="leading-none inline-flex">Agendar una llamada</span>
-                <span class="text-center leading-none text-sm text-accent-800 inline-flex">con Javier Diaz</span>
-              </div>
-            </button>
-            <a href="/servicios/" class="hidden md:block px-8 rounded-full py-4 md:w-max text-black ring-4 ring-tones-100/50 bg-tones-100/50 font-semibold transition hover:bg-accent-100 hover:ring-accent-100 text-center md:text-left">
-              Mis servicios
-            </a>
-          </motion.div>
         </div>
       </div>
     </Container>
@@ -170,11 +148,11 @@ const latestWork = publishedWork.slice(0, 4);
             initial={{opacity:0,y:-20}}
             animate={{opacity:1,y:0}}
             transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.5 }}
-            className="flex flex-col md:flex-row md:items-center gap-4">
-            <a href="/contacto/" class="relative px-6 py-3 rounded-full bg-accent-400 text-accent-1000 text-center md:text-left font-semibold transition hover:scale-105 z-10 md:w-max border-2 border-black">
+            className="flex flex-col md:flex-row md:items-center gap-3">
+            <a href="/contacto/" class="relative px-6 py-3 rounded-full bg-accent-400 text-accent-1000 text-center md:text-left font-semibold transition hover:bg-accent-400/75 z-10 md:w-max">
               Solicita una cotización
             </a>
-            <a href="/proyectos/" class="px-6 py-3 md:w-max rounded-full text-black ring-4 font-semibold transition ring-tones-100/50 bg-tones-100/50 hover:bg-accent-100 hover:ring-accent-100 text-center md:text-left">
+            <a href="/proyectos/" class="px-6 py-3 md:w-max rounded-full text-black font-semibold transition bg-tones-100/50 hover:bg-accent-100 text-center md:text-left">
               Conoce mi trabajo
             </a>
           </motion.div>
@@ -190,21 +168,21 @@ const latestWork = publishedWork.slice(0, 4);
           <h3 class="text-2xl font-bold">Hola!, Soy Javier Diaz</h3>
           <div class="relative flex flex-col gap-1.5 font-medium text-tones-900">
             <p>
-              Un freelancer mexicano que trabaja con varias startups, empresas, agencias y particulares para construir productos y servicios para la web.
+              Un freelancer mexicano que ha trabajado con diferentes startups, empresas, agencias y particulares para construir productos y servicios en la web.
             </p>
             <p>
-              Me gusta colaborar con personas y equipos para crear experiencias y productos fantásticos que sean fáciles de usar.
+              Colaboro con personas y equipos multidiplinarios para crear experiencias y productos fantásticos que sean fáciles de usar.
             </p>
             <p>
               En mi tiempo libre, usualmente podrás encontrarme leyendo, viendo películas, jugando videojuegos o aprendiendo algo nuevo.
             </p>
             <span class="absolute left-0 -ml-10 mt-4 top-0 mb-0 hidden font-mono text-[12rem] text-tones-600 leading-none opacity-5 lg:flex">*</span>
           </div>
-          <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
-            <a href="/contacto/" class="mt-2 px-6 py-2.5 text-center md:text-left md:w-max rounded-full bg-accent-400 text-accent-1000 font-semibold transition hover:scale-105 border-2 border-black">
+          <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-3">
+            <a href="/contacto/" class="mt-2 px-6 py-3 text-center md:text-left md:w-max rounded-full bg-accent-400 text-accent-1000 font-semibold transition hover:bg-accent-400/75">
               Comenzar un proyecto
             </a>
-            <a href="/servicios/" class="mt-2 px-6 py-2.5 text-center md:text-left md:w-max rounded-full text-black ring-4 ring-tones-100/50 bg-tones-100/50 font-semibold transition hover:bg-accent-100 hover:ring-accent-100">
+            <a href="/servicios/" class="mt-2 px-6 py-3 text-center md:text-left md:w-max rounded-full text-black bg-tones-100/50 font-semibold transition hover:bg-accent-100">
               Descubre mis servicios
             </a>
           </div>
