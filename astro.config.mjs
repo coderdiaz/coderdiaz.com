@@ -16,6 +16,7 @@ export default defineConfig({
   },
   trailingSlash: 'always',
   redirects: {
+    '/notas/personaliza-tu-terminal/': '/notas/personaliza-tu-terminal-con-iterm-starship/',
     '/jardin/': '/notas/',
     '/jardin/2021-en-retrospectiva/': '/notas/2021-en-retrospectiva/',
     '/jardin/actualizacion-octubre-2023/': '/notas/actualizacion-octubre-2023/',
