@@ -67,7 +67,9 @@ const { entry, showServices = false } = Astro.props;
             <Image
               class="mt-4 md:mt-0 w-full pointer-events-none select-none group-hover:scale-[1.03] transition-transform duration-300 ease-in-out"
               src={entry.data.featuredImage as ImageMetadata}
-              alt={entry.data.tag} />
+              alt={entry.data.tag}
+              loading="eager"
+            />
           </motion.div>
         )}
       </div>
