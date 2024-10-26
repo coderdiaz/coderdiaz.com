@@ -100,24 +100,26 @@ const { seo } = Astro.props;
     </motion.footer>
     <div class="fixed inset-0 z-40 w-full h-screen pointer-events-none mix-blend-overlay bg-[url(/spread.svg)] [background-size:4px_4px] bg-repeat opacity-30" style="opacity: 0.15;"></div>
     <Cursor client:load />
-    <motion.div
-      client:idle
-      initial={{ opacity: 0, y: 100}}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 1 }}
-      className="fixed z-50 bottom-0 right-0 md:mb-6 md:mr-6 w-full md:w-max px-3 md:px-0 pb-4 md:pb-0">
-      <button
-        data-cal-link="coderdiaz/intro"
-        data-cal-namespace="intro"
-        data-cal-config='{"layout":"month_view"}'
-        aria-label="Agendar una llamada con Javier Diaz"
-        class="relative px-1.5 pr-6 py-1.5 bg-accent-400 text-accent-1000 font-semibold transition hover:scale-105 z-10 w-full md:w-auto flex gap-3 items-center rounded-full border-2 border-black">
-        <Image class="w-12 h-12 flex-shrink-0 rounded-full object-cover object-top" src={ProfileAvatar} alt="Avatar de Javier Diaz" />
-        <div class="flex flex-col items-start gap-1 w-full">
-          <span class="leading-none inline-flex">Agendar una llamada</span>
-          <span class="text-center leading-none text-sm text-accent-800 inline-flex">de introducción</span>
-        </div>
-      </button>
-    </motion.div>
+    { currentPath !== '/aprende-react/' && (
+        <motion.div
+          client:idle
+          initial={{ opacity: 0, y: 100}}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 1 }}
+          className="fixed z-50 bottom-0 right-0 md:mb-6 md:mr-6 w-full md:w-max px-3 md:px-0 pb-4 md:pb-0">
+          <button
+            data-cal-link="coderdiaz/intro"
+            data-cal-namespace="intro"
+            data-cal-config='{"layout":"month_view"}'
+            aria-label="Agendar una llamada con Javier Diaz"
+            class="relative px-1.5 pr-6 py-1.5 bg-accent-400 text-accent-1000 font-semibold transition hover:scale-105 z-10 w-full md:w-auto flex gap-3 items-center rounded-full border-2 border-black">
+            <Image class="w-12 h-12 flex-shrink-0 rounded-full object-cover object-top" src={ProfileAvatar} alt="Avatar de Javier Diaz" />
+            <div class="flex flex-col items-start gap-1 w-full">
+              <span class="leading-none inline-flex">Agendar una llamada</span>
+              <span class="text-center leading-none text-sm text-accent-800 inline-flex">de introducción</span>
+            </div>
+          </button>
+        </motion.div>
+      )}
   </body>
 </html>
