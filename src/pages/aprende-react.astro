@@ -1,0 +1,38 @@
+---
+import { getEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import Container from '@/components/Container.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+import ReactImage from '@/assets/images/reactor.png';
+
+const entry = await getEntry('workshop', 'aprende-react');
+const { Content } = await entry.render();
+---
+<BaseLayout seo={entry.data.seo}>
+  <section>
+    <Container class="py-12">
+      <div class="relative flex flex-col gap-3">
+        <div class="flex items-center">
+          <span class="font-semibold text-gray-500">Taller intensivo de React.js</span>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="w-full md:max-w-[36rem] flex flex-col gap-2">
+            <h1 class="text-3xl md:text-5xl font-bold text-[#1442B0]">{entry.data.title}</h1>
+            <p>{entry.data.description}</p>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a href="#pricing" class="relative px-6 py-2 rounded-full bg-accent-400 text-accent-1000 text-center md:text-left font-semibold transition hover:bg-accent-400/75 z-10 md:w-max">
+              Inscríbete ahora
+            </a>
+            <span class="text-sm text-gray-500">Iniciamos el 22 de noviembre</span>
+          </div>
+        </div>
+        <div class="absolute w-72 h-72 animate-[spin_12s_linear_infinite] -top-4 -right-6">
+          <Image class="w-full h-full" src={ReactImage} alt="" />
+        </div>
+      </div>
+    </Container>
+  </section>
+  <Content />
+</BaseLayout>
