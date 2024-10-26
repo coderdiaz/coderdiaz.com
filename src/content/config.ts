@@ -57,8 +57,19 @@ const pageCollection = defineCollection({
   }),
 });
 
+const workshopCollection = defineCollection({
+  type: 'content',
+  schema: ({ image }) => z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    cta: ctaSchema.optional(),
+    seo: seoSchema(image).optional(),
+  }),
+})
+
 export const collections = {
   'notes': notesCollection,
   'work': workCollection,
   'pages': pageCollection,
+  'worshops': workshopCollection,
 };
