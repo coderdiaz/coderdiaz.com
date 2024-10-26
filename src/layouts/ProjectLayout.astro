@@ -44,6 +44,7 @@ const { Content } = await entry.render();
           >
             <Image
               class="w-full pointer-events-none select-none group-hover:scale-[1.03] transition-transform duration-300 ease-in-out"
+              loading="eager"
               src={entry.data.featuredImage as ImageMetadata}
               alt={entry.data.tag} />
           </motion.div>
