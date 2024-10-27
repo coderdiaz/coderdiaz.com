@@ -4,11 +4,12 @@ import { Image } from 'astro:assets';
 import Container from '@/components/Container.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ReactImage from '@/assets/images/reactor.png';
+import SeoImage from '@/content/workshop/aprende-react/meta.jpg';
 
 const entry = await getEntry('workshop', 'aprende-react');
 const { Content } = await entry.render();
 ---
-<BaseLayout seo={entry.data.seo}>
+<BaseLayout seo={{...entry.data.seo, image: SeoImage}}>
   <section>
     <Container class="py-12">
       <div class="relative flex flex-col gap-3">
