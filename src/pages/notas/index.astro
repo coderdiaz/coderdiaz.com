@@ -108,7 +108,7 @@ const links = (await Astro.glob('../../content/links/*.json'))
           {links.map((link) => (
             <a href={link.url} target="_blank" rel="noreferrer" class="py-2 hover:bg-accent-50 group hover:ring-4 hover:ring-accent-50 px-2 rounded-xl transition">
               <article class="flex items-center gap-3">
-                <span class="hidden md:block text-tones-700 text-xs uppercase">
+                <span class="hidden md:block text-tones-700 text-xs uppercase w-[5.5rem] flex-shrink-0">
                   {link.source}
                 </span>
                 <h4 class="font-semibold underline underline-offset-2 decoration-accent-200 group-hover:decoration-accent-500 transition-all">{link.title}</h4>
