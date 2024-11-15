@@ -1,5 +1,5 @@
 import { orange } from '@radix-ui/colors';
-import { stone, rose, blue, lime, amber } from 'tailwindcss/colors';
+import { stone, rose, blue, lime, amber, red } from 'tailwindcss/colors';
 
 export function generateRadixColors(colors) {
   let count = 50;
@@ -22,6 +22,7 @@ export default {
       orange: generateRadixColors(orange),
       lime,
       rose,
+      red,
       blue,
       accent: generateRadixColors(amber),
       tones: {

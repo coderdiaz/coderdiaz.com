@@ -127,7 +127,7 @@ import Container from '@/components/Container.astro';
     <div class="flex flex-col gap-2.5">
       <h2 class="text-xl md:text-2xl font-semibold">Formato del taller</h2>
       <div class="flex flex-col gap-2">
-        <p class="text-gray-600 md:text-lg leading-relaxed">El taller se llevará a cabo en vivo (en línea). Las sesiones serán a través de una plataforma que no requiere ningún tipo de instalación, únicamente necesitaras un navegador web.</p>
+        <p class="text-gray-600 md:text-lg leading-relaxed">El taller se llevará a cabo en vivo (en línea), sin embargo, si quieres apuntarte, puedes hacerlo bajo demanda con cada una de las grabaciones y teniendo acceso a las tutorías y comunidad para resolver tus dudas. Las sesiones serán a través de una plataforma que no requiere ningún tipo de instalación, únicamente necesitaras un navegador web.</p>
         <p class="text-gray-600 md:text-lg leading-relaxed">El formato en línea no nos permite tener la flexibilidad que tenemos en una taller presencial así que íremos resolviendo ejercicios en cada bloque para complementar nuestro aprendizaje, y posteriormente, tendremos espacio para resolver dudas.</p>
         <p class="text-gray-600 md:text-lg leading-relaxed">Todas las personas participantes tendrán acceso a un canal en Discord donde podremos resolver dudas y compartir recursos que nos sean de ayuda, recordemos que en comunidad también podemos fortalecer nuestro aprendizaje.</p>
       </div>
@@ -162,13 +162,14 @@ import Container from '@/components/Container.astro';
           <div class="flex flex-col items-center gap-4">
             <p class="inline-block font-semibold">Por tan solo</p>
             <div class="flex items-center gap-3">
-              <span class="font-display text-7xl font-bold">$69</span>
+              <p class="font-display text-6xl font-bold text-red-700">$34.5</p>
               <div class="flex flex-col">
+                <span className="line-through text-xl">$69</span>
                 <span class="font-bold text-xl">USD</span>
               </div>
             </div>
             <div class="flex flex-col items-center gap-2 w-full">
-              <a href="https://buy.stripe.com/3cs9Bh93ufj0gmI28o" class="relative px-6 py-3 w-full rounded-full bg-accent-400 text-accent-1000 text-center font-semibold transition hover:bg-accent-400/75 z-10">
+              <a href="https://buy.stripe.com/3cs9Bh93ufj0gmI28o?prefilled_promo_code=BUENFIN50" class="relative px-6 py-3 w-full rounded-full bg-accent-400 text-accent-1000 text-center font-semibold transition hover:bg-accent-400/75 z-10">
                 Inscríbete ahora
               </a>
               <span class="text-accent-900 font-medium text-sm">Compra segura con Stripe</span>
