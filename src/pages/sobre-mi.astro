@@ -1,0 +1,24 @@
+---
+import { getEntry } from 'astro:content';
+import Container from '@/components/Container.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const entry = await getEntry('pages', 'about');
+const { Content } = await entry.render();
+---
+
+<BaseLayout seo={entry.data.seo}>
+  <section class="pt-12 pb-6">
+    <Container class="relative max-w-screen-md">
+      <h1 class="font-bold text-3xl md:text-4xl">
+        {entry.data.title}
+      </h1>
+      <span class="absolute left-0 -ml-6 -mt-6 top-0 mb-0 hidden font-mono text-[18rem] text-accent-600 leading-none opacity-5 lg:flex pointer-events-none select-none">*</span>
+    </Container>
+  </section>
+  <section>
+    <Container class="prose md:prose-lg max-w-screen-md">
+      <Content />
+    </Container>
+  </section>
+</BaseLayout>
