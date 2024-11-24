@@ -82,7 +82,7 @@ export default {
               }
             },
             img: {
-              borderRadius: 20,
+              borderRadius: 0,
               borderWidth: 1,
               borderColor: theme('colors.tones.200'),
               borderStyle: 'solid',
