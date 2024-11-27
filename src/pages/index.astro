@@ -10,6 +10,7 @@ import ProfileAvatar from '@/assets/images/profile.jpg';
 import SectionWork from '@/components/SectionWork.astro';
 import NoteItem from '@/components/NoteItem.astro';
 import { includeDraft } from '@/lib/utils';
+import { ChevronsDownIcon } from 'lucide-react';
 
 const publishedNotes = (await getCollection('notes', ({ data }: CollectionEntry<'notes'>) => includeDraft(data.draft)))
   .sort((a: any, b: any) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
@@ -21,9 +22,9 @@ const latestPosts = publishedNotes.slice(0, 5);
 const latestWork = publishedWork.slice(0, 4);
 ---
 <BaseLayout>
-  <section>
+  <section class="border-b border-gray-200">
     <Container>
-      <div class="pt-8 pb-12 md:pt-12 md:pb-16">
+      <div class="pt-8 pb-12 md:pt-16 md:pb-16">
         <div class="flex flex-col items-start gap-8">
           <div class="relative flex items-start flex-col gap-3 md:gap-4 w-full md:w-[44rem]">
             <motion.h1
@@ -31,16 +32,16 @@ const latestWork = publishedWork.slice(0, 4);
               initial={{opacity:0,y:-20}}
               animate={{opacity:1,y:0}}
               transition={{ type: 'spring', stiffness: 250, damping: 20 }}
-              className="text-[2.25rem] leading-[1.05] md:text-[2.9rem] md:leading-[1.05] font-bold relative z-10"
+              className="text-[1.85rem] leading-[1] md:text-[2.9rem] md:leading-[1.025] font-bold relative z-10 md:mr-32"
             >
-              Convierto <span class="relative before:content-[''] before:absolute before:bottom-2 before:w-full before:h-1.5 before:bg-accent-300 before:-z-[1]">tus ideas</span> en productos atractivos en ciclos de <span class="relative before:content-[''] before:absolute before:bottom-2 before:w-full before:h-1.5 before:bg-blue-300 before:-z-[1]">8 semanas</span>
+              Convierto <span class="relative before:content-[''] before:absolute before:bottom-2 before:w-full before:h-1.5 before:bg-accent-300 before:-z-[1]">tus ideas</span> en productos atractivos y amigables para todos
             </motion.h1>
             <motion.p
               client:load
               initial={{opacity:0,y:-20}}
               animate={{opacity:1,y:0}}
               transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.05 }}
-              className="text-tones-900 md:text-xl font-semibold md:leading-7 md:mr-32"
+              className="text-tones-700 md:text-xl font-medium md:leading-7 md:mr-32"
             >
               Te ayudo a optimizar la experiencia de tus productos actuales, a renovar tu sitio web o mejorar su rendimiento, y hacer que tu nueva idea se vuelva realidad.
             </motion.p>
@@ -55,17 +56,6 @@ const latestWork = publishedWork.slice(0, 4);
       </div>
     </Container>
   </section>
-  <motion.section
-    className="border-b border-gray-200"
-    client:load
-    initial={{opacity:0,y:-20}}
-    animate={{opacity:1,y:0}}
-    transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.2 }}
-  >
-    <Container class="pb-4">
-      <h2 class="text-xl md:text-2xl font-bold text-tones-900">Proyectos destacados</h2>
-    </Container>
-  </motion.section>
   <SectionWork entry={latestWork[0]} />
   <SectionWork entry={latestWork[1]} />
   <motion.section
@@ -171,7 +161,7 @@ const latestWork = publishedWork.slice(0, 4);
               Soy un freelancer multidiciplinario que ha trabajado con diferentes startups, empresas, agencias y particulares para construir productos y servicios en la web.
             </p>
             <p>
-              He colaborado con personas y equipos multidiplinarios para crear experiencias y productos fantásticos que sean fáciles de usar y sin fricciones. 
+              He colaborado con personas y equipos multidiplinarios para crear experiencias y productos fantásticos que sean fáciles de usar y sin fricciones.
             </p>
             <p>
               En mi tiempo libre, usualmente podrás encontrarme leyendo, viendo películas, dando clases de programación, jugando videojuegos o aprendiendo algo nuevo.
