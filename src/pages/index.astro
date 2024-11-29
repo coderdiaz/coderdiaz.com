@@ -10,7 +10,6 @@ import ProfileAvatar from '@/assets/images/profile.jpg';
 import SectionWork from '@/components/SectionWork.astro';
 import NoteItem from '@/components/NoteItem.astro';
 import { includeDraft } from '@/lib/utils';
-import { ChevronsDownIcon } from 'lucide-react';
 
 const publishedNotes = (await getCollection('notes', ({ data }: CollectionEntry<'notes'>) => includeDraft(data.draft)))
   .sort((a: any, b: any) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
@@ -45,6 +44,17 @@ const latestWork = publishedWork.slice(0, 4);
             >
               Te ayudo a optimizar la experiencia de tus productos actuales, a renovar tu sitio web o mejorar su rendimiento, y hacer que tu nueva idea se vuelva realidad.
             </motion.p>
+            <motion.div
+              className="mt-4"
+              client:load
+              initial={{opacity:0, y: -20}}
+              animate={{opacity:1,y:0}}
+              transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.1 }}
+            >
+              <a href="/contacto/" class="mt-2 px-6 py-4 text-center md:text-left md:w-max rounded-full bg-accent-400 text-accent-1000 font-semibold transition hover:bg-accent-400/75">
+                Comenzar un proyecto
+              </a>
+            </motion.div>
             <motion.span
               client:load
               initial={{opacity:0,y:-20}}
