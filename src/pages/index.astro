@@ -10,6 +10,7 @@ import ProfileAvatar from '@/assets/images/profile.jpg';
 import SectionWork from '@/components/SectionWork.astro';
 import NoteItem from '@/components/NoteItem.astro';
 import { includeDraft } from '@/lib/utils';
+import { ArrowRightIcon } from 'lucide-react';
 
 const publishedNotes = (await getCollection('notes', ({ data }: CollectionEntry<'notes'>) => includeDraft(data.draft)))
   .sort((a: any, b: any) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
@@ -31,7 +32,7 @@ const latestWork = publishedWork.slice(0, 4);
               initial={{opacity:0,y:-20}}
               animate={{opacity:1,y:0}}
               transition={{ type: 'spring', stiffness: 250, damping: 20 }}
-              className="text-[1.85rem] leading-[1] md:text-[2.9rem] md:leading-[1.025] font-bold relative z-10 md:mr-32"
+              className="text-[1.85rem] leading-[1] md:text-[3rem] font-semibold md:leading-[0.95] font-extra relative z-10 md:mr-0"
             >
               Convierto <span class="relative before:content-[''] before:absolute before:bottom-2 before:w-full before:h-1.5 before:bg-accent-300 before:-z-[1]">tus ideas</span> en productos atractivos y amigables para todos
             </motion.h1>
@@ -40,7 +41,7 @@ const latestWork = publishedWork.slice(0, 4);
               initial={{opacity:0,y:-20}}
               animate={{opacity:1,y:0}}
               transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.05 }}
-              className="text-tones-700 md:text-xl font-medium md:leading-7 md:mr-32"
+              className="text-tones-700 md:text-lg md:leading-7 md:mr-44"
             >
               Te ayudo a optimizar la experiencia de tus productos actuales, a renovar tu sitio web o mejorar su rendimiento, y hacer que tu nueva idea se vuelva realidad.
             </motion.p>
@@ -51,8 +52,9 @@ const latestWork = publishedWork.slice(0, 4);
               animate={{opacity:1,y:0}}
               transition={{ type: 'spring', stiffness: 250, damping: 20, delay: 0.1 }}
             >
-              <a href="/contacto/" class="mt-2 px-6 py-4 text-center md:text-left md:w-max rounded-full bg-accent-400 text-accent-1000 font-semibold transition hover:bg-accent-400/75">
+              <a href="/contacto/" class="mt-2 pl-6 pr-5 py-3.5 text-center md:text-left md:w-max rounded-full bg-black text-white font-semibold shadow-sm hover:shadow-lg transition-all inline-flex gap-3 hover:scale-105">
                 Comenzar un proyecto
+                <ArrowRightIcon />
               </a>
             </motion.div>
             <motion.span
