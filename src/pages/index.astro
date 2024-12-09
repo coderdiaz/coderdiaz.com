@@ -11,15 +11,15 @@ import SectionWork from '@/components/SectionWork.astro';
 import NoteItem from '@/components/NoteItem.astro';
 import { includeDraft } from '@/lib/utils';
 import { ArrowRightIcon } from 'lucide-react';
+import { getEntry } from 'astro:content';
 
 const publishedNotes = (await getCollection('notes', ({ data }: CollectionEntry<'notes'>) => includeDraft(data.draft)))
   .sort((a: any, b: any) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 
-const publishedWork = (await getCollection('work', ({ data }: CollectionEntry<'work'>) => includeDraft(data.draft)))
-  .sort((a: any, b: any) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
-
 const latestPosts = publishedNotes.slice(0, 5);
-const latestWork = publishedWork.slice(0, 4);
+const ariaWebsite = await getEntry('work', 'academia-de-baile-aria')
+const ariaApp = await getEntry('work', 'software-para-academia-de-baile')
+const pandaSaludDashboard = await getEntry('work', 'panda-salud')
 ---
 <BaseLayout>
   <section class="border-b border-gray-200">
@@ -68,8 +68,8 @@ const latestWork = publishedWork.slice(0, 4);
       </div>
     </Container>
   </section>
-  <SectionWork entry={latestWork[0]} />
-  <SectionWork entry={latestWork[1]} />
+  <SectionWork entry={ariaApp} />
+  <SectionWork entry={ariaWebsite} />
   <motion.section
     className="border-b border-gray-200"
     client:load
@@ -162,7 +162,7 @@ const latestWork = publishedWork.slice(0, 4);
       </div>
     </Container>
   </motion.section>
-  <SectionWork entry={latestWork[2]} />
+  <SectionWork entry={pandaSaludDashboard} />
   <section class="border-b border-gray-200">
     <Container class="md:px-0">
       <div class="py-16 flex flex-col-reverse md:flex-row gap-12  md:gap-4 items-center">
