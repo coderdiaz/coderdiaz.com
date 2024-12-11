@@ -38,7 +38,7 @@ export default defineConfig({
     '/expanish-website/': '/proyectos/expanish-website/',
     '/codigofacilito/': '/proyectos/codigofacilito/',
     '/panda-salud/': '/proyectos/panda-salud/',
-    '/softre-para-academia-de-baile/': '/proyectos/softre-para-academia-de-baile/',
+    '/software-para-academia-de-baile/': '/proyectos/software-para-academia-de-baile/',
   },
   integrations: [react(), tailwind(), sitemap(), mdx({
     optimize: true,
