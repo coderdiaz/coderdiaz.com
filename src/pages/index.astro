@@ -25,16 +25,16 @@ const pandaSaludDashboard = await getEntry('work', 'panda-salud')
   <section class="border-b border-gray-200">
     <Container>
       <div class="pt-8 pb-12 md:pt-16 md:pb-16">
-        <div class="flex flex-col items-start gap-8">
+        <div class="flex flex-col items-start gap-6">
           <div class="relative flex items-start flex-col gap-3 md:gap-4 w-full md:w-[44rem]">
             <motion.h1
               client:load
               initial={{opacity:0,y:-20}}
               animate={{opacity:1,y:0}}
               transition={{ type: 'spring', stiffness: 250, damping: 20 }}
-              className="text-[1.85rem] leading-[1] md:text-[3rem] font-semibold md:leading-[1.05] font-extra relative z-10 md:mr-0"
+              className="text-[1.85rem] leading-[1] md:text-[3rem] font-bold md:leading-[1.0] font-extra relative z-10 md:mr-0"
             >
-              Convierto <span class="relative before:content-[''] before:absolute before:bottom-2 before:w-full before:h-1.5 before:bg-accent-300 before:-z-[1]">tus ideas</span> en productos atractivos y amigables para todos
+              Convierto <span class="relative before:content-[''] before:absolute before:bottom-2 before:w-full before:h-1.5 before:bg-accent-400 before:-z-[1]">tus ideas</span> en productos atractivos y amigables para todos
             </motion.h1>
             <motion.p
               client:load
@@ -46,7 +46,6 @@ const pandaSaludDashboard = await getEntry('work', 'panda-salud')
               Te ayudo a optimizar la experiencia de tus productos actuales, a renovar tu sitio web o mejorar su rendimiento, y hacer que tu nueva idea se vuelva realidad.
             </motion.p>
             <motion.div
-              className="mt-4"
               client:load
               initial={{opacity:0, y: -20}}
               animate={{opacity:1,y:0}}

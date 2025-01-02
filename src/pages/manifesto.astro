@@ -1,11 +1,11 @@
 ---
-import { getEntry } from 'astro:content';
+import { getEntry, render } from 'astro:content';
 import { motion } from 'framer-motion';
 import Container from '@/components/Container.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
 const entry = await getEntry('pages', 'manifesto');
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 <BaseLayout seo={entry.data.seo}>
   <article>

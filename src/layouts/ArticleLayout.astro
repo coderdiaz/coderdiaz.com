@@ -13,7 +13,7 @@ interface Props {
 
 const { entry, seo } = Astro.props;
 const notes = (await getCollection('notes', ({ data }: CollectionEntry<'notes'>) => data.draft !== true))
-  .filter((note) => note.slug !== entry.slug);
+  .filter((note) => note.id !== entry.id);
 
 // random
 const randomNote = notes.sort(() => Math.random() - 0.5).slice(0, 1)[0];
@@ -68,7 +68,7 @@ const randomNote = notes.sort(() => Math.random() - 0.5).slice(0, 1)[0];
       >
         <span class="text-tones-500 font-medium text-sm">Más desde Coderdiaz Studio</span>
         {randomNote && (
-          <a href={`/notas/${randomNote.slug}/`}>
+          <a href={`/notas/${randomNote.id}/`}>
             <div class="flex items-center gap-4 bg-gray-50 hover:bg-gray-100 transition p-1.5 rounded-xl">
               { randomNote.data.featuredImage && (
                 <motion.div

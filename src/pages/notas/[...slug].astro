@@ -1,18 +1,18 @@
 ---
 import ArticleLayout from '@/layouts/ArticleLayout.astro';
 import { includeDraft } from '@/lib/utils';
-import type { CollectionEntry } from 'astro:content';
+import { type CollectionEntry, render } from 'astro:content';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const entries = await getCollection('notes', ({ data }: CollectionEntry<'notes'>) => includeDraft(data.draft)) as Array<CollectionEntry<'notes'>>;
   return entries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
+    params: { slug: entry.id }, props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 <ArticleLayout entry={entry} seo={entry.data.seo}>
   <Content />

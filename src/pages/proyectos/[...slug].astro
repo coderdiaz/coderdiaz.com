@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import ProyectLayout from '@/layouts/ProjectLayout.astro';
 import { includeDraft } from '@/lib/utils';
@@ -7,12 +7,12 @@ import { includeDraft } from '@/lib/utils';
 export async function getStaticPaths() {
   const entries = (await getCollection('work', ({ data }: CollectionEntry<'work'>) => includeDraft(data.draft)))
   return entries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
+    params: { slug: entry.id }, props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 <ProyectLayout entry={entry}>
   <Content />
