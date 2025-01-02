@@ -59,7 +59,7 @@ const seoImage = generateAbsoluteUrl(image.src);
   <meta property="twitter:description" content={seo?.description || defaultSeo.description} />
   <meta property="twitter:image" content={seoImage} />
   { analytics && (
-    <script defer data-domain="coderdiaz.com" src="https://analy.fun/js/script.js"></script>
+    <script defer is:inline data-domain="coderdiaz.com" src="https://analy.fun/js/script.js" />
   )}
   <slot />
 </head>

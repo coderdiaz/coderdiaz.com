@@ -3,5 +3,4 @@
 interface ImportMetaEnv {
   readonly ENABLED_ANALYTICS: boolean;
   readonly HUGEICONS_KEY: string;
-  readonly ENABLED_ANALYTICS: boolean;
 }
